@@ -74,5 +74,5 @@ bool testWrapShifts() {
 
 int main() {
     std::cout << testWrapShifts(); 
-    return false;
+    return -1;
 }
