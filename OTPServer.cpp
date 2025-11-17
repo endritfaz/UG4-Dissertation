@@ -25,8 +25,8 @@ class Engine {
             return pipe; 
         }
 
-        void sendCommand(char* command) {
-
+        void sendCommand(std::string command) {
+            write(pipe[1], command.c_str(), command.size());
         } 
 
         std::string getResponse() {
