@@ -2,5 +2,13 @@
 #include <iostream>
 
 int main() { 
-    std::cout << "It's working!";
+    char buffer[1024];
+
+    while (fgets(buffer, sizeof(buffer), stdin) != NULL) {
+        if (strcmp(buffer, "hello")) {
+            std::cout << "It's working\n" << std::flush;
+        }
+    }
+
+    return 0;
 }

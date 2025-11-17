@@ -8,6 +8,9 @@ class OTPServer {
         char* engine1; 
         char* engine2; 
 
+        int engine1pipe[2];
+        int engine2pipe[2];
+
     public:
         OTPServer(char* engine1, char* engine2):
             engine1 {engine1},
@@ -88,14 +91,6 @@ void OTPServer::start() {
     }
     
     else {
-        // Close engine 1 unnecessary pipes 
-        close(engine1_to_server[1]);
-        close(server_to_engine1[0]);
-
-        // Close engine 2 unnecessary pipes
-        close(engine2_to_server[1]);
-        close(server_to_engine2[0]);
-
         char buffer[256];
         ssize_t n = read(engine1_to_server[0], buffer, sizeof(buffer) - 1);
         
@@ -112,12 +107,20 @@ void OTPServer::start() {
             std::cout << "Parent received: " << buffer2;
         }
         
-        // Close remaining pipes 
-        close(server_to_engine1[1]);
-        close(engine1_to_server[0]);
+        // Set communication channels, e.g engine1_pipe = [write_pipe, read_pipe]
+        engine1_pipe[0] = engine1_to_server[0];
+        engine1_pipe[1] = server_to_engine1[1];
 
-        close(server_to_engine2[1]);
-        close(engine2_to_server[0]);
+        engine2_pipe[0] = engine2_to_server[0];
+        engine2_pipe[1] = server_to_engine2[1];
+        
+        // Close unused pipes
+        close(server_to_engine1[0]);
+        close(engine1_to_server[1]);
+
+        close(server_to_engine2[0]);
+        close(engine2_to_server[1]);
+
     }
 }
 
