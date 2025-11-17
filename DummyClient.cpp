@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <iostream>
+#include <cstring> 
 
 int main() { 
     char buffer[1024];

@@ -2,5 +2,5 @@
 #include <iostream>
 
 int main() { 
-    std::cout << "Oh my god!";
+    std::cout << "Oh my god!\n";
 }

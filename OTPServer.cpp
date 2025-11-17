@@ -3,26 +3,121 @@
 #include <string>
 using namespace std; 
 
-class OTPServer {
-    private: 
-        char* engine1; 
-        char* engine2; 
-
-        int engine1pipe[2];
-        int engine2pipe[2];
+class Engine {
+    private:
+        char* executable; 
+        int* pipe;
 
     public:
-        OTPServer(char* engine1, char* engine2):
+        Engine(char* executable):
+            executable {executable}
+        {}
+
+        void setPipe(int p[]) {
+            pipe = p;
+        }
+
+        char* getExecutable() {
+            return executable;
+        }
+
+        int* getPipe() {
+            return pipe; 
+        }
+
+        void sendCommand(char* command) {
+
+        } 
+
+        std::string getResponse() {
+            char buffer[256]; 
+            std::string line;
+
+            ssize_t n; 
+            bool newline = false; 
+
+            while ((n = read(pipe[0], buffer, sizeof(buffer))) > 0) {
+                for (ssize_t i = 0; i < n; i++) {
+                    if (buffer[i] == '\n') {
+                        newline = true;
+                        break; 
+                    }
+                    line += buffer[i];
+                }
+
+                if (newline) {
+                    break; 
+                }
+            }
+            return line; 
+        }
+};
+
+
+class OTPServer {
+   
+    public:
+        Engine engine1; 
+        Engine engine2;
+
+        OTPServer(Engine engine1, Engine engine2):
             engine1 {engine1},
             engine2 {engine2}
         {}
 
-        void print() {
-            cout << engine1; 
-            cout << engine2; 
-        }
 
-        void start(); 
+        void start() {
+            engine1.setPipe(startEngine(engine1.getExecutable()));
+            engine2.setPipe(startEngine(engine2.getExecutable()));
+        }
+        
+        // Forks the process to start the engine and returns a pipe to the engine
+        int* startEngine(char* engine) {
+            int server_to_engine[2];
+            int engine_to_server[2];
+            int* engine_pipe = new int[2];
+
+            if (pipe(server_to_engine) < 0 || pipe(engine_to_server) < 0) {
+                perror("pipe");
+                exit(EXIT_FAILURE);
+            }
+
+            pid_t pid = fork();
+
+            if (pid == -1) {
+                perror("fork");
+                exit(EXIT_FAILURE);
+            }
+
+            else if (pid == 0) {
+                configurePipes(server_to_engine, engine_to_server);
+                launchEngine(engine);
+            }
+
+            else {
+                // engine std_out -> engine write end -> engine read end 
+                engine_pipe[0] = engine_to_server[0];
+
+                // server write -> server read -> engine std_in
+                engine_pipe[1] = server_to_engine[1];
+
+                close(engine_to_server[1]);
+                close(server_to_engine[0]);
+
+                return engine_pipe;
+            }
+        }
+        
+        void configurePipes(int server_to_engine[], int engine_to_server[]) {
+            close(server_to_engine[1]);
+            close(engine_to_server[0]);
+
+            dup2(server_to_engine[0], STDIN_FILENO);
+            close(server_to_engine[0]);
+
+            dup2(engine_to_server[1], STDOUT_FILENO);
+            close(engine_to_server[1]); 
+        }
 
         void launchEngine(char* engine) {
             char *args[] = {engine, NULL};
@@ -34,101 +129,18 @@ class OTPServer {
                 exit(EXIT_FAILURE);
             }
         }
-
-        void configurePipes(int server_to_engine_p[], int engine_to_server_p[], int server_to_engine_s[], int engine_to_server_s[]) {
-            close(server_to_engine_s[0]);
-            close(engine_to_server_s[0]);
-            close(server_to_engine_s[1]);
-            close(engine_to_server_s[1]);
-            
-            close(server_to_engine_p[1]);
-            close(engine_to_server_p[0]);
-
-            dup2(server_to_engine_p[0], STDIN_FILENO);
-            close(server_to_engine_p[0]);
-
-            dup2(engine_to_server_p[1], STDOUT_FILENO);
-            close(engine_to_server_p[1]);  
-        }
 };
 
-void OTPServer::start() {
-    int server_to_engine1[2]; 
-    int engine1_to_server[2];
-
-    int server_to_engine2[2];
-    int engine2_to_server[2];
-
-    if (pipe(server_to_engine1) < 0 || pipe(engine1_to_server) < 0 || pipe(server_to_engine2) < 0 || pipe(engine2_to_server) < 0) {
-        perror("pipe");
-        exit(EXIT_FAILURE); 
-    }
-
-    pid_t pid1 = fork();
-    // Stops first child process from forking 
-    pid_t pid2 = -1; 
-    if (pid1 != 0) {
-        pid2 = fork();
-        if (pid2 == -1) {
-            perror("fork");
-            exit(EXIT_FAILURE);
-        }
-    }
-
-    if (pid1 == -1) {
-        perror("fork");
-        exit(EXIT_FAILURE);
-    } 
-
-    else if (pid1 == 0) {
-        configurePipes(server_to_engine1, engine1_to_server, server_to_engine2, engine2_to_server);
-        launchEngine(engine1);     
-    }
-    
-    else if (pid2 == 0) {
-        configurePipes(server_to_engine2, engine2_to_server, server_to_engine1, engine1_to_server);
-        launchEngine(engine2); 
-    }
-    
-    else {
-        char buffer[256];
-        ssize_t n = read(engine1_to_server[0], buffer, sizeof(buffer) - 1);
-        
-        if (n > 0) {
-            buffer[n] = '\0';
-            std::cout << "Parent received: " << buffer;
-        }
-
-        char buffer2[256];
-        ssize_t n2 = read(engine2_to_server[0], buffer2, sizeof(buffer2) - 1);
-
-        if (n2 > 0) {
-            buffer2[n2] = '\0';
-            std::cout << "Parent received: " << buffer2;
-        }
-        
-        // Set communication channels, e.g engine1_pipe = [write_pipe, read_pipe]
-        engine1_pipe[0] = engine1_to_server[0];
-        engine1_pipe[1] = server_to_engine1[1];
-
-        engine2_pipe[0] = engine2_to_server[0];
-        engine2_pipe[1] = server_to_engine2[1];
-        
-        // Close unused pipes
-        close(server_to_engine1[0]);
-        close(engine1_to_server[1]);
-
-        close(server_to_engine2[0]);
-        close(engine2_to_server[1]);
-
-    }
-}
-
 int main() {
-    char engine1[] = "./client";
-    char engine2[] = "./client2"; 
+    char engine1_executable[] = "./client";
+    char engine2_executable[] = "./client2"; 
 
+    Engine engine1{engine1_executable};
+    Engine engine2{engine2_executable};
     OTPServer serv{engine1, engine2};
-    serv.start(); 
+
+    serv.start();
+    
+    std::cout << serv.engine2.getResponse();
     return 0; 
 }
