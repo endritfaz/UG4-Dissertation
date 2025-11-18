@@ -58,7 +58,7 @@ uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
         int direction = directions[i];
         
         uint64_t charge = shift(playerBoard, direction) & opponentBoard;
-        for (int j = 0; j < 4; j++) {
+        for (int j = 0; j < 5; j++) {
             charge |= shift(charge, direction) & opponentBoard;
         }
         uint64_t directionMoves = shift(charge, direction) & empty;
@@ -68,6 +68,26 @@ uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
     return moves;
 }
 
+
+uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
+    int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
+
+    for (int i = 0; i < 8; i++) {
+        int direction = directions[i];
+
+        uint64_t captured = shift(move, direction) & opponentBoard;
+        for (int j = 0; j < 5; j++) {
+            captured |= shift(captured, direction) & opponentBoard; 
+        }
+        if ((shift(captured, direction) & playerBoard) != 0) {
+            playerBoard |= captured;
+            opponentBoard &= ~captured; 
+        }
+    }
+    return new uint64_t[]{playerBoard, opponentBoard};
+}
+
+/*
 int main() {
     uint64_t playerBoard = 0x40000000000; 
     uint64_t opponentBoard = 0x180000000000; 
@@ -80,3 +100,4 @@ int main() {
 
     return 0; 
 }
+*/

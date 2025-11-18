@@ -1,20 +1,31 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include "Game.h"
+
 using namespace std; 
 
 class Engine {
     private:
         char* executable; 
         int* pipe;
+        std::string colour; 
 
     public:
         Engine(char* executable):
             executable {executable}
         {}
 
+        void setColour(std::string c) {
+            colour = c; 
+        }
+
         void setPipe(int p[]) {
             pipe = p;
+        }
+
+        std::string getColour(void) {
+            return colour; 
         }
 
         char* getExecutable() {
@@ -54,13 +65,13 @@ class Engine {
 };
 
 
-class OTPServer {
+class Server {
    
     public:
         Engine engine1; 
         Engine engine2;
 
-        OTPServer(Engine engine1, Engine engine2):
+        Server(Engine engine1, Engine engine2):
             engine1 {engine1},
             engine2 {engine2}
         {}
@@ -92,6 +103,7 @@ class OTPServer {
             else if (pid == 0) {
                 configurePipes(server_to_engine, engine_to_server);
                 launchEngine(engine);
+                return NULL; 
             }
 
             else {
@@ -129,6 +141,52 @@ class OTPServer {
                 exit(EXIT_FAILURE);
             }
         }
+
+        void play() {
+            Game game{};
+            
+            // TODO: Have this be decided separately 
+            engine1.setColour("black"); 
+            engine2.setColour("white"); 
+
+            Engine active = engine1; 
+            Engine inactive = engine2; 
+
+            std::string command; 
+            std::string response; 
+
+            while(true) {
+                // Check for a winner (no player has valid moves or board full)
+                if (game.gameOver()) {
+                    std::cout << game.getWinner();
+                    break; 
+                }
+                command = std::format("genmove {}\n", active.getColour()); 
+                active.sendCommand(command);
+                std::cout << std::format("{}\n", command); 
+                // TODO: Check response is valid 
+                response = active.getResponse();
+                std::cout << std::format("{}\n", response); 
+               
+                // TODO: Check if the move is actually valid 
+                game.makeMove(response); 
+
+                command = std::format("play {} {}\n", active.getColour(), response); 
+                inactive.sendCommand(command);
+                std::cout << std::format("{}\n", command); 
+
+                // TODO: Check if inactive player board update has succeeded
+                response = inactive.getResponse();
+                std::cout << std::format("{}\n", response); 
+                // Swap active and inactive engine for next turn
+                Engine temp = active;
+                active = inactive; 
+                inactive = temp; 
+                
+                // Increment game turn 
+                game.turn += 1; 
+            }
+        }
 };
 
 int main() {
@@ -137,10 +195,9 @@ int main() {
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
-    OTPServer serv{engine1, engine2};
+    Server serv{engine1, engine2};
 
     serv.start();
-    
-    std::cout << serv.engine2.getResponse();
+    serv.play();
     return 0; 
 }
