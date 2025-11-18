@@ -156,8 +156,9 @@ class Server {
             std::string response; 
 
             while(true) {
+                // sleep(1);
                 // Check for a winner (no player has valid moves or board full)
-                if (game.gameOver()) {
+                if (game.gameOver()) { 
                     std::cout << game.getWinner();
                     break; 
                 }
@@ -182,9 +183,6 @@ class Server {
                 Engine temp = active;
                 active = inactive; 
                 inactive = temp; 
-                
-                // Increment game turn 
-                game.turn += 1; 
             }
         }
 };

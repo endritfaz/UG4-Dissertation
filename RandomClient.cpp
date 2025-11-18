@@ -82,13 +82,23 @@ class RandomClient {
                 {
                     moves = generateMoves(game.white, game.black);
                 }
-                
+                std::cerr << game.white; 
+                std::cerr << "\n";
+                std::cerr << game.black; 
+                std::cerr << "\n";
+                std::cerr << moves;
                 uint64_t move = pickRandomSetBit(moves);
-                
+                std::cerr << "\n";
+                std::cerr << move; 
+                std::cerr << "\n";
                 if (move == 0) {
+                    std::cerr << "PASSING";
+                    game.makeMove("pass"); 
+                    std::cerr << "PASSED";
                     std::cout << "pass\n";
+                    return; 
                 }
-
+                game.makeMove(move);
                 std::cout << std::format("{}\n", convertToSquare(move));
             }
         }

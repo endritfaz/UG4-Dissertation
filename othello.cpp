@@ -71,6 +71,7 @@ uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
 
 uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
     int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
+    playerBoard |= move; 
 
     for (int i = 0; i < 8; i++) {
         int direction = directions[i];

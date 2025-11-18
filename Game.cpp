@@ -25,10 +25,13 @@ void Game::makeMove(uint64_t move) {
         black = boards[1];
         white = boards[0]; 
     }
+
+    turn += 1; 
 }
 
 void Game::makeMove(std::string move) {
     if (move == "pass") {
+        turn += 1;
         return; 
     }
 
@@ -54,6 +57,8 @@ void Game::makeMove(std::string move) {
         black = boards[1];
         white = boards[0]; 
     }
+
+    turn += 1; 
 }
 
 bool Game::gameOver() {
