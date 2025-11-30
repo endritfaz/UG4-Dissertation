@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "othello.h"
 #include <string>
-
+#include <format> 
 #include <cstdint>
 #include <random>
 #include <bitset>

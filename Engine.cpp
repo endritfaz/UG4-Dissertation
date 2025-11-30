@@ -41,29 +41,39 @@ std::string Engine::getResponse() {
 
     while ((n = read(pipe[0], buffer, sizeof(buffer))) > 0) {
         for (ssize_t i = 0; i < n; i++) {
-            if (buffer[i] == '\n') {
+            
+            if (buffer[i] == '>') {
                 newline = true;
                 break; 
             }
+            
             line += buffer[i];
+            
         }
-
+        
         if (newline) {
             break; 
         }
+        
     }
     return line; 
 }
 
 void Engine::launchEngine() {
-    char *args[] = {executable, NULL};
-    try {
-        execvp(args[0], args); 
-    }
-    catch (exception e) {
-        perror("execvp");
-        exit(EXIT_FAILURE);
-    }
+	char *args[] = {executable, NULL};
+ 
+	try {
+		// TODO: Replace with absolute path, that is passed in as an argument
+		if (chdir("edax-4.6-linux-x86") != 0) {
+			perror("chdir");
+			exit(EXIT_FAILURE);
+		}
+		execvp(args[0], args);
+	}
+	catch (exception e) {
+		perror("execvp");
+		exit(EXIT_FAILURE);
+	}
 }
 
 void Engine::configurePipes(int server_to_engine[], int engine_to_server[]) {
@@ -74,6 +84,7 @@ void Engine::configurePipes(int server_to_engine[], int engine_to_server[]) {
     close(server_to_engine[0]);
 
     dup2(engine_to_server[1], STDOUT_FILENO);
+    // dup2(engine_to_server[1], STDERR_FILENO);
     close(engine_to_server[1]); 
 }
 
