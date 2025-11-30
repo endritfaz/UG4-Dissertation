@@ -14,7 +14,7 @@ class RandomClient {
         Game game{};
 
         uint64_t pickRandomSetBit(uint64_t x) {
-            if (x == 0) return 0;  // nothing to pick
+            if (x == 0) return 0;  
 
             // Count set bits
             int count = __builtin_popcountll(x);
@@ -23,7 +23,7 @@ class RandomClient {
             std::random_device rd;
             std::mt19937 gen(rd());
             std::uniform_int_distribution<> dis(0, count - 1);
-            int k = dis(gen);  // which set bit to pick
+            int k = dis(gen);  
 
             // Create a mask that selects the k-th 1
             uint64_t bit = 1;
@@ -31,7 +31,7 @@ class RandomClient {
 
             // Mask all bits before the k-th set bit
             for (int i = 0; i < k; ++i) {
-                // clear the lowest set bit
+                // Clear the lowest set bit
                 ones &= (ones - 1);
             }
 
