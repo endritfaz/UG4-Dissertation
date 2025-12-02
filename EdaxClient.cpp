@@ -18,11 +18,25 @@ class EdaxClient {
         }
 
         void play() {
+            engine.sendCommand("set verbose 0\n");
+            std::string response = engine.getResponse('>');
+            std::cout << "got response\n";
+            
+            // Need to get response after playing
+            engine.sendCommand("play c4\n");
+            response = engine.getResponse('>');
+
             engine.sendCommand("go\n");
             std::cout << "sent command\n";
-            std::string response = engine.getResponse();
+            response = engine.getResponse('>');
             std::cout << "got response\n";
-            std::cout << std::format("{}\n", response); 
+            std::cout << std::format("{}\n", extractMove(response)); 
+        }
+
+        // TODO: Replace with regex 
+        std::string extractMove(std::string response) {
+            std::string move = response.substr(13, 15);
+            return move;
         }
 };
 

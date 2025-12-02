@@ -32,18 +32,18 @@ void Engine::sendCommand(std::string command) {
     write(pipe[1], command.c_str(), command.size());
 } 
 
-std::string Engine::getResponse() {
-    char buffer[256]; 
+std::string Engine::getResponse(char end) {
+    char buffer[1024]; 
     std::string line;
 
     ssize_t n; 
-    bool newline = false; 
+    bool endchar = false; 
 
     while ((n = read(pipe[0], buffer, sizeof(buffer))) > 0) {
         for (ssize_t i = 0; i < n; i++) {
             
-            if (buffer[i] == '>') {
-                newline = true;
+            if (buffer[i] == end) {
+                endchar = true;
                 break; 
             }
             
@@ -51,7 +51,7 @@ std::string Engine::getResponse() {
             
         }
         
-        if (newline) {
+        if (endchar) {
             break; 
         }
         
