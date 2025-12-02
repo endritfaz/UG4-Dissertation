@@ -21,9 +21,9 @@ public:
     int* getPipe(); 
     void sendCommand(std::string command);
     std::string getResponse(char end); 
-    void launchEngine();
+    void launchEngine(const char* dir);
     void configurePipes(int server_to_engine[], int engine_to_server[]);
-    void startEngine();
+    void startEngine(const char* dir);
 
 };
 

@@ -59,12 +59,12 @@ std::string Engine::getResponse(char end) {
     return line; 
 }
 
-void Engine::launchEngine() {
+void Engine::launchEngine(const char* dir) {
 	char *args[] = {executable, NULL};
  
 	try {
 		// TODO: Replace with absolute path, that is passed in as an argument
-		if (chdir("edax-4.6-linux-x86") != 0) {
+		if (chdir(dir) != 0) {
 			perror("chdir");
 			exit(EXIT_FAILURE);
 		}
@@ -89,7 +89,7 @@ void Engine::configurePipes(int server_to_engine[], int engine_to_server[]) {
 }
 
 // Forks the process to start the engine sets the engine pipe
-void Engine::startEngine() {
+void Engine::startEngine(const char* dir) {
     int server_to_engine[2];
     int engine_to_server[2];
     int* engine_pipe = new int[2];
@@ -108,7 +108,7 @@ void Engine::startEngine() {
 
     else if (pid == 0) {
         configurePipes(server_to_engine, engine_to_server);
-        launchEngine();
+        launchEngine(dir);
     }
 
     else {

@@ -65,6 +65,13 @@ class RandomClient {
             char del = ' '; 
 
             std::getline(ss, command_type, del); 
+            /*
+            if (command_type == "init") {
+                game = Game();
+                std::cout << "success\n";
+                return; 
+            }
+            */
             std::getline(ss, colour, del); 
 
             if (command_type == "play") {
@@ -82,19 +89,12 @@ class RandomClient {
                 {
                     moves = generateMoves(game.white, game.black);
                 }
-                std::cerr << game.white; 
-                std::cerr << "\n";
-                std::cerr << game.black; 
-                std::cerr << "\n";
-                std::cerr << moves;
+               
                 uint64_t move = pickRandomSetBit(moves);
-                std::cerr << "\n";
-                std::cerr << move; 
-                std::cerr << "\n";
+           
                 if (move == 0) {
-                    std::cerr << "PASSING";
                     game.makeMove("pass"); 
-                    std::cerr << "PASSED";
+
                     std::cout << "pass\n";
                     return; 
                 }
