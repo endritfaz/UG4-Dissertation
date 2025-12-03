@@ -23,18 +23,15 @@ class EdaxClient {
 
             std::getline(ss, command_type, del);
             
-            /*
+
             if (command_type == "init") {
-                std::cerr << "yes";
                 engine.sendCommand("init\n");
                 std::string response = engine.getResponse('>');
                 std::cout << "success\n";
                 return; 
 
             }
-            */
             
-
             std::getline(ss, colour, del); 
 
             if (command_type == "play") {
@@ -60,7 +57,7 @@ class EdaxClient {
         }
 
         void start() {
-            engine.startEngine("edax-4.6-linux-aarch64/bin"); 
+            engine.startEngine("edax-4.6-linux-x86"); 
         }
 
         void ready() {
@@ -100,7 +97,7 @@ class EdaxClient {
 };
 
 int main() {
-    char edax_executable[] = "./lEdax-armv8";
+    char edax_executable[] = "./lEdax-x86-64";
     Engine engine{edax_executable};
     EdaxClient client{engine};
     

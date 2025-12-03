@@ -37,13 +37,13 @@ class Server {
 
             std::string command; 
             std::string response; 
-            /*
+            
             engine1.sendCommand("init\n");
             response = active.getResponse('\n');
             
-            engine2.sendCommand("init'\n"); 
-            response = active.getResponse('\n');
-            */
+            engine2.sendCommand("init\n"); 
+            response = inactive.getResponse('\n');
+            
             while(true) {
                 // Check for a winner (no player has valid moves or board full)
                 if (game.gameOver()) { 
@@ -52,21 +52,21 @@ class Server {
 
                 command = std::format("genmove {}\n", active.getColour()); 
                 active.sendCommand(command);
-                std::cout << std::format("{}\n", command); 
+                // std::cout << std::format("{}\n", command); 
                 // TODO: Check response is valid 
                 response = active.getResponse('\n');
-                std::cout << std::format("{}\n", response); 
+                // std::cout << std::format("{}\n", response); 
                
                 // TODO: Check if the move is actually valid 
                 game.makeMove(response); 
 
                 command = std::format("play {} {}\n", active.getColour(), response); 
                 inactive.sendCommand(command);
-                std::cout << std::format("{}\n", command); 
+                // std::cout << std::format("{}\n", command); 
 
                 // TODO: Check if inactive player board update has succeeded
                 response = inactive.getResponse('\n');
-                std::cout << std::format("{}\n", response); 
+                // std::cout << std::format("{}\n", response); 
                 // Swap active and inactive engine for next turn
                 Engine temp = active;
                 active = inactive; 
@@ -114,13 +114,13 @@ class Server {
 
 int main() {
     char engine1_executable[] = "./EdaxClient";
-    char engine2_executable[] = "./client2"; 
+    char engine2_executable[] = "./EdaxClient"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
     Server serv{engine1, engine2};
 
     serv.start();
-    serv.playGames(1);
+    serv.playGames(10);
     return 0; 
 }

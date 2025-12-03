@@ -65,13 +65,13 @@ class RandomClient {
             char del = ' '; 
 
             std::getline(ss, command_type, del); 
-            /*
+            
             if (command_type == "init") {
                 game = Game();
                 std::cout << "success\n";
                 return; 
             }
-            */
+            
             std::getline(ss, colour, del); 
 
             if (command_type == "play") {
