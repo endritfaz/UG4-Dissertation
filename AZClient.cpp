@@ -3,12 +3,13 @@
 #include <fmt/format.h>
 #include "Engine.h"
 #include <sstream>
+#include <vector>
 
-class EdaxClient {
+class AZClient {
     public:
         Engine engine;
         
-        EdaxClient(Engine engine): 
+        AZClient(Engine engine): 
             engine {engine}
         {}
 
@@ -25,8 +26,8 @@ class EdaxClient {
             
 
             if (command_type == "init") {
-                engine.sendCommand("init\n");
-                std::string response = engine.getResponse('>');
+                engine.sendCommand("clear_board\n");
+                std::string response = engine.getResponse('\n');
                 std::cout << "success\n";
                 return; 
 
@@ -47,27 +48,29 @@ class EdaxClient {
             }
 
             else if (command_type == "genmove") {
-                std::string command = "go\n"; 
+                std::string command = fmt::format("genmove {}\n", colour); 
 
                 engine.sendCommand(command); 
-                std::string response = engine.getResponse('>');
+                std::string response = engine.getResponse('=');
+                response = engine.getResponse('\n'); 
              
                 std::cout << fmt::format("{}\n", extractMove(response));
             }
         }
 
         void start() {
-            engine.startEngine("edax-4.6-linux-x86"); 
+            const char* path = "/home/endret/minizero";
+            engine.startEngine(path); 
         }
 
         void ready() {
+            sleep(2);
             // Capture intial input (to throwaway)
-            std::string response = engine.getResponse('>');
-      
-            engine.sendCommand("set verbose 0\n");
-
-            // Capture newline created by setting verbose (to throwaway)
-            response = engine.getResponse('>');
+            std::string response = engine.getResponse('&');
+            response = engine.getResponse('&');
+            response = engine.getResponse('&');
+            response = engine.getResponse('&');
+            std::cout << response; 
         }
 
         void play() {
@@ -97,9 +100,16 @@ class EdaxClient {
 };
 
 int main() {
-    char edax_executable[] = "./lEdax-x86-64";
-    Engine engine{edax_executable};
-    EdaxClient client{engine};
+    std::vector<std::string> az_argv = {
+        "./tools/quick-run.sh",
+        "console",
+        "othello",
+        "othello_az_n200.pt",
+        "othello_8x8_az.cfg",
+    };
+
+    Engine engine{az_argv};
+    AZClient client{engine};
     
     client.start();
     client.ready(); 

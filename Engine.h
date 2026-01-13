@@ -4,18 +4,20 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
-
+#include <vector>
 class Engine {
 private: 
-    char* executable; 
+    std::vector<std::string> argv; 
     int* pipe;
-    std::string colour; 
+    std::string colour;
+    pid_t enginePID; 
 
 public:
     Engine(char* executable);
+    Engine(const std::vector<std::string>& argv);
 
     void setColour(std::string c); 
-    void setPipe(int p[]); 
+    void setPipe(int p[]);
     std::string getColour(void);
     char* getExecutable(); 
     int* getPipe(); 
@@ -24,7 +26,7 @@ public:
     void launchEngine(const char* dir);
     void configurePipes(int server_to_engine[], int engine_to_server[]);
     void startEngine(const char* dir);
-
+    pid_t getEnginePID(void);
 };
 
 #endif

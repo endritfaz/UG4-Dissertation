@@ -1,9 +1,10 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
-#include <format> 
+#include <fmt/format.h> 
 #include "Game.h"
 #include "Engine.h"
+#include <signal.h>
 using namespace std; 
 
 class Server {
@@ -50,7 +51,7 @@ class Server {
                     return game.getWinner();
                 }
 
-                command = std::format("genmove {}\n", active.getColour()); 
+                command = fmt::format("genmove {}\n", active.getColour()); 
                 active.sendCommand(command);
                 // std::cout << std::format("{}\n", command); 
                 // TODO: Check response is valid 
@@ -60,7 +61,7 @@ class Server {
                 // TODO: Check if the move is actually valid 
                 game.makeMove(response); 
 
-                command = std::format("play {} {}\n", active.getColour(), response); 
+                command = fmt::format("play {} {}\n", active.getColour(), response); 
                 inactive.sendCommand(command);
                 // std::cout << std::format("{}\n", command); 
 
@@ -75,7 +76,7 @@ class Server {
         }
 
         void playGames(int n) {
-            std::cout << std::format("Playing {} game(s)\n", n);
+            std::cout << fmt::format("Playing {} game(s)\n", n);
             std::cout << "------------------------------\n";
 
             std::string engine1colour = "black";
@@ -105,16 +106,16 @@ class Server {
         }
 
         void printSummary(int engine1wins, int engine2wins, int draws) {
-            std::cout << std::format("Engine1 won {} games\n", engine1wins);
-            std::cout << std::format("Engine2 won {} games\n", engine2wins);
-            std::cout << std::format("There were {} draws\n", draws); 
+            std::cout << fmt::format("Engine1 won {} games\n", engine1wins);
+            std::cout << fmt::format("Engine2 won {} games\n", engine2wins);
+            std::cout << fmt::format("There were {} draws\n", draws); 
             std::cout << "------------------------------\n";
         }
 };
 
 int main() {
     char engine1_executable[] = "./EdaxClient";
-    char engine2_executable[] = "./EdaxClient"; 
+    char engine2_executable[] = "./RandomClient2"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
@@ -122,5 +123,10 @@ int main() {
 
     serv.start();
     serv.playGames(10);
+
+    // Shut down engines
+    kill(serv.engine1.getEnginePID(), SIGTERM); 
+    kill(serv.engine2.getEnginePID(), SIGTERM); 
+  
     return 0; 
 }

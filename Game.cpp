@@ -77,8 +77,8 @@ bool Game::gameOver() {
 
 // Assumes the game is over
 std::string Game::getWinner() {
-    int blackDiscs = std::popcount(black);
-    int whiteDiscs = std::popcount(white);
+    int blackDiscs = __builtin_popcountll(black);
+    int whiteDiscs = __builtin_popcountll(white);
 
     if (blackDiscs > whiteDiscs) {
         return "black";

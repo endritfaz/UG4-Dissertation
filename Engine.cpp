@@ -1,11 +1,16 @@
 #include <unistd.h>
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Engine.h"
 using namespace std; 
 
 Engine::Engine(char* executable):
-    executable {executable}
+    argv {executable}
+{}
+
+Engine::Engine(const std::vector<std::string>& argv):
+    argv {argv}
 {}
 
 void Engine::setColour(std::string c) {
@@ -21,7 +26,10 @@ std::string Engine::getColour(void) {
 }
 
 char* Engine::getExecutable() {
-    return executable;
+    if (argv.empty()) {
+        return nullptr;
+    }
+    return const_cast<char*>(argv.front().c_str());
 }
 
 int* Engine::getPipe() {
@@ -33,7 +41,7 @@ void Engine::sendCommand(std::string command) {
 } 
 
 std::string Engine::getResponse(char end) {
-    char buffer[1024]; 
+    char buffer[2048]; 
     std::string line;
 
     ssize_t n; 
@@ -50,7 +58,7 @@ std::string Engine::getResponse(char end) {
             line += buffer[i];
             
         }
-        
+        break;
         if (endchar) {
             break; 
         }
@@ -60,15 +68,23 @@ std::string Engine::getResponse(char end) {
 }
 
 void Engine::launchEngine(const char* dir) {
-	char *args[] = {executable, NULL};
- 
 	try {
 		// TODO: Replace with absolute path, that is passed in as an argument
 		if (chdir(dir) != 0) {
 			perror("chdir");
 			exit(EXIT_FAILURE);
 		}
-		execvp(args[0], args);
+        if (argv.empty()) {
+            std::cerr << "Engine argv is empty\n";
+            exit(EXIT_FAILURE);
+        }
+        std::vector<char*> args;
+        args.reserve(argv.size() + 1);
+        for (const auto& arg : argv) {
+            args.push_back(const_cast<char*>(arg.c_str()));
+        }
+        args.push_back(nullptr);
+		execvp(args[0], args.data());
 	}
 	catch (exception e) {
 		perror("execvp");
@@ -112,6 +128,7 @@ void Engine::startEngine(const char* dir) {
     }
 
     else {
+        enginePID = pid; 
         // engine std_out -> engine write end -> engine read end 
         engine_pipe[0] = engine_to_server[0];
 
@@ -123,4 +140,8 @@ void Engine::startEngine(const char* dir) {
 
         pipe = engine_pipe;
     }
+}
+
+pid_t Engine::getEnginePID() {
+    return enginePID; 
 }

@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "othello.h"
 #include <string>
-#include <format> 
+#include <fmt/format.h> 
 #include <cstdint>
 #include <random>
 #include <bitset>
@@ -52,7 +52,7 @@ class RandomClient {
             char row = '0' + ((shifts / 8) + 1); 
             char column = columns.at(shifts % 8); 
 
-            return std::format("{}{}", column, row);
+            return fmt::format("{}{}", column, row);
         }
 
         void parse(std::string line) {
@@ -65,7 +65,7 @@ class RandomClient {
             char del = ' '; 
 
             std::getline(ss, command_type, del); 
-            
+
             if (command_type == "init") {
                 game = Game();
                 std::cout << "success\n";
@@ -99,7 +99,7 @@ class RandomClient {
                     return; 
                 }
                 game.makeMove(move);
-                std::cout << std::format("{}\n", convertToSquare(move));
+                std::cout << fmt::format("{}\n", convertToSquare(move));
             }
         }
 
