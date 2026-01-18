@@ -30,20 +30,16 @@ class AZClient {
                 std::string response = engine.getResponse('\n');
                 std::cout << "success\n";
                 return; 
-
             }
             
             std::getline(ss, colour, del); 
 
             if (command_type == "play") {
                 std::getline(ss, move, del);
-                move = reflectRow(move);
-                // std::cerr << std::format("play {}\n", move);
                 
-                std::string command = fmt::format("play {}\n", move);
+                std::string command = fmt::format("play {} {}\n", colour, move);
                 engine.sendCommand(command);
-                std::string response = engine.getResponse('>');
-
+           
                 std::cout << "success\n";
             }
 
@@ -51,10 +47,8 @@ class AZClient {
                 std::string command = fmt::format("genmove {}\n", colour); 
 
                 engine.sendCommand(command); 
-                std::string response = engine.getResponse('=');
-                response = engine.getResponse('\n'); 
-             
-                std::cout << fmt::format("{}\n", extractMove(response));
+                std::string move = engine.readMove();
+                std::cout << move << "\n";
             }
         }
 
@@ -62,15 +56,13 @@ class AZClient {
             const char* path = "/home/endret/minizero";
             engine.startEngine(path); 
         }
-
+        
+        // TODO: Hacky, fix this 
         void ready() {
-            sleep(2);
+            sleep(3);
             // Capture intial input (to throwaway)
-            std::string response = engine.getResponse('&');
-            response = engine.getResponse('&');
-            response = engine.getResponse('&');
-            response = engine.getResponse('&');
-            std::cout << response; 
+            engine.emptyResponse(); 
+            std::string response = engine.getResponse('t');
         }
 
         void play() {
@@ -81,22 +73,6 @@ class AZClient {
                 parse(line);
             }
         }
-
-        // TODO: Replace with regex 
-        std::string extractMove(std::string response) {
-            std::string move = response.substr(13, 15);
-
-            if (move.at(0) == 'p' && move.at(1) == 'a') {
-                return "pass"; 
-            }
-
-            return reflectRow(move);
-        }
-
-        std::string reflectRow(std::string move) {
-            move.replace(1, 1, 1, '9' - move.at(1) + '0');
-            return move; 
-        }
 };
 
 int main() {
@@ -104,14 +80,17 @@ int main() {
         "./tools/quick-run.sh",
         "console",
         "othello",
+        "othello_8x8_az_3bx256_n200-04a589"
+        /*
         "othello_az_n200.pt",
         "othello_8x8_az.cfg",
+        */
     };
 
     Engine engine{az_argv};
     AZClient client{engine};
     
     client.start();
-    client.ready(); 
+    client.ready();
     client.play();
 }

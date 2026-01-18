@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <regex>
 #include "Engine.h"
 using namespace std; 
 
@@ -12,6 +13,14 @@ Engine::Engine(char* executable):
 Engine::Engine(const std::vector<std::string>& argv):
     argv {argv}
 {}
+
+void Engine::setName(std::string s) {
+    name = s;
+}
+
+std::string Engine::getName() {
+    return name;
+}
 
 void Engine::setColour(std::string c) {
     colour = c; 
@@ -41,7 +50,7 @@ void Engine::sendCommand(std::string command) {
 } 
 
 std::string Engine::getResponse(char end) {
-    char buffer[2048]; 
+    char buffer[512]; 
     std::string line;
 
     ssize_t n; 
@@ -56,15 +65,20 @@ std::string Engine::getResponse(char end) {
             }
             
             line += buffer[i];
-            
         }
-        break;
+        
         if (endchar) {
             break; 
         }
         
     }
     return line; 
+}
+
+void Engine::emptyResponse() {
+    char buffer[8192]; 
+    read(pipe[0], buffer, sizeof(buffer));
+    return;
 }
 
 void Engine::launchEngine(const char* dir) {
@@ -100,7 +114,7 @@ void Engine::configurePipes(int server_to_engine[], int engine_to_server[]) {
     close(server_to_engine[0]);
 
     dup2(engine_to_server[1], STDOUT_FILENO);
-    // dup2(engine_to_server[1], STDERR_FILENO);
+    dup2(engine_to_server[1], STDERR_FILENO);
     close(engine_to_server[1]); 
 }
 
@@ -144,4 +158,24 @@ void Engine::startEngine(const char* dir) {
 
 pid_t Engine::getEnginePID() {
     return enginePID; 
+}
+
+// WRITTEN BY AI 
+std::string Engine::readMove() {
+    std::string buffer;
+    buffer.reserve(16384);
+
+    const std::regex move_re(R"(=\s*([A-H][1-9]))");
+    char chunk[4096];
+    ssize_t n;
+
+    while ((n = read(pipe[0], chunk, sizeof(chunk))) > 0) {
+        buffer.append(chunk, static_cast<size_t>(n));
+        std::smatch match;
+        if (std::regex_search(buffer, match, move_re)) {
+            return match[1].str();
+        }
+    }
+
+    return "";
 }

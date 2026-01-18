@@ -11,11 +11,14 @@ private:
     int* pipe;
     std::string colour;
     pid_t enginePID; 
+    std::string name; 
 
 public:
     Engine(char* executable);
     Engine(const std::vector<std::string>& argv);
 
+    void setName(std::string s);
+    std::string getName();
     void setColour(std::string c); 
     void setPipe(int p[]);
     std::string getColour(void);
@@ -23,10 +26,12 @@ public:
     int* getPipe(); 
     void sendCommand(std::string command);
     std::string getResponse(char end); 
+    void emptyResponse();
     void launchEngine(const char* dir);
     void configurePipes(int server_to_engine[], int engine_to_server[]);
     void startEngine(const char* dir);
     pid_t getEnginePID(void);
+    std::string readMove();
 };
 
 #endif

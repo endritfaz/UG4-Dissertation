@@ -11,6 +11,37 @@ Game::Game():
     turn {0}
     {}    
 
+int Game::countWhitePieces() {
+    return __builtin_popcountll(white);
+}
+
+int Game::countBlackPieces() {
+    return __builtin_popcountll(black);
+}
+
+int Game::countMoves(std::string colour) {
+    uint64_t targetBoard; 
+    uint64_t otherBoard;
+
+    if (colour == "black") {
+        targetBoard = black; 
+        otherBoard = white; 
+    }
+
+    else if (colour == "white") {
+        targetBoard = white; 
+        otherBoard = black; 
+    }
+
+    else {
+        exit(EXIT_FAILURE); 
+    }
+
+    int targetMoveCount = __builtin_popcountll(generateMoves(targetBoard, otherBoard));
+
+    return targetMoveCount; 
+}
+
 void Game::makeMove(uint64_t move) {
     uint64_t* boards; 
 
