@@ -60,15 +60,16 @@ class Server {
                     std::string winner = game.getWinner(); 
                     jgame["winner"] = winner;
                     jgame["moves"] = moves;
+                    std::cout << "*";
                     return winner;
                 }
 
                 command = fmt::format("genmove {}\n", active.getColour()); 
                 active.sendCommand(command);
-                // std::cout << std::format("{}\n", command); 
+                std::cout << fmt::format("{}\n", command); 
                 // TODO: Check response is valid 
                 response = active.getResponse('\n');
-                // std::cout << std::format("{}\n", response); 
+                std::cout << fmt::format("{}\n", response); 
                
                 // TODO: Check if the move is actually valid 
                 game.makeMove(response); 
@@ -78,11 +79,11 @@ class Server {
 
                 command = fmt::format("play {} {}\n", active.getColour(), response); 
                 inactive.sendCommand(command);
-                // std::cout << std::format("{}\n", command); 
+                std::cout << fmt::format("{}\n", command); 
 
                 // TODO: Check if inactive player board update has succeeded
                 response = inactive.getResponse('\n');
-                // std::cout << std::format("{}\n", response); 
+                std::cout << fmt::format("{}\n", response); 
                 // Swap active and inactive engine for next turn
                 Engine temp = active;
                 active = inactive; 
@@ -129,7 +130,8 @@ class Server {
                 j["num_games"] = n;
 
                 // TODO: Make the filename a combination of the two player names, and a random number
-                std::ofstream o("output-az1200.json");
+                std::string output_name = fmt::format("games-{}-{}.json", engine1.getName(), engine2.getName());
+                std::ofstream o(output_name);
                 o << std::setw(4) << j << std::endl; 
             }
 
@@ -137,27 +139,27 @@ class Server {
         }
 
         void printSummary(int engine1wins, int engine2wins, int draws) {
-            std::cout << fmt::format("Engine1 won {} games\n", engine1wins);
-            std::cout << fmt::format("Engine2 won {} games\n", engine2wins);
+            std::cout << fmt::format("{} won {} games\n", engine1.getName(), engine1wins);
+            std::cout << fmt::format("{} won {} games\n", engine2.getName(), engine2wins);
             std::cout << fmt::format("There were {} draws\n", draws); 
             std::cout << "------------------------------\n";
         }
 };
 
 int main() {
-    char engine1_executable[] = "./AZClient2";
-    char engine2_executable[] = "./RandomClient2"; 
+    char engine1_executable[] = "./azclient2";
+    char engine2_executable[] = "./randomclient"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
     Server serv{engine1, engine2};
 
-    serv.engine1.setName("az1200"); 
+    serv.engine1.setName("az0"); 
     serv.engine2.setName("random");
 
     serv.start();
 
-    int num_games = 10;
+    int num_games = 50;
     bool save = true;
     serv.playGames(num_games, save);
 

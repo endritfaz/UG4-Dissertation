@@ -88,6 +88,10 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
     return new uint64_t[]{playerBoard, opponentBoard};
 }
 
+uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
+    
+}
+
 /*
 int main() {
     uint64_t playerBoard = 0x40000000000; 
