@@ -2,6 +2,8 @@
 #include <cstdint>
 #include "othello.h"
 
+int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
+
 // Shifts by shamt, postive shamt means moving right on board
 uint64_t shift(uint64_t board, int shamt) {
     uint64_t westMask = 0xFEFEFEFEFEFEFEFE;
@@ -49,7 +51,6 @@ void printBoard(uint64_t board) {
 }
 
 uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
-    int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
     
     uint64_t empty = ~(playerBoard | opponentBoard);
     uint64_t moves = 0; 
@@ -70,7 +71,6 @@ uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
 
 
 uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
-    int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
     playerBoard |= move; 
 
     for (int i = 0; i < 8; i++) {
@@ -88,8 +88,19 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
     return new uint64_t[]{playerBoard, opponentBoard};
 }
 
-uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
-    
+uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
+
+uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
+    uint64_t empty = ~(playerBoard | opponentBoard);
+
+    uint64_t neighboursOfEmpty = 0; 
+
+    for (int i = 0; i < 8; i++) {
+        int direction = directions[i];
+        neighboursOfEmpty |= shift(empty, direction);
+    }
+
+    return playerBoard & neighboursOfEmpty; 
 }
 
 /*

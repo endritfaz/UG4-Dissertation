@@ -114,7 +114,7 @@ void Engine::configurePipes(int server_to_engine[], int engine_to_server[]) {
     close(server_to_engine[0]);
 
     dup2(engine_to_server[1], STDOUT_FILENO);
-    dup2(engine_to_server[1], STDERR_FILENO);
+    // dup2(engine_to_server[1], STDERR_FILENO);
     close(engine_to_server[1]); 
 }
 
@@ -165,7 +165,7 @@ std::string Engine::readMove() {
     std::string buffer;
     buffer.reserve(16384);
 
-    const std::regex move_re(R"(=\s*([A-H][1-9]|PASS))");
+    const std::regex move_re(R"(=\s*(PASS|pass|[A-H][1-9]))");
     char chunk[4096];
     ssize_t n;
 

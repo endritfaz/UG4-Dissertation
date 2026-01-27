@@ -14,6 +14,7 @@ public:
     int countWhitePieces(); 
     int countBlackPieces(); 
     int countMoves(std::string colour); 
+    int countFrontierDiscs(std::string colour);
     void makeMove(uint64_t move);
     void makeMove(std::string move);
     bool gameOver(); 

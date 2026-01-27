@@ -42,6 +42,29 @@ int Game::countMoves(std::string colour) {
     return targetMoveCount; 
 }
 
+int Game::countFrontierDiscs(std::string colour) {
+    uint64_t targetBoard; 
+    uint64_t otherBoard;
+
+    if (colour == "black") {
+        targetBoard = black; 
+        otherBoard = white; 
+    }
+
+    else if (colour == "white") {
+        targetBoard = white; 
+        otherBoard = black; 
+    }
+
+    else {
+        exit(EXIT_FAILURE); 
+    }
+
+    int targetMoveCount = __builtin_popcountll(frontierDiscs(targetBoard, otherBoard));
+
+    return targetMoveCount; 
+}
+
 void Game::makeMove(uint64_t move) {
     uint64_t* boards; 
 
@@ -61,7 +84,7 @@ void Game::makeMove(uint64_t move) {
 }
 
 void Game::makeMove(std::string move) {
-    if (move == "pass") {
+    if (move == "pass" || move == "PASS") {
         turn += 1;
         return; 
     }

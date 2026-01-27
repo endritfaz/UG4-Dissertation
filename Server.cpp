@@ -56,6 +56,8 @@ class Server {
             
             while(true) {
                 // Check for a winner (no player has valid moves or board full)
+                // std::cout << fmt::format("{}\n", game.black); 
+                // std::cout << fmt::format("{}\n", game.white); 
                 if (game.gameOver()) { 
                     std::string winner = game.getWinner(); 
                     jgame["winner"] = winner;
@@ -147,14 +149,14 @@ class Server {
 };
 
 int main() {
-    char engine1_executable[] = "./azclient2";
+    char engine1_executable[] = "./azclient";
     char engine2_executable[] = "./randomclient"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
     Server serv{engine1, engine2};
 
-    serv.engine1.setName("az0"); 
+    serv.engine1.setName("az2000"); 
     serv.engine2.setName("random");
 
     serv.start();

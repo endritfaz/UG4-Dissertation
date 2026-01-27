@@ -37,9 +37,12 @@ class AZClient {
             if (command_type == "play") {
                 std::getline(ss, move, del);
                 
+                if (move == "pass") {
+                    move = "PASS"; 
+                }
+
                 std::string command = fmt::format("play {} {}\n", colour, move);
                 engine.sendCommand(command);
-           
                 std::cout << "success\n";
             }
 
@@ -48,6 +51,8 @@ class AZClient {
 
                 engine.sendCommand(command); 
                 std::string move = engine.readMove();
+
+                engine.emptyResponse(); 
                 std::cout << move << "\n";
             }
         }
@@ -80,10 +85,11 @@ int main() {
         "./tools/quick-run.sh",
         "console",
         "othello",
-        "othello_8x8_az_3bx256_n200-04a589"
+        "othello_8x8_az_3bx256_n200-04a589/model/weight_iter_2000.pt", 
+        "othello_8x8_az_3bx256_n200-04a589/othello_8x8_az_3bx256_n200-04a589.cfg"
         /*
         "othello_az_n200.pt",
-        "othello_8x8_az.cfg",
+        "othello_8x8_az.cfg"
         */
     };
 

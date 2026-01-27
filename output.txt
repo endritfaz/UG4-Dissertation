@@ -1,0 +1,18390 @@
+Playing 50 game(s)
+------------------------------
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+A8
+play white A8
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A1
+play white A1
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A1
+play white A1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+A8
+play white A8
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+A8
+play white A8
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+A1
+play white A1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+A1
+play white A1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+PASS
+play black PASS
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+C5
+play white C5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A8
+play white A8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+*genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+D3
+play black D3
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+B7
+play black B7
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+D2
+play white D2
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+C2
+play black C2
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+A5
+play black A5
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+G4
+play white G4
+
+success
+genmove black
+
+A6
+play black A6
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+G2
+play black G2
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+B1
+play black B1
+
+success
+genmove white
+
+A1
+play white A1
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+PASS
+play black PASS
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+B8
+play white B8
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+F6
+play white F6
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+G5
+play black G5
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+B6
+play white B6
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+F8
+play white F8
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+A7
+play black A7
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+G8
+play black G8
+
+success
+genmove white
+
+H8
+play white H8
+
+success
+genmove black
+
+H7
+play black H7
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+E1
+play black E1
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+*genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+B5
+play white B5
+
+success
+genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+F2
+play white F2
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+C6
+play white C6
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+F3
+play white F3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+B4
+play black B4
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+C7
+play black C7
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+G3
+play black G3
+
+success
+genmove white
+
+C8
+play white C8
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+C1
+play white C1
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+H2
+play white H2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+H3
+play black H3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+H6
+play white H6
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+H5
+play black H5
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+A2
+play black A2
+
+success
+genmove white
+
+A3
+play white A3
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+*genmove black
+
+F4
+play black F4
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+C4
+play black C4
+
+success
+genmove white
+
+F5
+play white F5
+
+success
+genmove black
+
+E2
+play black E2
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+E3
+play white E3
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+F7
+play white F7
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+D1
+play white D1
+
+success
+genmove black
+
+E6
+play black E6
+
+success
+genmove white
+
+D6
+play white D6
+
+success
+genmove black
+
+F1
+play black F1
+
+success
+genmove white
+
+C3
+play white C3
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+B3
+play white B3
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+E7
+play black E7
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+D8
+play white D8
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+E8
+play black E8
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+genmove black
+
+D7
+play black D7
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+G6
+play white G6
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+H1
+play white H1
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+A4
+play black A4
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+G1
+play white G1
+
+success
+genmove black
+
+G7
+play black G7
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+H4
+play black H4
+
+success
+genmove white
+
+pass
+play white pass
+
+success
+genmove black
+
+B2
+play black B2
+
+success
+*genmove black
+
+D6
+play black D6
+
+success
+genmove white
+
+C4
+play white C4
+
+success
+genmove black
+
+C3
+play black C3
+
+success
+genmove white
+
+C2
+play white C2
+
+success
+genmove black
+
+F3
+play black F3
+
+success
+genmove white
+
+E6
+play white E6
+
+success
+genmove black
+
+C6
+play black C6
+
+success
+genmove white
+
+F4
+play white F4
+
+success
+genmove black
+
+F6
+play black F6
+
+success
+genmove white
+
+E7
+play white E7
+
+success
+genmove black
+
+F5
+play black F5
+
+success
+genmove white
+
+D7
+play white D7
+
+success
+genmove black
+
+C5
+play black C5
+
+success
+genmove white
+
+G5
+play white G5
+
+success
+genmove black
+
+E3
+play black E3
+
+success
+genmove white
+
+E2
+play white E2
+
+success
+genmove black
+
+F2
+play black F2
+
+success
+genmove white
+
+F1
+play white F1
+
+success
+genmove black
+
+F7
+play black F7
+
+success
+genmove white
+
+B4
+play white B4
+
+success
+genmove black
+
+B6
+play black B6
+
+success
+genmove white
+
+G8
+play white G8
+
+success
+genmove black
+
+G4
+play black G4
+
+success
+genmove white
+
+H3
+play white H3
+
+success
+genmove black
+
+A3
+play black A3
+
+success
+genmove white
+
+D3
+play white D3
+
+success
+genmove black
+
+D2
+play black D2
+
+success
+genmove white
+
+G3
+play white G3
+
+success
+genmove black
+
+C1
+play black C1
+
+success
+genmove white
+
+A6
+play white A6
+
+success
+genmove black
+
+G6
+play black G6
+
+success
+genmove white
+
+G7
+play white G7
+
+success
+genmove black
+
+B5
+play black B5
+
+success
+genmove white
+
+A4
+play white A4
+
+success
+genmove black
+
+D8
+play black D8
+
+success
+genmove white
+
+E1
+play white E1
+
+success
+genmove black
+
+D1
+play black D1
+
+success
+genmove white
+
+C7
+play white C7
+
+success
+genmove black
+
+H8
+play black H8
+
+success
+genmove white
+
+B2
+play white B2
+
+success
+genmove black
+
+A1
+play black A1
+
+success
+genmove white
+
+B1
+play white B1
+
+success
+genmove black
+
+G1
+play black G1
+
+success
+genmove white
+
+A2
+play white A2
+
+success
+genmove black
+
+B3
+play black B3
+
+success
+genmove white
+
+G2
+play white G2
+
+success
+genmove black
+
+H6
+play black H6
+
+success
+genmove white
+
+H4
+play white H4
+
+success
+genmove black
+
+H1
+play black H1
+
+success
+genmove white
+
+H5
+play white H5
+
+success
+genmove black
+
+H2
+play black H2
+
+success
+genmove white
+
+H7
+play white H7
+
+success
+genmove black
+
+C8
+play black C8
+
+success
+genmove white
+
+B7
+play white B7
+
+success
+genmove black
+
+A8
+play black A8
+
+success
+genmove white
+
+A7
+play white A7
+
+success
+genmove black
+
+F8
+play black F8
+
+success
+genmove white
+
+E8
+play white E8
+
+success
+genmove black
+
+B8
+play black B8
+
+success
+genmove white
+
+A5
+play white A5
+
+success
+*az2000 won 50 games
+random won 0 games
+There were 0 draws
+------------------------------

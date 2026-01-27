@@ -1,7 +1,7 @@
 CXXFLAGS = -Iinclude -std=c++20
 
 analysis: analysis/analysis.cpp 
-	g++ $(CXXFLAGS) -o anal analysis/analysis.cpp othello/Game.cpp othello/othello.cpp
+	g++ $(CXXFLAGS) -o anal analysis/analysis.cpp othello/Game.cpp othello/othello.cpp -lfmt
 
 server: Server.cpp 
 	g++ $(CXXFLAGS) Server.cpp othello/othello.cpp Engine.cpp othello/Game.cpp -o server \

@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <iostream>
 #include <fstream>
+#include <fmt/format.h>
 
 using json = nlohmann::json;
 
@@ -21,7 +22,7 @@ discsPerMoveInfo calcDiscMove(json jgame) {
     for (int i = 0; i < moves.size(); i++) {
         game.makeMove(moves[i]); 
 
-        if (moves[i] == "pass") {
+        if (moves[i] == "pass" || moves[i] == "PASS") {
             continue;
         }
 
@@ -45,7 +46,7 @@ discsPerMoveInfo calcAvailableMoves(json jgame) {
     for (int i = 0; i < moves.size(); i++) {
         game.makeMove(moves[i]); 
 
-        if (moves[i] == "pass") {
+        if (moves[i] == "pass" || moves[i] == "PASS") {
             continue;
         }
 
@@ -59,7 +60,32 @@ discsPerMoveInfo calcAvailableMoves(json jgame) {
     return discInfo; 
 }
 
-void calcDiscMoveAverage(json games, std::function<discsPerMoveInfo(json)> func) {
+discsPerMoveInfo calcFrontierMove(json jgame) {
+discsPerMoveInfo discInfo; 
+
+    Game game{};
+    std::vector<std::string> moves = jgame["moves"];
+
+    int placed = 0; 
+    for (int i = 0; i < moves.size(); i++) {
+        game.makeMove(moves[i]); 
+
+        if (moves[i] == "pass" || moves[i] == "PASS") {
+            continue;
+        }
+
+        placed += 1; 
+        // placed - 1 shouldn't be negative because first move can't pass
+        discInfo.piecesPerMoveBlack[placed - 1] = game.countFrontierDiscs("black");
+        discInfo.piecesPerMoveWhite[placed - 1] = game.countFrontierDiscs("white");
+    }
+    discInfo.placed = placed; 
+
+    return discInfo; 
+
+}
+
+void calcFeatureAverage(json games, std::function<discsPerMoveInfo(json)> func, std::string feature, std::string model) {
     std::vector<int> totalPiecesPerMoveBlack(60);
     std::vector<int> totalPiecesPerMoveWhite(60);
 
@@ -85,29 +111,32 @@ void calcDiscMoveAverage(json games, std::function<discsPerMoveInfo(json)> func)
             break; 
         }
 
-        avgPiecesPerMoveBlack[i] = totalPiecesPerMoveBlack[i] / samplesPerMove[i];
-        avgPiecesPerMoveWhite[i] = totalPiecesPerMoveWhite[i] / samplesPerMove[i];
+        avgPiecesPerMoveBlack[i] = (float) totalPiecesPerMoveBlack[i] / samplesPerMove[i];
+        avgPiecesPerMoveWhite[i] = (float) totalPiecesPerMoveWhite[i] / samplesPerMove[i];
     }
 
     // Account for starting position
-    avgPiecesPerMoveBlack.insert(avgPiecesPerMoveBlack.begin(), 4.0);
-    avgPiecesPerMoveWhite.insert(avgPiecesPerMoveWhite.begin(), 4.0); 
+    avgPiecesPerMoveBlack.insert(avgPiecesPerMoveBlack.begin(), 2.0);
+    avgPiecesPerMoveWhite.insert(avgPiecesPerMoveWhite.begin(), 2.0); 
 
     json j; 
-    j["avg_discs_per_move_black"] = avgPiecesPerMoveBlack; 
-    j["avg_discs_per_move_white"] = avgPiecesPerMoveWhite; 
+    
+    j[fmt::format("avg_{}_per_move_black", feature)] = avgPiecesPerMoveBlack; 
+    j[fmt::format("avg_{}_per_move_white", feature)] = avgPiecesPerMoveWhite; 
 
     // Write JSON to file with indent of 4 spaces 
-    std::ofstream o("avg.json");
+    std::ofstream o(fmt::format("avg-{}-{}.json", feature, model));
     o << std::setw(4) << j << std::endl; 
 }
 
 int main() {
-    std::ifstream i("output-az.json");
+    std::string feature = "discs"; 
+    std::string model = "az1000";
+    std::ifstream i("games-az1000-random.json");
     json j; 
     i >> j; 
 
     json games = j["games"];
 
-    calcDiscMoveAverage(games, &calcAvailableMoves);
+    calcFeatureAverage(games, &calcDiscMove, feature, model);
 }
