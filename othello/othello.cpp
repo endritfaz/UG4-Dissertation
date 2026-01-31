@@ -90,6 +90,20 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
 
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
 
+
+/* 
+playerBoard/opponentBoard is the board state two moves before a corner capture by the player.
+playerMove/opponentMoves are the preceding two moves before a corner capture by the player
+Check whether the opponent was forced to play the move that preceded the corner capture
+*/
+bool forcedCornerCapture(uint64_t playerBoard, uint64_t opponentBoard, uint64_t playerMove, uint64_t opponentMove) {
+    uint64_t* newBoard = makeMove(playerBoard, opponentBoard, playerMove); 
+    uint64_t newPlayerBoard = newBoard[0]; 
+    uint64_t newOpponentBoard = newBoard[1];
+
+    return opponentMove == generateMoves(newOpponentBoard, newPlayerBoard); 
+}
+
 uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     uint64_t empty = ~(playerBoard | opponentBoard);
 
@@ -102,6 +116,7 @@ uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
 
     return playerBoard & neighboursOfEmpty; 
 }
+
 
 /*
 int main() {

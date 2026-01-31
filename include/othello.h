@@ -10,5 +10,6 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move);
 uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard); 
 uint64_t stableDiscs(uint64_t whiteBoard, uint64_t blackBoard, std::string colour);
 uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard); 
+bool forcedCornerCapture(uint64_t playerBoard, uint64_t opponentBoard, uint64_t playerMove, uint64_t opponentMove);
 
 #endif

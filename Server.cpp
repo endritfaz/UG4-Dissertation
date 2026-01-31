@@ -26,8 +26,6 @@ class Server {
             const char* dir = "."; 
             engine1.startEngine(dir);
             engine2.startEngine(dir);
-
-            // sleep(5);
         }
         
         std::string play(std::string engine1colour, std::string engine2colour, json& jgame) {
@@ -56,22 +54,20 @@ class Server {
             
             while(true) {
                 // Check for a winner (no player has valid moves or board full)
-                // std::cout << fmt::format("{}\n", game.black); 
-                // std::cout << fmt::format("{}\n", game.white); 
                 if (game.gameOver()) { 
                     std::string winner = game.getWinner(); 
                     jgame["winner"] = winner;
                     jgame["moves"] = moves;
-                    std::cout << "*";
+                    // std::cout << "*";
                     return winner;
                 }
 
                 command = fmt::format("genmove {}\n", active.getColour()); 
                 active.sendCommand(command);
-                std::cout << fmt::format("{}\n", command); 
+                //std::cout << fmt::format("{}\n", command); 
                 // TODO: Check response is valid 
                 response = active.getResponse('\n');
-                std::cout << fmt::format("{}\n", response); 
+                //std::cout << fmt::format("{}\n", response); 
                
                 // TODO: Check if the move is actually valid 
                 game.makeMove(response); 
@@ -81,11 +77,11 @@ class Server {
 
                 command = fmt::format("play {} {}\n", active.getColour(), response); 
                 inactive.sendCommand(command);
-                std::cout << fmt::format("{}\n", command); 
+                //std::cout << fmt::format("{}\n", command); 
 
                 // TODO: Check if inactive player board update has succeeded
                 response = inactive.getResponse('\n');
-                std::cout << fmt::format("{}\n", response); 
+                //std::cout << fmt::format("{}\n", response); 
                 // Swap active and inactive engine for next turn
                 Engine temp = active;
                 active = inactive; 
@@ -150,18 +146,18 @@ class Server {
 
 int main() {
     char engine1_executable[] = "./azclient";
-    char engine2_executable[] = "./randomclient"; 
+    char engine2_executable[] = "./edaxclient"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
     Server serv{engine1, engine2};
 
-    serv.engine1.setName("az2000"); 
-    serv.engine2.setName("random");
+    serv.engine1.setName("az1000"); 
+    serv.engine2.setName("edax");
 
     serv.start();
 
-    int num_games = 50;
+    int num_games = 100;
     bool save = true;
     serv.playGames(num_games, save);
 

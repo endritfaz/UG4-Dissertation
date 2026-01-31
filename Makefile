@@ -14,3 +14,6 @@ azclient: clients/AZClient.cpp
 
 randomclient: clients/RandomClient.cpp 
 	g++ $(CXXFLAGS) -o randomclient clients/RandomClient.cpp othello/Game.cpp othello/othello.cpp -lfmt
+
+edaxclient: clients/EdaxClient.cpp
+	g++ $(CXXFLAGS) -o edaxclient clients/EdaxClient.cpp othello/Game.cpp othello/othello.cpp Engine.cpp -lfmt

@@ -165,8 +165,8 @@ std::string Engine::readMove() {
     std::string buffer;
     buffer.reserve(16384);
 
-    const std::regex move_re(R"(=\s*(PASS|pass|[A-H][1-9]))");
-    char chunk[4096];
+    const std::regex move_re(R"(=\s*(Resign|PASS|pass|[A-H][1-9]))");
+    char chunk[8192];
     ssize_t n;
 
     while ((n = read(pipe[0], chunk, sizeof(chunk))) > 0) {

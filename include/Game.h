@@ -9,6 +9,8 @@ public:
     uint64_t black;
     uint64_t white;
     int turn;
+    bool resign; 
+    std::string winner; 
 
     Game();
     int countWhitePieces(); 

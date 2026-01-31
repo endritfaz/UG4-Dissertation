@@ -1,5 +1,5 @@
 {
-    "avg_discs_per_move_black": [
+    "avg_frontier_per_move_black": [
         2.0,
         4.0,
         3.0,
@@ -62,7 +62,7 @@
         1.0,
         0.0
     ],
-    "avg_discs_per_move_white": [
+    "avg_frontier_per_move_white": [
         2.0,
         1.0,
         3.0,

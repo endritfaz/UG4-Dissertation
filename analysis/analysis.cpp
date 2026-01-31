@@ -61,7 +61,7 @@ discsPerMoveInfo calcAvailableMoves(json jgame) {
 }
 
 discsPerMoveInfo calcFrontierMove(json jgame) {
-discsPerMoveInfo discInfo; 
+    discsPerMoveInfo discInfo; 
 
     Game game{};
     std::vector<std::string> moves = jgame["moves"];
@@ -70,7 +70,7 @@ discsPerMoveInfo discInfo;
     for (int i = 0; i < moves.size(); i++) {
         game.makeMove(moves[i]); 
 
-        if (moves[i] == "pass" || moves[i] == "PASS") {
+        if (moves[i] == "pass" || moves[i] == "PASS" || moves[i] == "Resign") {
             continue;
         }
 
@@ -82,7 +82,6 @@ discsPerMoveInfo discInfo;
     discInfo.placed = placed; 
 
     return discInfo; 
-
 }
 
 void calcFeatureAverage(json games, std::function<discsPerMoveInfo(json)> func, std::string feature, std::string model) {
@@ -130,13 +129,13 @@ void calcFeatureAverage(json games, std::function<discsPerMoveInfo(json)> func, 
 }
 
 int main() {
-    std::string feature = "discs"; 
-    std::string model = "az1000";
-    std::ifstream i("games-az1000-random.json");
+    std::string feature = "frontier"; 
+    std::string model = "az1000-edax21";
+    std::ifstream i("games-az1000-edax.json");
     json j; 
     i >> j; 
 
     json games = j["games"];
 
-    calcFeatureAverage(games, &calcDiscMove, feature, model);
+    calcFeatureAverage(games, &calcFrontierMove, feature, model);
 }

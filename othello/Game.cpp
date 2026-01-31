@@ -4,11 +4,12 @@
 #include "othello.h"
 #include <string>
 
-
 Game::Game():
     black {0x1008000000},
     white {0x810000000},
-    turn {0}
+    turn {0}, 
+    resign {false},
+    winner {""}
     {}    
 
 int Game::countWhitePieces() {
@@ -89,6 +90,19 @@ void Game::makeMove(std::string move) {
         return; 
     }
 
+    else if (move == "Resign") {
+        resign = true;
+
+        if (turn % 2 == 0) {
+            winner = "white"; 
+        }
+
+        else {
+            winner = "black";
+        }
+
+    }
+
     std::string columns = "ABCDEFGH";
 
     char column = move.at(0); 
@@ -118,6 +132,10 @@ void Game::makeMove(std::string move) {
 bool Game::gameOver() {
     uint64_t full = 0xFFFFFFFF;
 
+    if (resign) {
+        return true; 
+    }
+
     if ((black | white) == full) {
         return true; 
     }
@@ -134,11 +152,15 @@ std::string Game::getWinner() {
     int blackDiscs = __builtin_popcountll(black);
     int whiteDiscs = __builtin_popcountll(white);
 
+    if (resign = true) {
+        return winner; 
+    }
+    
     if (blackDiscs > whiteDiscs) {
         return "black";
     }
 
-    else if (whiteDiscs > blackDiscs) {
+    if (whiteDiscs > blackDiscs) {
         return "white";
     }
 
