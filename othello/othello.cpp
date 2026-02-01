@@ -88,6 +88,20 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
     return new uint64_t[]{playerBoard, opponentBoard};
 }
 
+// Takes a move, e.g a1 and returns bitboard representation 00...01
+uint64_t moveToBitboard(std::string move) {
+    std::string columns = "abcdefgh";
+
+    char column = move.at(0); 
+    char row = move.at(1); 
+    
+    int position = ((row - '0') - 1)*8 + columns.find(column, 0);
+
+    uint64_t moveBoard = 1ULL << position;
+
+    return moveBoard; 
+}
+
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
 
 

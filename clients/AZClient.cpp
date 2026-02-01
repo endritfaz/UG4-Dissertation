@@ -4,6 +4,7 @@
 #include "Engine.h"
 #include <sstream>
 #include <vector>
+#include <helper.h> 
 
 class AZClient {
     public:
@@ -52,6 +53,7 @@ class AZClient {
 
                 engine.sendCommand(command); 
                 std::string move = engine.readMove();
+                toLower(move);
 
                 engine.emptyResponse();
                 std::cout << move << "\n";

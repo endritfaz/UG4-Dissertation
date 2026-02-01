@@ -51,8 +51,11 @@ class EdaxClient {
 
                 engine.sendCommand(command); 
                 std::string response = engine.getResponse('>');
-             
-                std::cout << fmt::format("{}\n", extractMove(response));
+                
+                std::string move = extractMove(response);
+                toLower(&move); 
+
+                std::cout << fmt::format("{}\n", move);
             }
         }
 

@@ -41,7 +41,7 @@ class RandomClient {
         }
 
         std::string convertToSquare(uint64_t move) {
-            std::string columns = "ABCDEFGH"; 
+            std::string columns = "abcdefgh"; 
 
             int shifts = 0; 
             while (move != 1ULL) {

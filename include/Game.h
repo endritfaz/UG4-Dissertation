@@ -21,7 +21,7 @@ public:
     void makeMove(std::string move);
     bool gameOver(); 
     std::string getWinner(); 
-
+    bool validateMove(std::string move);
 };
 
 #endif

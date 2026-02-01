@@ -85,12 +85,12 @@ void Game::makeMove(uint64_t move) {
 }
 
 void Game::makeMove(std::string move) {
-    if (move == "pass" || move == "PASS") {
+    if (move == "pass") {
         turn += 1;
         return; 
     }
 
-    else if (move == "Resign") {
+    if (move == "resign") {
         resign = true;
 
         if (turn % 2 == 0) {
@@ -100,19 +100,11 @@ void Game::makeMove(std::string move) {
         else {
             winner = "black";
         }
-
+        return; 
     }
 
-    std::string columns = "ABCDEFGH";
-
-    char column = move.at(0); 
-    char row = move.at(1); 
-    
-    int position = ((row - '0') - 1)*8 + columns.find(column, 0);
-
-    uint64_t moveBoard = 1ULL << position; 
-
-    uint64_t* boards; 
+    uint64_t moveBoard = moveToBitboard(move);
+    uint64_t* boards;
 
     if (turn % 2 == 0) {
         boards = ::makeMove(black, white, moveBoard); 
@@ -152,7 +144,8 @@ std::string Game::getWinner() {
     int blackDiscs = __builtin_popcountll(black);
     int whiteDiscs = __builtin_popcountll(white);
 
-    if (resign = true) {
+    if (resign) {
+        std::cout << "resign";
         return winner; 
     }
     
@@ -165,4 +158,27 @@ std::string Game::getWinner() {
     }
 
     return "draw"; 
+}
+
+bool Game::validateMove(std::string move) {
+    if (move == "pass" || move == "resign") {
+        return true; 
+    }
+
+    uint64_t moveBoard = moveToBitboard(move); 
+
+    uint64_t activePlayer; 
+    uint64_t inactivePlayer; 
+
+    if (turn % 2 == 0) {
+        activePlayer = black; 
+        inactivePlayer = white; 
+    }
+
+    else {
+        activePlayer = white; 
+        inactivePlayer = black; 
+    }
+
+    return (generateMoves(activePlayer, inactivePlayer) && moveBoard) != 0;
 }

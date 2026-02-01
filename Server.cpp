@@ -29,8 +29,7 @@ class Server {
         }
         
         std::string play(std::string engine1colour, std::string engine2colour, json& jgame) {
-            Game game{};
-
+            Game game{}; 
             std::vector<std::string> moves{};
             
             engine1.setColour(engine1colour); 
@@ -52,24 +51,41 @@ class Server {
             engine2.sendCommand("init\n"); 
             response = inactive.getResponse('\n');
             
+    
             while(true) {
-                // Check for a winner (no player has valid moves or board full)
+                // Check for a winner (no player has valid moves, board full, or resignation)
                 if (game.gameOver()) { 
                     std::string winner = game.getWinner(); 
                     jgame["winner"] = winner;
                     jgame["moves"] = moves;
-                    // std::cout << "*";
+                    
+                    #ifdef DEBUG
+                        std::cout << "*";
+                    #endif
+
                     return winner;
                 }
 
                 command = fmt::format("genmove {}\n", active.getColour()); 
                 active.sendCommand(command);
-                //std::cout << fmt::format("{}\n", command); 
+
+                #ifdef DEBUG
+                    std::cout << fmt::format("{}\n", command); 
+                #endif
+
                 // TODO: Check response is valid 
                 response = active.getResponse('\n');
-                //std::cout << fmt::format("{}\n", response); 
-               
-                // TODO: Check if the move is actually valid 
+                
+                #ifdef DEBUG
+                    std::cout << fmt::format("{}\n", response); 
+                #endif
+
+                // Check if the move is actually valid and make it  
+                if (!game.validateMove(response)) {
+                    std::cout << "INVALID MOVE"; 
+                    exit(0);
+                } 
+
                 game.makeMove(response); 
                 
                 // Record move for JSON file
@@ -77,11 +93,18 @@ class Server {
 
                 command = fmt::format("play {} {}\n", active.getColour(), response); 
                 inactive.sendCommand(command);
-                //std::cout << fmt::format("{}\n", command); 
+                
+                #ifdef DEBUG
+                    std::cout << fmt::format("{}\n", command); 
+                #endif
 
                 // TODO: Check if inactive player board update has succeeded
                 response = inactive.getResponse('\n');
-                //std::cout << fmt::format("{}\n", response); 
+                
+                #ifdef DEBUG
+                    std::cout << fmt::format("{}\n", response); 
+                #endif
+
                 // Swap active and inactive engine for next turn
                 Engine temp = active;
                 active = inactive; 
@@ -146,18 +169,18 @@ class Server {
 
 int main() {
     char engine1_executable[] = "./azclient";
-    char engine2_executable[] = "./edaxclient"; 
+    char engine2_executable[] = "./randomclient"; 
 
     Engine engine1{engine1_executable};
     Engine engine2{engine2_executable};
     Server serv{engine1, engine2};
 
     serv.engine1.setName("az1000"); 
-    serv.engine2.setName("edax");
+    serv.engine2.setName("random");
 
     serv.start();
 
-    int num_games = 100;
+    int num_games = 2;
     bool save = true;
     serv.playGames(num_games, save);
 
