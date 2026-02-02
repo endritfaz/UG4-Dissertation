@@ -3,6 +3,7 @@
 #include <fmt/format.h>
 #include "Engine.h"
 #include <sstream>
+#include "helper.h"
 
 class EdaxClient {
     public:
@@ -53,7 +54,7 @@ class EdaxClient {
                 std::string response = engine.getResponse('>');
                 
                 std::string move = extractMove(response);
-                toLower(&move); 
+                toLower(move); 
 
                 std::cout << fmt::format("{}\n", move);
             }

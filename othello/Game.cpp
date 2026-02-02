@@ -145,7 +145,6 @@ std::string Game::getWinner() {
     int whiteDiscs = __builtin_popcountll(white);
 
     if (resign) {
-        std::cout << "resign";
         return winner; 
     }
     

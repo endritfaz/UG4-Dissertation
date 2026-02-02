@@ -7,6 +7,8 @@
 #include <signal.h>
 #include "nlohmann/json.hpp"
 #include <fstream>
+#include "helper.h"
+#include <vector>
 
 using namespace std; 
 using json = nlohmann::json;
@@ -167,21 +169,89 @@ class Server {
         }
 };
 
-int main() {
-    char engine1_executable[] = "./azclient";
-    char engine2_executable[] = "./randomclient"; 
+std::string nameToExecutable(std::string name) {
+    toLower(name); 
 
-    Engine engine1{engine1_executable};
-    Engine engine2{engine2_executable};
+    if (name == "edax") {
+        return "./edaxclient"; 
+    }
+
+    if (name == "az") {
+        return "./azclient"; 
+    }
+
+    if (name == "random") {
+        return "./randomclient";
+    }
+
+    return "";
+}
+
+//  e.g ./server az 1000 edax 21 2 0.5 true 10
+int main(int argc, char* argv[]) {
+    if (argc < 9) {
+        std::cout << "Missing parameters\n"; 
+        return -1; 
+    }
+
+    // Bot names and versions 
+    std::string primary_engine_name = argv[1]; 
+    std::string primary_engine_version = argv[2]; 
+
+    std::string secondary_engine_name = argv[3];
+    std::string secondary_engine_version = argv[4]; 
+
+    std::stringstream convert_num_games{ argv[5] }; 
+
+    // Number of games to play 
+	int num_games{};
+	if (!(convert_num_games >> num_games)) {
+		return -1; 
+    }
+
+    // Probability of primary bot being selected as black in any game 
+    std::stringstream convert_black_probability{ argv[6] }; 
+
+	float black_probability{};
+	if (!(convert_black_probability >> black_probability)) {
+		return -1; 
+    }
+
+    // Whether to save games in JSON files or not 
+    bool save = argv[7] == "true" ? true : false;
+    std::cout << save; 
+    // How often played games are persisted 
+    std::stringstream convert_checkpoint_freq{ argv[8] }; 
+
+	int checkpoint_freq{};
+	if (!(convert_checkpoint_freq >> checkpoint_freq)) {
+		return -1; 
+    }
+
+    // Name of directory to which games are persisted 
+    std::string save_dir = fmt::format("{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+
+    // Start the server and bots 
+    std::string primary_engine_executable = nameToExecutable(primary_engine_name); 
+    std::string secondary_engine_executable = nameToExecutable(secondary_engine_name); 
+
+    if (primary_engine_executable == "" || secondary_engine_executable == "") {
+        std::cout << "Invalid engine name"; 
+        return -1;
+    }
+
+    std::vector<std::string> primary_engine_args = {primary_engine_executable}; 
+    std::vector<std::string> secondary_engine_args = {secondary_engine_executable};
+
+    Engine engine1{primary_engine_args};
+    Engine engine2{secondary_engine_args};
     Server serv{engine1, engine2};
 
-    serv.engine1.setName("az1000"); 
-    serv.engine2.setName("random");
+    serv.engine1.setName(primary_engine_name); 
+    serv.engine2.setName(secondary_engine_name);
 
     serv.start();
 
-    int num_games = 2;
-    bool save = true;
     serv.playGames(num_games, save);
 
     // Shut down engines
@@ -190,3 +260,4 @@ int main() {
   
     return 0; 
 }
+

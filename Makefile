@@ -4,13 +4,13 @@ analysis: analysis/analysis.cpp
 	g++ $(CXXFLAGS) -o anal analysis/analysis.cpp othello/Game.cpp othello/othello.cpp -lfmt
 
 server: Server.cpp 
-	g++ $(CXXFLAGS) Server.cpp othello/othello.cpp Engine.cpp othello/Game.cpp -o server \
+	g++ $(CXXFLAGS) Server.cpp othello/othello.cpp Engine.cpp othello/Game.cpp helper.cpp -o server \
     -I/opt/homebrew/include \
     -L/opt/homebrew/lib \
     -lfmt
 
 server_debug: Server.cpp 
-	g++ -DDEBUG $(CXXFLAGS) Server.cpp othello/othello.cpp Engine.cpp othello/Game.cpp -o server \
+	g++ -DDEBUG $(CXXFLAGS) Server.cpp othello/othello.cpp Engine.cpp othello/Game.cpp helper.cpp -o server \
     -I/opt/homebrew/include \
     -L/opt/homebrew/lib \
     -lfmt
