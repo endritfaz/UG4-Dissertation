@@ -160,10 +160,10 @@ std::string Game::getWinner() {
 }
 
 bool Game::validateMove(std::string move) {
-    if (move == "pass" || move == "resign") {
+    if (move == "resign") {
         return true; 
     }
-
+    
     uint64_t moveBoard = moveToBitboard(move); 
 
     uint64_t activePlayer; 
@@ -179,5 +179,9 @@ bool Game::validateMove(std::string move) {
         inactivePlayer = black; 
     }
 
-    return (generateMoves(activePlayer, inactivePlayer) && moveBoard) != 0;
+    if (move == "pass") {
+        return generateMoves(activePlayer, inactivePlayer) == 0; 
+    }
+    
+    return (generateMoves(activePlayer, inactivePlayer) & moveBoard) != 0;
 }

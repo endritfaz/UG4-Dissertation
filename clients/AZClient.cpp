@@ -83,7 +83,7 @@ class AZClient {
         }
 };
 
-int main() {
+int main(int argc, char* argv[]) {
     std::vector<std::string> az_argv = {
         "./tools/quick-run.sh",
         "console",

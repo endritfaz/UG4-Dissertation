@@ -14,12 +14,20 @@ Engine::Engine(const std::vector<std::string>& argv):
     argv {argv}
 {}
 
+void Engine::setVersion(std::string s) {
+    version = s; 
+}
+
 void Engine::setName(std::string s) {
     name = s;
 }
 
 std::string Engine::getName() {
     return name;
+}
+
+std::string Engine::getVersion() {
+    return version; 
 }
 
 void Engine::setColour(std::string c) {

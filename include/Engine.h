@@ -12,11 +12,14 @@ private:
     std::string colour;
     pid_t enginePID; 
     std::string name; 
+    std::string version; 
 
 public:
     Engine(char* executable);
     Engine(const std::vector<std::string>& argv);
 
+    void setVersion(std::string s);
+    std::string getVersion(); 
     void setName(std::string s);
     std::string getName();
     void setColour(std::string c); 

@@ -29,6 +29,10 @@ class Server {
             const char* dir = "."; 
             engine1.startEngine(dir);
             engine2.startEngine(dir);
+
+            // Wait until engines are ready before starting play 
+            engine1.getResponse('\n');
+            engine2.getResponse('\n');      
         }
         
         std::string play(std::string engine1colour, std::string engine2colour, json& jgame) {
@@ -38,9 +42,12 @@ class Server {
             engine1.setColour(engine1colour); 
             engine2.setColour(engine2colour); 
             
-            // Set black/white names for JSON file 
+            // Set black/white names and versions for JSON file 
             jgame[engine1.getColour()] = engine1.getName(); 
+            jgame[fmt::format("{}_version", engine1.getColour())] = engine1.getVersion();
+
             jgame[engine2.getColour()] = engine2.getName(); 
+            jgame[fmt::format("{}_version", engine2.getColour())] = engine2.getVersion(); 
 
             Engine active = engine1; 
             Engine inactive = engine2;
@@ -147,7 +154,6 @@ class Server {
                 engine2colour = "white";
                 
                 bool outcome = d(gen);
-                std::cout << fmt::format("{}\n", outcome); 
                 if (!outcome) {
                     engine1colour = "white";
                     engine2colour = "black"; 
@@ -282,15 +288,19 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
-    std::vector<std::string> primary_engine_args = {primary_engine_executable}; 
-    std::vector<std::string> secondary_engine_args = {secondary_engine_executable};
+    std::vector<std::string> primary_engine_args = {primary_engine_executable, primary_engine_version}; 
+    std::vector<std::string> secondary_engine_args = {secondary_engine_executable, secondary_engine_version};
 
     Engine engine1{primary_engine_args};
     Engine engine2{secondary_engine_args};
     Server serv{engine1, engine2};
 
+    // Set engines' names and versions 
     serv.engine1.setName(primary_engine_name); 
     serv.engine2.setName(secondary_engine_name);
+
+    serv.engine1.setVersion(primary_engine_version); 
+    serv.engine2.setVersion(secondary_engine_version);
 
     serv.start();
 

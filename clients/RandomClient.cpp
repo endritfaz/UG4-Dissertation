@@ -114,6 +114,8 @@ class RandomClient {
 };
 
 int main() {
-    RandomClient client{}; 
+    RandomClient client{};
+    
+    std::cout << "Ready\n";
     client.play(); 
 }
