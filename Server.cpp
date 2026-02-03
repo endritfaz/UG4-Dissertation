@@ -9,6 +9,7 @@
 #include <fstream>
 #include "helper.h"
 #include <vector>
+#include <filesystem>
 
 using namespace std; 
 using json = nlohmann::json;
@@ -42,15 +43,20 @@ class Server {
             jgame[engine2.getColour()] = engine2.getName(); 
 
             Engine active = engine1; 
-            Engine inactive = engine2; 
+            Engine inactive = engine2;
+
+            if (engine1.getColour() == "white" && engine2.getColour() == "black") {
+                active = engine2; 
+                inactive = engine1; 
+            } 
 
             std::string command; 
             std::string response; 
             
-            engine1.sendCommand("init\n");
+            active.sendCommand("init\n");
             response = active.getResponse('\n');
             
-            engine2.sendCommand("init\n"); 
+            inactive.sendCommand("init\n"); 
             response = inactive.getResponse('\n');
             
     
@@ -114,21 +120,39 @@ class Server {
             }
         }
 
-        void playGames(int n, bool save=false) {
+        void playGames(int n, float black_probability, bool save=false, int checkpoint_freq=-1, std::string output_dir="") {
             std::vector<json> games{};  
             
             std::cout << fmt::format("Playing {} game(s)\n", n);
             std::cout << "------------------------------\n";
 
-            std::string engine1colour = "black";
-            std::string engine2colour = "white"; 
+            // Bernoulli distribution used for player colour selection in each game 
+            std::random_device rd;
+            std::mt19937 gen(rd());
+
+            std::bernoulli_distribution d(black_probability);
             
+            std::string engine1colour; 
+            std::string engine2colour; 
+        
             int engine1wins = 0; 
             int engine2wins = 0; 
             int draws = 0; 
 
             for (int i = 0; i < n; i++) {
                 json game;
+                
+                // Choose engine1 playing as black with probability black_probability
+                engine1colour = "black";
+                engine2colour = "white";
+                
+                bool outcome = d(gen);
+                std::cout << fmt::format("{}\n", outcome); 
+                if (!outcome) {
+                    engine1colour = "white";
+                    engine2colour = "black"; 
+                }
+                
                 std::string winner = play(engine1colour, engine2colour, game); 
                 
                 if (engine1colour == "black" && winner == "black" || engine1colour == "white" && winner == "white") {
@@ -144,18 +168,24 @@ class Server {
                 }
 
                 games.push_back(game);
-            }
-            
-            // Save games played to output JSON file for later analysis
-            if (save) {
-                json j; 
-                j["games"] = games; 
-                j["num_games"] = n;
+                
+                // Games are saved every checkpoint_freq number of games 
+                if ((i + 1) % checkpoint_freq == 0 || i == n-1) {
+                    if (save) {
+                        json j; 
+                        j["games"] = games; 
+                        j["num_games"] = checkpoint_freq;
 
-                // TODO: Make the filename a combination of the two player names, and a random number
-                std::string output_name = fmt::format("games-{}-{}.json", engine1.getName(), engine2.getName());
-                std::ofstream o(output_name);
-                o << std::setw(4) << j << std::endl; 
+                        // Save the game to output_path (relative to program)
+                        std::string output_name = fmt::format("games-{}-{}-{}.json", engine1.getName(), engine2.getName(), i+1);
+                        std::string output_path = fmt::format("{}/{}", output_dir, output_name);
+                        std::ofstream o(output_path);
+
+                        o << std::setw(4) << j << std::endl; 
+
+                        games = {};
+                    }
+                }
             }
 
             printSummary(engine1wins, engine2wins, draws);
@@ -187,7 +217,7 @@ std::string nameToExecutable(std::string name) {
     return "";
 }
 
-//  e.g ./server az 1000 edax 21 2 0.5 true 10
+// e.g ./server az 1000 edax 21 2 0.5 true 10
 int main(int argc, char* argv[]) {
     if (argc < 9) {
         std::cout << "Missing parameters\n"; 
@@ -218,8 +248,8 @@ int main(int argc, char* argv[]) {
     }
 
     // Whether to save games in JSON files or not 
-    bool save = argv[7] == "true" ? true : false;
-    std::cout << save; 
+    bool save = std::string(argv[7]) == "true";
+
     // How often played games are persisted 
     std::stringstream convert_checkpoint_freq{ argv[8] }; 
 
@@ -228,8 +258,20 @@ int main(int argc, char* argv[]) {
 		return -1; 
     }
 
+    // Handle invalid checkpoint frequency 
+    if (checkpoint_freq < 1 || checkpoint_freq > num_games) {
+        checkpoint_freq = num_games; 
+    }
+
     // Name of directory to which games are persisted 
-    std::string save_dir = fmt::format("{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+    srand(time(0));
+
+    std::string save_dir = fmt::format("game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+
+    // Create save directories if necessary
+    if (save) {
+        std::filesystem::create_directories(save_dir);
+    }
 
     // Start the server and bots 
     std::string primary_engine_executable = nameToExecutable(primary_engine_name); 
@@ -252,7 +294,7 @@ int main(int argc, char* argv[]) {
 
     serv.start();
 
-    serv.playGames(num_games, save);
+    serv.playGames(num_games, black_probability, save, checkpoint_freq, save_dir);
 
     // Shut down engines
     kill(serv.engine1.getEnginePID(), SIGTERM); 
