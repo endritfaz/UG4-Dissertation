@@ -105,6 +105,43 @@ uint64_t moveToBitboard(std::string move) {
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
 
 
+// Returns true if the disc specified by move is placed in a region with an odd number of empty tiles, and false otherwise 
+
+/*
+TODO:
+Start with a bitboard where the only set bit is the move.
+Expand the move in all directions, AND it with bitboard of empty squares, and OR it with the board before expansion. 
+Stop when the board doesn't change anymore
+Count number of set bits
+*/
+
+bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
+    uint64_t empty = ~(playerBoard | opponentBoard);
+
+    uint64_t region = move; 
+
+    while(true) {
+        uint64_t oldRegion = region; 
+
+        for (int i = 0; i < 8; i++) {
+            int direction = directions[i]; 
+
+            uint64_t shifted = shift(region, direction); 
+            uint64_t shiftedEmpty = shifted & empty; 
+
+            region |= shiftedEmpty; 
+        }
+
+        if (region == oldRegion) {
+            break; 
+        }
+    }
+
+    int count = __builtin_popcountll(region);
+
+    return ((count % 2) != 0); 
+}
+
 /* 
 playerBoard/opponentBoard is the board state two moves before a corner capture by the player.
 playerMove/opponentMoves are the preceding two moves before a corner capture by the player
