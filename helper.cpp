@@ -5,3 +5,17 @@
 void toLower(std::string& s) {
     std::transform(s.begin(), s.end(), s.begin(), ::tolower); 
 }
+
+// GENERATED  BY AI 
+std::string join(const std::vector<std::string>& vec, const std::string& delimiter) {
+    std::string result;
+
+    for (size_t i = 0; i < vec.size(); ++i) {
+        result += vec[i];
+        if (i != vec.size() - 1) {
+            result += delimiter;
+        }
+    }
+
+    return result;
+}

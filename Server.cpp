@@ -269,16 +269,6 @@ int main(int argc, char* argv[]) {
         checkpoint_freq = num_games; 
     }
 
-    // Name of directory to which games are persisted 
-    srand(time(0));
-
-    std::string save_dir = fmt::format("game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
-
-    // Create save directories if necessary
-    if (save) {
-        std::filesystem::create_directories(save_dir);
-    }
-
     // Start the server and bots 
     std::string primary_engine_executable = nameToExecutable(primary_engine_name); 
     std::string secondary_engine_executable = nameToExecutable(secondary_engine_name); 
@@ -288,6 +278,16 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
+    // Name of directory to which games are persisted 
+    srand(time(0));
+
+    std::string save_dir = fmt::format("test_game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+
+    // Create save directories if necessary
+    if (save) {
+        std::filesystem::create_directories(save_dir);
+    }
+    
     std::vector<std::string> primary_engine_args = {primary_engine_executable, primary_engine_version}; 
     std::vector<std::string> secondary_engine_args = {secondary_engine_executable, secondary_engine_version};
 
@@ -312,4 +312,3 @@ int main(int argc, char* argv[]) {
   
     return 0; 
 }
-

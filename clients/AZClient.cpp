@@ -71,6 +71,8 @@ class AZClient {
             // Capture intial input (to throwaway)
             engine.emptyResponse(); 
             std::string response = engine.getResponse('t');
+
+            std::cout << "Ready\n";
         }
 
         void play() {
@@ -84,6 +86,9 @@ class AZClient {
 };
 
 int main(int argc, char* argv[]) {
+    // TODO: Security risk, check this is a number
+    std::string iteration = argv[1]; 
+    
     std::vector<std::string> az_argv = {
         "./tools/quick-run.sh",
         "console",
@@ -92,7 +97,7 @@ int main(int argc, char* argv[]) {
         "othello_8x8_az_3bx256_n200-04a589/model/weight_iter_2000.pt", 
         "othello_8x8_az_3bx256_n200-04a589/othello_8x8_az_3bx256_n200-04a589.cfg"
         */
-        "weight_iter_1000.pt",
+        fmt::format("weights/weight_iter_{}.pt", iteration),
         "othello_8x8_az_play.cfg"
     };
 

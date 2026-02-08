@@ -1,14 +1,13 @@
 #!/usr/bin/bash
 
-primary_bot=$1
-primary_bot_version=$2
+primary_bot="az"
+secondary_bot="edax"
+edax_versions=("6", "15", "21")
 
-secondary_bot=$3
-secondary_bot_version=$4 
-
-num_games=$5 
-black_probability=$6
-
-save=$7
-checkpoint_frequency=$8
-
+for i in $(seq 0 1000 28000);
+do
+    for j in ${edax_versions[@]};
+        do
+            ./server $primary_bot $i $secondary_bot $j 10 0.5 true 5
+        done
+done
