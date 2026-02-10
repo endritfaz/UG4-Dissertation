@@ -128,14 +128,47 @@ void calcFeatureAverage(json games, std::function<discsPerMoveInfo(json)> func, 
     o << std::setw(4) << j << std::endl; 
 }
 
-int main() {
-    std::string feature = "frontier"; 
-    std::string model = "az1000-edax21";
-    std::ifstream i("games-az1000-edax.json");
-    json j; 
-    i >> j; 
+bool forcedCornerCapture(std::string move, json prevMoveFeature) {
+    if (!isCornerMove(move)) {
+        return false;
+    }
 
-    json games = j["games"];
+    return (prevMoveFeature["black_active"] && (prevMoveFeature["num_moves_black"] == 1 || prevMoveFeature["num_moves_black"] == 0) || !prevMoveFeature["black_active"] && (prevMoveFeature["num_moves_white"] == 1 || prevMoveFeature["num_moves_white"] == 0));
+}
 
-    calcFeatureAverage(games, &calcFrontierMove, feature, model);
+std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
+    std::vector<json> movesFeatures{}; 
+    Game game{};
+    int ply = 0; 
+
+    for (auto move : moves) {
+        json moveFeatures; 
+
+        game.makeMove(move);
+        ply += 1; 
+
+        moveFeatures["ply"] = ply;
+        moveFeatures["black_active"] = (game.turn % 2 == 0);
+        moveFeatures["num_discs"] = game.countWhitePieces() + game.countBlackPieces(); 
+        moveFeatures["num_discs_black"] = game.countBlackPieces();
+        moveFeatures["num_discs_white"] = game.countWhitePieces();
+        moveFeatures["num_moves_black"] = game.countMoves("black"); 
+        moveFeatures["num_moves_white"] = game.countMoves("white");
+        moveFeatures["num_frontier_black"] = game.countFrontierDiscs("black");
+        moveFeatures["num_frontier_white"] = game.countFrontierDiscs("white");
+        
+        if (movesFeatures.size() == 0) {
+            moveFeatures["forced_corner_cap"] = false;
+        }
+
+        else {
+            moveFeatures["forced_corner_cap"] = forcedCornerCapture(move, movesFeatures.back());
+        }
+
+        moveFeatures["parity"] = game.oddParity(move);
+
+        movesFeatures.push_back(moveFeatures);
+    }
+
+    return movesFeatures;
 }

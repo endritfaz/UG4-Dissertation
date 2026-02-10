@@ -185,3 +185,26 @@ bool Game::validateMove(std::string move) {
     
     return (generateMoves(activePlayer, inactivePlayer) & moveBoard) != 0;
 }
+
+bool Game::oddParity(std::string move) {
+    uint64_t moveBoard = moveToBitboard(move);
+
+    uint64_t activePlayer; 
+    uint64_t inactivePlayer; 
+
+    if (turn % 2 == 0) {
+        activePlayer = black; 
+        inactivePlayer = white; 
+    }
+
+    else {
+        activePlayer = white; 
+        inactivePlayer = black; 
+    }
+
+    return (::oddParity(activePlayer, inactivePlayer, moveBoard));
+}
+
+bool isCornerMove(std::string move) {
+    return (move == "a1" || move == "a8" || move == "h1" || move == "h8");
+}

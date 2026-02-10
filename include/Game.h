@@ -4,6 +4,8 @@
 #include <cstdint>
 #include <string>
 
+bool isCornerMove(std::string move);
+
 class Game {
 public:
     uint64_t black;
@@ -22,6 +24,7 @@ public:
     bool gameOver(); 
     std::string getWinner(); 
     bool validateMove(std::string move);
+    bool oddParity(std::string move);
 };
 
 #endif

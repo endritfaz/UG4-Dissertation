@@ -2,7 +2,7 @@
 
 primary_bot="az"
 secondary_bot="edax"
-edax_versions=("6", "15", "21")
+edax_versions=("6" "15" "21")
 
 for i in $(seq 0 1000 28000);
 do

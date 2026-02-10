@@ -24,8 +24,6 @@ randomclient: clients/RandomClient.cpp
 edaxclient: clients/EdaxClient.cpp
 	g++ $(CXXFLAGS) -o edaxclient clients/EdaxClient.cpp othello/Game.cpp othello/othello.cpp Engine.cpp helper.cpp -lfmt
 
-test: test.cpp 
-	g++ $(CXXFLAGS) -std=c++17 test.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o test
+db: db.cpp 
+	g++ $(CXXFLAGS) -std=c++17 db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o db
 
-dbanalysis: analysis/db_analysis.cpp
-	g++ $(CXXFLAGS) -std=c++17 analysis/db_analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o dbanalysis
