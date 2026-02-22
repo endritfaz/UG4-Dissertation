@@ -13,6 +13,7 @@ DB_PORT = "5432"
 WIN_RATES_DIR = Path("game_data_plots/win_rates")
 FRONTIER_DIR = Path("game_data_plots/frontier")
 FORCED_CORNER_DIR = Path("game_data_plots/forced_corner")
+AVG_GAME_FRONTIER_DIR = Path("game_data_plots/avg_game_frontier")
 
 # Taken from: https://medium.com/@alestamm/importing-data-from-a-postgresql-database-to-a-pandas-dataframe-5f4bffcd8bb2
 def sql_to_dataframe(conn, query, column_names):
@@ -260,6 +261,55 @@ def plot_forced_corner_capture_rate(forced_df, output_dir):
     plt.close(fig)
 
 
+def plot_avg_game_frontier_by_iteration(avg_game_frontier_df, output_dir):
+    """
+    Plot AZ iteration vs average per-game frontier, split by AZ colour and Edax version (2x3).
+    """
+    sns.set_theme(style="whitegrid")
+
+    df = avg_game_frontier_df.copy()
+    df["az_version"] = pd.to_numeric(df["az_version"], errors="coerce")
+    df["edax_version"] = pd.to_numeric(df["edax_version"], errors="coerce")
+    df["avg_game_frontier"] = pd.to_numeric(df["avg_game_frontier"], errors="coerce")
+    df["az_colour"] = df["az_colour"].astype(str).str.lower()
+    df = df.dropna(subset=["az_version", "edax_version", "avg_game_frontier"])
+    df["az_version"] = df["az_version"].astype(int)
+    df["edax_version"] = df["edax_version"].astype(int)
+
+    fig, axes = plt.subplots(2, 3, figsize=(18, 10), sharex=True, sharey=True)
+    fig.suptitle("Average Per-Game AZ Frontier vs AZ Iteration")
+
+    az_colours = ["black", "white"]
+    edax_versions = [6, 15, 21]
+
+    for row, az_colour in enumerate(az_colours):
+        for col, edax_version in enumerate(edax_versions):
+            ax = axes[row][col]
+            panel = df[
+                (df["az_colour"] == az_colour)
+                & (df["edax_version"] == edax_version)
+            ].sort_values("az_version")
+
+            if panel.empty:
+                ax.text(0.5, 0.5, "No data", ha="center", va="center", transform=ax.transAxes)
+            else:
+                sns.lineplot(
+                    data=panel,
+                    x="az_version",
+                    y="avg_game_frontier",
+                    marker="o",
+                    ax=ax,
+                )
+
+            ax.set_title(f"AZ {az_colour.capitalize()} vs Edax {edax_version}")
+            ax.set_xlabel("AlphaZero Iteration")
+            ax.set_ylabel("Avg Frontier Per Game")
+
+    fig.tight_layout(rect=[0, 0.03, 1, 0.96])
+    fig.savefig(output_dir / "avg_game_frontier_by_iteration.png", dpi=300, bbox_inches="tight")
+    plt.close(fig)
+
+
 try:
     conn = psycopg2.connect(database=DB_NAME, user=DB_USER, password=DB_PASS, host=DB_HOST, port=DB_PORT)
 
@@ -277,6 +327,7 @@ try:
     prepare_output_dir(WIN_RATES_DIR)
     plot_az_edax_rates(rates, WIN_RATES_DIR)
     
+    """
     # Plot frontier size by move number for each az/edax version combination 
     
     frontier_query = "WITH az_games AS (SELECT g.game_id, CASE WHEN g.black = 'az' THEN CAST(g.black_version AS INT) ELSE CAST(g.white_version AS INT) END AS az_version, CASE WHEN g.black = 'az' THEN 'black' ELSE 'white' END AS az_colour, CASE WHEN g.black = 'edax' THEN CAST(g.black_version AS INT) ELSE CAST(g.white_version AS INT) END AS edax_version FROM games g WHERE (g.black = 'az' AND g.white = 'edax') OR (g.black = 'edax' AND g.white = 'az')) " + "SELECT a.az_version, a.az_colour, a.edax_version, m.num_discs, AVG(CASE WHEN a.az_colour = 'black' THEN m.num_frontier_black ELSE m.num_frontier_white END) AS avg_az_frontier, AVG(CASE WHEN a.az_colour = 'black' THEN m.num_frontier_white ELSE m.num_frontier_black END) AS avg_edax_frontier, COUNT(*) AS n FROM az_games a JOIN moves m ON m.game_id = a.game_id WHERE a.edax_version IN (6, 15, 21) GROUP BY 1,2,3,4 ORDER BY 1,2,3,4;"
@@ -287,7 +338,8 @@ try:
 
     prepare_output_dir(FRONTIER_DIR)
     plot_avg_frontier_by_discs(frontier, FRONTIER_DIR)
-
+    """
+    
     forced_corner_query = (
         "WITH az_games AS ("
         "SELECT g.game_id, "
@@ -316,6 +368,37 @@ try:
 
     prepare_output_dir(FORCED_CORNER_DIR)
     plot_forced_corner_capture_rate(forced_corner, FORCED_CORNER_DIR)
+
+    avg_game_frontier_query = (
+        "WITH az_games AS ("
+        "SELECT g.game_id, "
+        "CASE WHEN g.black = 'az' THEN CAST(g.black_version AS INT) ELSE CAST(g.white_version AS INT) END AS az_version, "
+        "CASE WHEN g.black = 'az' THEN 'black' ELSE 'white' END AS az_colour, "
+        "CASE WHEN g.black = 'edax' THEN CAST(g.black_version AS INT) ELSE CAST(g.white_version AS INT) END AS edax_version "
+        "FROM games g "
+        "WHERE (g.black = 'az' AND g.white = 'edax') OR (g.black = 'edax' AND g.white = 'az')"
+        "), az_moves AS ("
+        "SELECT a.az_version, a.az_colour, a.edax_version, a.game_id, "
+        "CASE WHEN a.az_colour = 'black' THEN m.num_frontier_black ELSE m.num_frontier_white END AS az_frontier "
+        "FROM az_games a "
+        "JOIN moves m ON m.game_id = a.game_id "
+        "WHERE a.edax_version IN (6, 15, 21) "
+        "AND (((a.az_colour = 'black') AND (m.ply % 2 = 1)) OR ((a.az_colour = 'white') AND (m.ply % 2 = 0)))"
+        "), per_game AS ("
+        "SELECT az_version, az_colour, edax_version, game_id, AVG(az_frontier::float) AS game_avg_frontier "
+        "FROM az_moves "
+        "GROUP BY 1,2,3,4"
+        ") "
+        "SELECT az_version, az_colour, edax_version, AVG(game_avg_frontier) AS avg_game_frontier, COUNT(*) AS games "
+        "FROM per_game "
+        "GROUP BY 1,2,3 "
+        "ORDER BY 2,3,1;"
+    )
+    avg_game_frontier_columns = ["az_version", "az_colour", "edax_version", "avg_game_frontier", "games"]
+    avg_game_frontier = sql_to_dataframe(conn, avg_game_frontier_query, avg_game_frontier_columns)
+
+    prepare_output_dir(AVG_GAME_FRONTIER_DIR)
+    plot_avg_game_frontier_by_iteration(avg_game_frontier, AVG_GAME_FRONTIER_DIR)
 
 except (Exception, psycopg2.DatabaseError) as error:
     print("Error: %s" % error)

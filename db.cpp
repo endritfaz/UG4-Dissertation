@@ -82,7 +82,7 @@ int main() {
             return 1;
         }
         
-        // TODO: Initialise the database
+        // Initialise the database
         if (!initialise_database(c)) {
             std::cout << "Database initialisation failed" << std::endl; 
             exit(-1); 

@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
                std::string winner = game["winner"]; 
                
                // TODO: Fix SQL injection 
-               std::string sql =  fmt::format("INSERT INTO games (black,black_version,white,white_version,game_sequence, winner) VALUES (\'{}\',\'{}\',\'{}\',\'{}\',\'{}\',\'{}\');", black, black_version, white, white_version, game_sequence, winner); 
+               std::string sql =  fmt::format("INSERT INTO games (black,black_version,white,white_version,game_sequence,winner) VALUES (\'{}\',\'{}\',\'{}\',\'{}\',\'{}\',\'{}\');", black, black_version, white, white_version, game_sequence, winner); 
 
                /* Create a transactional object. */
                work W(C);
