@@ -144,11 +144,35 @@ std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
     for (auto move : moves) {
         json moveFeatures; 
 
+        // black_active means black played the move
+        moveFeatures["black_active"] = (game.turn % 2 == 0);
+        moveFeatures["parity"] = game.oddParity(move);
+        
+        bool fcpsPossible = game.forcedCornerCapturePossible(); 
+        moveFeatures["forced_corner_capture_possible"] = fcpsPossible; 
+        
+        // Check if the corner capture was actually executed. That is, there was a corner capture sequence available, and the relevant corner was captured on move ply + 2 
+    
+        int cornerCapturePly = ply + 2;
+        
+        bool fcpsExecuted = false;
+        if (fcpsPossible) {
+            if (ply + 2 < moves.size()) {
+                std::string cornerCaptureMove = moves[cornerCapturePly];
+                
+                // Needs to be a real move as it will be converted to bitboard
+                if (cornerCaptureMove != "pass" && cornerCaptureMove != "resign") {
+                    fcpsExecuted = game.forcedCornerCaptureExecuted(move, cornerCaptureMove); 
+                }
+            }
+        }
+
+        moveFeatures["forced_corner_capture_executed"] = fcpsExecuted;
+      
         game.makeMove(move);
         ply += 1; 
 
         moveFeatures["ply"] = ply;
-        moveFeatures["black_active"] = (game.turn % 2 == 0);
         moveFeatures["num_discs"] = game.countWhitePieces() + game.countBlackPieces(); 
         moveFeatures["num_discs_black"] = game.countBlackPieces();
         moveFeatures["num_discs_white"] = game.countWhitePieces();
@@ -156,16 +180,6 @@ std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
         moveFeatures["num_moves_white"] = game.countMoves("white");
         moveFeatures["num_frontier_black"] = game.countFrontierDiscs("black");
         moveFeatures["num_frontier_white"] = game.countFrontierDiscs("white");
-        
-        if (movesFeatures.size() == 0) {
-            moveFeatures["forced_corner_cap"] = false;
-        }
-
-        else {
-            moveFeatures["forced_corner_cap"] = forcedCornerCapture(move, movesFeatures.back());
-        }
-
-        moveFeatures["parity"] = game.oddParity(move);
 
         movesFeatures.push_back(moveFeatures);
     }

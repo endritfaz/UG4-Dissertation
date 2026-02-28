@@ -205,6 +205,44 @@ bool Game::oddParity(std::string move) {
     return (::oddParity(activePlayer, inactivePlayer, moveBoard));
 }
 
+bool Game::forcedCornerCapturePossible() {
+    uint64_t activePlayer; 
+    uint64_t inactivePlayer; 
+
+    if (turn % 2 == 0) {
+        activePlayer = black; 
+        inactivePlayer = white; 
+    }
+
+    else {
+        activePlayer = white; 
+        inactivePlayer = black; 
+    }
+
+    return (forcedCornerCaptures(activePlayer, inactivePlayer) > 0); 
+}
+
+bool Game::forcedCornerCaptureExecuted(std::string initialMove, std::string cornerCaptureMove) {
+    uint64_t activePlayer; 
+    uint64_t inactivePlayer; 
+
+    if (turn % 2 == 0) {
+        activePlayer = black; 
+        inactivePlayer = white; 
+    }
+
+    else {
+        activePlayer = white; 
+        inactivePlayer = black; 
+    }
+
+    uint64_t initialMoveBitboard = moveToBitboard(initialMove); 
+    uint64_t cornerCaptureMoveBitboard = moveToBitboard(cornerCaptureMove); 
+
+    return ((forcedCornerCaptureCorners(activePlayer, inactivePlayer, initialMoveBitboard) & cornerCaptureMoveBitboard) > 0); 
+}
+
+
 bool isCornerMove(std::string move) {
     return (move == "a1" || move == "a8" || move == "h1" || move == "h8");
 }

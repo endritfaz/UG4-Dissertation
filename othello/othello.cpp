@@ -1,8 +1,10 @@
 #include <iostream>
 #include <cstdint>
 #include "othello.h"
+#include <vector>
 
 int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
+uint64_t corners = 0x8100000000000081;
 
 // Shifts by shamt, postive shamt means moving right on board
 uint64_t shift(uint64_t board, int shamt) {
@@ -102,19 +104,25 @@ uint64_t moveToBitboard(std::string move) {
     return moveBoard; 
 }
 
+uint64_t leastSignificantBit(uint64_t x) {
+    return x & (~x + 1);
+}
+
+std::vector<uint64_t> separateMoves(uint64_t moves) {
+    std::vector<uint64_t> separatedMoves; 
+
+    while (moves) {
+        uint64_t move = leastSignificantBit(moves); 
+        separatedMoves.push_back(move);
+        moves = moves ^ move; 
+    }
+    return separatedMoves;
+}
+
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
 
 
 // Returns true if the disc specified by move is placed in a region with an odd number of empty tiles, and false otherwise 
-
-/*
-TODO:
-Start with a bitboard where the only set bit is the move.
-Expand the move in all directions, AND it with bitboard of empty squares, and OR it with the board before expansion. 
-Stop when the board doesn't change anymore
-Count number of set bits
-*/
-
 bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
     uint64_t empty = ~(playerBoard | opponentBoard);
 
@@ -142,17 +150,55 @@ bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
     return ((count % 2) != 0); 
 }
 
-/* 
-playerBoard/opponentBoard is the board state two moves before a corner capture by the player.
-playerMove/opponentMoves are the preceding two moves before a corner capture by the player
-Check whether the opponent was forced to play the move that preceded the corner capture
-*/
-bool forcedCornerCapture(uint64_t playerBoard, uint64_t opponentBoard, uint64_t playerMove, uint64_t opponentMove) {
-    uint64_t* newBoard = makeMove(playerBoard, opponentBoard, playerMove); 
-    uint64_t newPlayerBoard = newBoard[0]; 
-    uint64_t newOpponentBoard = newBoard[1];
+// Returns the corners that may be captured as a result of a potential forced corner capture sequence defined by playerBoard, opponentBoard, and move. Returns 0 if there are no forced corner captures. 
+uint64_t forcedCornerCaptureCorners(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
+    uint64_t playerMovesFirst = generateMoves(playerBoard, opponentBoard);
+    uint64_t playerMovesFirstCorners = playerMovesFirst & corners; 
 
-    return opponentMove == generateMoves(newOpponentBoard, newPlayerBoard); 
+    uint64_t* secondBoardState = makeMove(playerBoard, opponentBoard, move); 
+
+    uint64_t secondPlayerBoard = secondBoardState[0];
+    uint64_t secondOpponentBoard = secondBoardState[1]; 
+
+    uint64_t playerMovesSecond = generateMoves(secondPlayerBoard, secondOpponentBoard); 
+    uint64_t playerMovesSecondCorners = playerMovesSecond & corners; 
+
+    // Corner moves that the active player could've played at the start, and that have persisted. Don't count these as being forced. 
+    uint64_t originalCornerCaptureMoves = playerMovesFirstCorners & playerMovesSecondCorners; 
+
+    // After playing move, check that opponent has 1 or less moves, and is therefore forced to potentially give up a corner
+    uint64_t opponentMoves = generateMoves(secondOpponentBoard, secondPlayerBoard); 
+    int numOpponentMoves = __builtin_popcountll(opponentMoves); 
+
+    if (numOpponentMoves > 1) {
+        return 0; 
+    }
+
+    // opponentMoves consists of either 0, or 1 move 
+    uint64_t* thirdBoardState = makeMove(secondOpponentBoard, secondPlayerBoard, opponentMoves); 
+
+    uint64_t thirdPlayerBoard = thirdBoardState[1]; 
+    uint64_t thirdOpponentBoard = thirdBoardState[0]; 
+
+    uint64_t playerMoves = generateMoves(thirdPlayerBoard, thirdOpponentBoard); 
+
+    uint64_t playerMovesForcedCorners = playerMoves & (~originalCornerCaptureMoves); 
+
+    return ((playerMovesForcedCorners & corners));
+}
+
+// Out of all possible moves the active player has, returns the ones which lead to a forced corner capture
+uint64_t forcedCornerCaptures(uint64_t playerBoard, uint64_t opponentBoard) {
+    std::vector<uint64_t> initialPlayerMoves = separateMoves(generateMoves(playerBoard, opponentBoard));
+
+    uint64_t forcedCornerCaptureMoves = 0; 
+
+    for (const auto move : initialPlayerMoves) {
+        if (__builtin_popcountll(forcedCornerCaptureCorners(playerBoard, opponentBoard, move)) > 0) {
+            forcedCornerCaptureMoves |= move; 
+        }
+    }
+    return forcedCornerCaptureMoves; 
 }
 
 uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
@@ -171,14 +217,11 @@ uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
 
 /*
 int main() {
-    uint64_t playerBoard = 0x40000000000; 
-    uint64_t opponentBoard = 0x180000000000; 
-    
-    uint64_t moves = generateMoves(playerBoard, opponentBoard);
+    uint64_t black = 0x3d88000000; 
+    uint64_t white = 0xff42767f1000; 
 
-    printBoard(playerBoard);
-    printBoard(opponentBoard);
-    printBoard(moves);
+    uint64_t fcp = forcedCornerCaptures(black, white); 
+    printBoard(fcp);
 
     return 0; 
 }

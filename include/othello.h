@@ -13,4 +13,6 @@ uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard);
 bool forcedCornerCapture(uint64_t playerBoard, uint64_t opponentBoard, uint64_t playerMove, uint64_t opponentMove);
 uint64_t moveToBitboard(std::string move);
 bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move);
+uint64_t forcedCornerCaptureCorners(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move); 
+uint64_t forcedCornerCaptures(uint64_t playerBoard, uint64_t opponentBoard);
 #endif

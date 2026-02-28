@@ -25,6 +25,8 @@ public:
     std::string getWinner(); 
     bool validateMove(std::string move);
     bool oddParity(std::string move);
+    bool forcedCornerCapturePossible();
+    bool forcedCornerCaptureExecuted(std::string initialMove, std::string cornerCaptureMove);
 };
 
 #endif
