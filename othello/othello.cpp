@@ -4,6 +4,8 @@
 #include <vector>
 
 int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
+int lineDirections[2] = {1, -1}; 
+
 uint64_t corners = 0x8100000000000081;
 
 // Shifts by shamt, postive shamt means moving right on board
@@ -34,6 +36,13 @@ uint64_t shift(uint64_t board, int shamt) {
         board = board << shamt; 
     }
     return board; 
+}
+
+static inline uint8_t shiftLine(uint8_t line, int shamt) {
+    if (shamt > 0) {
+        return line << shamt; 
+    }
+    return line >> (-shamt);   
 }
 
 void printBoard(uint64_t board) {
@@ -119,9 +128,16 @@ std::vector<uint64_t> separateMoves(uint64_t moves) {
     return separatedMoves;
 }
 
-uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {return 0;}
+std::vector<uint8_t> separateLineMoves(uint8_t moves) {
+    std::vector<uint8_t> separatedMoves; 
 
-
+    while (moves) {
+        uint8_t move = moves & (~moves + 1); 
+        separatedMoves.push_back(move);
+        moves = moves ^ move; 
+    }
+    return separatedMoves;
+}
 // Returns true if the disc specified by move is placed in a region with an odd number of empty tiles, and false otherwise 
 bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
     uint64_t empty = ~(playerBoard | opponentBoard);
@@ -214,15 +230,140 @@ uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     return playerBoard & neighboursOfEmpty; 
 }
 
+uint8_t* makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
+    playerLine |= move; 
 
-/*
-int main() {
-    uint64_t black = 0x3d88000000; 
-    uint64_t white = 0xff42767f1000; 
+    for (int i = 0; i < 2; i++) {
+        int direction = lineDirections[i];
 
-    uint64_t fcp = forcedCornerCaptures(black, white); 
-    printBoard(fcp);
+        uint64_t captured = shiftLine(move, direction) & opponentLine;
+        for (int j = 0; j < 5; j++) {
+            captured |= shiftLine(captured, direction) & opponentLine; 
+        }
+        if ((shiftLine(captured, direction) & playerLine) != 0) {
+            playerLine |= captured;
+            opponentLine &= ~captured; 
+        }
+    }
+    return new uint8_t[]{playerLine, opponentLine};
+}
+
+uint64_t stableEdges(uint64_t playerBoard, uint64_t opponentBoard) {
+    uint64_t stableEdges = 0; 
+
+    uint64_t topMask = 0xff00000000000000; 
+    uint8_t topPlayer = (topPlayer & topMask) > 56; 
+    uint8_t topOpponent = (topOpponent & topMask) > 56;
+
 
     return 0; 
 }
+
+uint64_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
+    uint8_t empty = ~(playerEdge | opponentEdge); 
+    std::vector<uint8_t> moves = separateLineMoves(empty);
+
+    uint8_t res = playerEdge | opponentEdge; 
+
+    if (res == 0) {
+        return 0; 
+    }
+
+    for (const auto move : moves) {
+        uint8_t* newEdge = makeLineMove(playerEdge, opponentEdge, move); 
+        // Remove opponent edges that got flipped
+        res &= playerEdge | newEdge[1]; 
+
+        if (res == 0) return 0; 
+        res &= stableEdge(newEdge[0], newEdge[1]);
+
+        newEdge = makeLineMove(opponentEdge, playerEdge, move); 
+        res &= opponentEdge | newEdge[1]; 
+
+        if (res == 0) return 0; 
+        res &= stableEdge(newEdge[1], newEdge[0]);
+    }
+    return res; 
+}
+
+void printLine(uint8_t line) {
+    uint8_t mask = 0x01; 
+    for (int i = 0; i < 8; i++) {
+        uint8_t p = mask & line; 
+
+        if (p == 1) {
+            std::cout << "0";
+        }
+        else {
+            std::cout << ".";
+        }
+        line = line >> 1; 
+    }
+    std::cout << "\n";
+}
+
+uint64_t fullVertical(uint64_t board) {return 0;}
+
+uint64_t fullHorizontal(uint64_t board) {return 0;}
+
+uint64_t fullDiagonal7(uint64_t board) {return 0;}
+
+uint64_t fullDiagonal9(uint64_t board) {return 0;}
+
+/*
+1) Find stable discs on edges 
+
+2) Find discs that are stable because the lines running through the disc in all four directions are full 
+
+3) Expand interior stable discs are stable in each of the four directions. A disc is stable in a direction if it is adjacent to a stable disc in that direction, or it is full in that direction. 
+
+Suppose it wasn't stable in that direction. Then the stable disc it is adjacent to would have to be flanked, and captured, contradicting the assumption that it was stable. But that disk could only have been marked stable because it a neighbour of another stable disc, or it was marked stable by (2) or (3), and these discs are definitely stable. 
+
+Hence, the algorithm does not produce false positives 
+
+Idea from https://github.com/Nyanyan/Egaroucid/blob/main/src/engine/stability.hpp 
 */
+uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
+    const uint64_t playerInternal = playerBoard & 0x007E7E7E7E7E7E00ULL;
+
+    uint64_t stableE = stableEdges(playerBoard, opponentBoard); 
+
+    uint64_t fullV = fullVertical(playerBoard | opponentBoard); 
+    uint64_t fullH = fullHorizontal(playerBoard | opponentBoard); 
+    uint64_t fullD7 = fullDiagonal7(playerBoard | opponentBoard); 
+    uint64_t fullD9 = fullDiagonal9(playerBoard | opponentBoard); 
+
+    // Edge stable discs 
+    uint64_t stableDiscs = stableE; 
+
+    // Internal stable discs because all the lines through them are full 
+    stableDiscs |= (fullV & fullH & fullD7 & fullD9); 
+
+    stableDiscs |= playerBoard; 
+
+    uint64_t finalStableDiscs = 0; 
+    uint64_t verticalStable, horizontalStable, diagonal7Stable, diagonal9Stable; 
+
+    // stableDiscs is updated in the loop. Check if any new stable discs have been discovered
+    while (stableDiscs & ~finalStableDiscs) {
+        finalStableDiscs |= stableDiscs; 
+
+        verticalStable = shift(stableDiscs, 8) | shift(stableDiscs, -8) | fullV; 
+        horizontalStable = shift(stableDiscs, 1) | shift(stableDiscs, -1) | fullH; 
+        diagonal7Stable = shift(stableDiscs, 7) | shift(stableDiscs, -7) | fullD7; 
+        diagonal9Stable = shift(stableDiscs, 9) | shift(stableDiscs, -9) | fullD9; 
+        
+        stableDiscs = verticalStable & horizontalStable & diagonal7Stable & diagonal9Stable & playerInternal; 
+    }
+    return finalStableDiscs;
+}
+
+
+int main() {
+    uint8_t black = 0x13;
+    uint8_t white = 0x2c;
+
+    uint8_t res = stableEdge(black, white);
+
+    printLine(res);
+}
