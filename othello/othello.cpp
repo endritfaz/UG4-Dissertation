@@ -61,6 +61,22 @@ void printBoard(uint64_t board) {
     std::cout << "  A B C D E F G H\n";
 }
 
+void printLine(uint8_t line) {
+    uint8_t mask = 0x01; 
+    for (int i = 0; i < 8; i++) {
+        uint8_t p = mask & line; 
+
+        if (p == 1) {
+            std::cout << "0";
+        }
+        else {
+            std::cout << ".";
+        }
+        line = line >> 1; 
+    }
+    std::cout << "\n";
+}
+
 uint64_t generateMoves(uint64_t playerBoard, uint64_t opponentBoard) {
     
     uint64_t empty = ~(playerBoard | opponentBoard);
@@ -97,6 +113,24 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
         }
     }
     return new uint64_t[]{playerBoard, opponentBoard};
+}
+
+uint8_t* makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
+    playerLine |= move; 
+
+    for (int i = 0; i < 2; i++) {
+        int direction = lineDirections[i];
+
+        uint64_t captured = shiftLine(move, direction) & opponentLine;
+        for (int j = 0; j < 5; j++) {
+            captured |= shiftLine(captured, direction) & opponentLine; 
+        }
+        if ((shiftLine(captured, direction) & playerLine) != 0) {
+            playerLine |= captured;
+            opponentLine &= ~captured; 
+        }
+    }
+    return new uint8_t[]{playerLine, opponentLine};
 }
 
 // Takes a move, e.g a1 and returns bitboard representation 00...01
@@ -230,36 +264,55 @@ uint64_t frontierDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     return playerBoard & neighboursOfEmpty; 
 }
 
-uint8_t* makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
-    playerLine |= move; 
+uint8_t extractLeftEdge(uint64_t board) {
+    uint64_t leftEdgeMask = 0x101010101010101; 
 
-    for (int i = 0; i < 2; i++) {
-        int direction = lineDirections[i];
+    board &= leftEdgeMask; 
 
-        uint64_t captured = shiftLine(move, direction) & opponentLine;
-        for (int j = 0; j < 5; j++) {
-            captured |= shiftLine(captured, direction) & opponentLine; 
-        }
-        if ((shiftLine(captured, direction) & playerLine) != 0) {
-            playerLine |= captured;
-            opponentLine &= ~captured; 
-        }
+    uint8_t line = 0; 
+
+    for (int i = 0; i < 8; i++) {
+        line |= ((board >> (i*8)) & 1ULL) << i; 
     }
-    return new uint8_t[]{playerLine, opponentLine};
+
+    return line; 
 }
 
-uint64_t stableEdges(uint64_t playerBoard, uint64_t opponentBoard) {
-    uint64_t stableEdges = 0; 
+uint64_t insertLeftEdge(uint8_t line) {
+    uint64_t board = 0; 
 
-    uint64_t topMask = 0xff00000000000000; 
-    uint8_t topPlayer = (topPlayer & topMask) > 56; 
-    uint8_t topOpponent = (topOpponent & topMask) > 56;
+    for (int i = 0; i < 8; i++) {
+        board |= ((line >> i) & 1ULL) << i*8; 
+    }
 
-
-    return 0; 
+    return board; 
 }
 
-uint64_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
+uint8_t extractRightEdge(uint64_t board) {
+    uint64_t rightEdgeMask = 0x8080808080808080; 
+
+    board &= rightEdgeMask; 
+
+    uint8_t line = 0; 
+
+    for (int i = 0; i < 8; i++) {
+        line |= ((board >> ((i*8) + 7)) & 1ULL) << i; 
+    }
+
+    return line; 
+}
+
+uint64_t insertRightEdge(uint8_t line) {
+    uint64_t board = 0; 
+
+    for (int i = 0; i < 8; i++) {
+        board |= ((line >> i) & 1ULL) << (i*8 + 7); 
+    }
+
+    return board; 
+}
+
+uint8_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
     uint8_t empty = ~(playerEdge | opponentEdge); 
     std::vector<uint8_t> moves = separateLineMoves(empty);
 
@@ -286,29 +339,85 @@ uint64_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
     return res; 
 }
 
-void printLine(uint8_t line) {
-    uint8_t mask = 0x01; 
-    for (int i = 0; i < 8; i++) {
-        uint8_t p = mask & line; 
+uint64_t stableEdges(uint64_t playerBoard, uint64_t opponentBoard) {
+    uint64_t stableEdges = 0; 
 
-        if (p == 1) {
-            std::cout << "0";
-        }
-        else {
-            std::cout << ".";
-        }
-        line = line >> 1; 
-    }
-    std::cout << "\n";
+    uint64_t topMask = 0xff00000000000000; 
+    uint64_t bottomMask = 0xff; 
+
+    uint8_t topPlayer = (playerBoard & topMask) >> 56; 
+    uint8_t topOpponent = (opponentBoard & topMask) >> 56;
+
+    uint8_t bottomPlayer = (playerBoard & bottomMask); 
+    uint8_t bottomOpponent = (opponentBoard & bottomMask); 
+
+    uint64_t leftPlayer = extractLeftEdge(playerBoard); 
+    uint64_t leftOpponent = extractLeftEdge(opponentBoard); 
+
+    uint64_t rightPlayer = extractRightEdge(playerBoard);
+    uint64_t rightOpponent = extractRightEdge(opponentBoard);
+
+    uint8_t stableTop = stableEdge(topPlayer, topOpponent);
+    uint8_t stableBottom = stableEdge(bottomPlayer, bottomOpponent); 
+    uint8_t stableLeft = stableEdge(leftPlayer, leftOpponent);
+    uint8_t stableRight = stableEdge(rightPlayer, rightOpponent); 
+
+    stableEdges |= (uint64_t) stableTop << 56;
+    stableEdges |= (uint64_t) stableBottom; 
+    stableEdges |= insertLeftEdge(stableLeft); 
+    stableEdges |= insertRightEdge(stableRight); 
+
+    return stableEdges; 
 }
 
-uint64_t fullVertical(uint64_t board) {return 0;}
+uint64_t fullVertical(uint64_t board) {
+    board &= shift(board, -8) | shift(board, 56);
+    board &= shift(board, -16) | shift(board, 48);
+    board &= shift(board, -32) | shift(board, 32);
+    return board;
+}
 
-uint64_t fullHorizontal(uint64_t board) {return 0;}
+uint64_t fullHorizontal(uint64_t board) {
+    board &= shift(board, -1);
+    board &= shift(board, -2);
+    board &= shift(board, -4); 
 
-uint64_t fullDiagonal7(uint64_t board) {return 0;}
+    return (board & 0x0101010101010101) * 0xFF;
+}
 
-uint64_t fullDiagonal9(uint64_t board) {return 0;}
+// Full diagonal functions only work for internal squares 
+uint64_t fullDiagonal7(uint64_t board) {
+    constexpr uint64_t edge = 0xFF818181818181FF;
+    uint64_t l7, r7;
+
+    l7 = r7 = board;
+
+    l7 &= edge | shift(l7, -7);        
+    r7 &= edge | shift(r7, 7);
+
+    l7 &= 0xFFFF030303030303ULL | shift(l7, -14);    
+    r7 &= 0xC0C0C0C0C0C0FFFFULL | shift(r7, 14);
+
+    l7 &= 0xFFFFFFFF0F0F0F0FULL | shift(l7, -28);    
+    r7 &= 0xF0F0F0F0FFFFFFFFULL | shift(r7, 28);
+
+    return l7 & r7;
+}
+
+uint64_t fullDiagonal9(uint64_t board) {
+    constexpr uint64_t edge = 0xFF818181818181FF;
+    uint64_t l9, r9;
+
+    l9 = r9 = board;
+
+    l9 &= edge | shift(l9, -9);        
+    r9 &= edge | shift(r9, 9);
+
+    l9 &= 0xFFFFC0C0C0C0C0C0ULL | shift(l9, -18);    
+    r9 &= 0x030303030303FFFFULL | shift(r9, 18);
+
+    return l9 & r9 & (0x0F0F0F0FF0F0F0F0ULL | shift(l9, -36) | shift(r9, 36));
+}
 
 /*
 1) Find stable discs on edges 
@@ -339,31 +448,32 @@ uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     // Internal stable discs because all the lines through them are full 
     stableDiscs |= (fullV & fullH & fullD7 & fullD9); 
 
-    stableDiscs |= playerBoard; 
+    stableDiscs &= playerBoard; 
 
     uint64_t finalStableDiscs = 0; 
     uint64_t verticalStable, horizontalStable, diagonal7Stable, diagonal9Stable; 
 
     // stableDiscs is updated in the loop. Check if any new stable discs have been discovered
     while (stableDiscs & ~finalStableDiscs) {
+        printBoard(stableDiscs); 
         finalStableDiscs |= stableDiscs; 
 
-        verticalStable = shift(stableDiscs, 8) | shift(stableDiscs, -8) | fullV; 
-        horizontalStable = shift(stableDiscs, 1) | shift(stableDiscs, -1) | fullH; 
-        diagonal7Stable = shift(stableDiscs, 7) | shift(stableDiscs, -7) | fullD7; 
-        diagonal9Stable = shift(stableDiscs, 9) | shift(stableDiscs, -9) | fullD9; 
+        verticalStable = shift(finalStableDiscs, 8) | shift(finalStableDiscs, -8) | fullV; 
+        horizontalStable = shift(finalStableDiscs, 1) | shift(finalStableDiscs, -1) | fullH; 
+        diagonal7Stable = shift(finalStableDiscs, 7) | shift(finalStableDiscs, -7) | fullD7; 
+        diagonal9Stable = shift(finalStableDiscs, 9) | shift(finalStableDiscs, -9) | fullD9; 
         
         stableDiscs = verticalStable & horizontalStable & diagonal7Stable & diagonal9Stable & playerInternal; 
+
+
     }
     return finalStableDiscs;
 }
 
-
+/*
 int main() {
-    uint8_t black = 0x13;
-    uint8_t white = 0x2c;
-
-    uint8_t res = stableEdge(black, white);
-
-    printLine(res);
+    uint64_t testb = 0x9f1f131150141090; 
+    uint64_t testw = 0; 
+    printBoard(stableDiscs(testb, testw));
 }
+*/
