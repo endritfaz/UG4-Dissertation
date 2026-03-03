@@ -162,16 +162,11 @@ std::vector<uint64_t> separateMoves(uint64_t moves) {
     return separatedMoves;
 }
 
-std::vector<uint8_t> separateLineMoves(uint8_t moves) {
-    std::vector<uint8_t> separatedMoves; 
-
-    while (moves) {
-        uint8_t move = moves & (~moves + 1); 
-        separatedMoves.push_back(move);
-        moves = moves ^ move; 
-    }
-    return separatedMoves;
+uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
+    return 0;
 }
+
+
 // Returns true if the disc specified by move is placed in a region with an odd number of empty tiles, and false otherwise 
 bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
     uint64_t empty = ~(playerBoard | opponentBoard);

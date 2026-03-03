@@ -8,6 +8,6 @@ for i in $(seq 0 1000 43000);
 do
     for j in ${edax_versions[@]};
         do
-            ./server $primary_bot $i $secondary_bot $j 50 0.5 true 5
+            ./server $primary_bot $i $secondary_bot $j 25 0.5 true 5
         done
 done
