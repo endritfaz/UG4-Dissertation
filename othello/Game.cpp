@@ -242,6 +242,26 @@ bool Game::forcedCornerCaptureExecuted(std::string initialMove, std::string corn
     return ((forcedCornerCaptureCorners(activePlayer, inactivePlayer, initialMoveBitboard) & cornerCaptureMoveBitboard) > 0); 
 }
 
+int Game::countStableDiscs(std::string colour) {
+    uint64_t targetBoard; 
+    uint64_t otherBoard;
+
+    if (colour == "black") {
+        targetBoard = black; 
+        otherBoard = white; 
+    }
+
+    else if (colour == "white") {
+        targetBoard = white; 
+        otherBoard = black; 
+    }
+
+    else {
+        exit(EXIT_FAILURE); 
+    }
+
+    return __builtin_popcountll(stableDiscs(targetBoard, otherBoard)); 
+}
 
 bool isCornerMove(std::string move) {
     return (move == "a1" || move == "a8" || move == "h1" || move == "h8");

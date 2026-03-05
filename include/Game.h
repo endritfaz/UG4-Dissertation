@@ -27,6 +27,7 @@ public:
     bool oddParity(std::string move);
     bool forcedCornerCapturePossible();
     bool forcedCornerCaptureExecuted(std::string initialMove, std::string cornerCaptureMove);
+    int countStableDiscs(std::string colour);
 };
 
 #endif

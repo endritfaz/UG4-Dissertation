@@ -188,7 +188,18 @@ def plot_parity_training(games, moves, save_dir, save_filename):
 
     fig.savefig(save_dir / save_filename, dpi=300, bbox_inches="tight")
     
-def plot_frontier_training(games, moves, save_dir, save_filename):
+def plot_frontier_training(games, moves, save_dir, save_filename, all_games):
+    edax15_vs_edax21 = all_games[
+    (all_games["black"] == "edax")
+    & (all_games["white"] == "edax")
+    & (all_games["white_version"].isin(["15", "21"]))
+    & (all_games["black_version"].isin(["15", "21"]))
+    & (all_games["white_version"] != all_games["black_version"])
+    ]
+
+    df = moves.merge(all_games[["game_id", "black_version", "white_version"]],on="game_id")
+    
+    print(df)
     # Filter for only games with no resign to make frontier average calculation fair. Resign games have less moves, so they only average frontiers over the early/mid game where other games also include the end game
     no_resign = games[games["resign"] == False]
     df = moves.merge(
@@ -196,6 +207,7 @@ def plot_frontier_training(games, moves, save_dir, save_filename):
         on="game_id"
     )
 
+    
     # Create columns for AZ/opponent frontier, and frontier difference from perspective of AZ
     df["az_frontier"] = np.where(df["az_black"], df["num_frontier_black"], df["num_frontier_white"])
 
@@ -248,6 +260,59 @@ def plot_frontier_training(games, moves, save_dir, save_filename):
             ax_current.set_ylabel("Mean Frontier difference (per game)")
             ax_current.set_title(f"AZ ({colour.capitalize()}) vs Edax depth {edax_version} ({other_colour.capitalize()})")
 
+    # fig.savefig(save_dir / save_filename, dpi=300, bbox_inches="tight")
+
+def plot_win_rate(games, moves, save_dir, save_filename, all_games):
+    edax15_vs_edax21 = all_games[
+    (all_games["black"] == "edax")
+    & (all_games["white"] == "edax")
+    & (all_games["white_version"].isin(["15", "21"]))
+    & (all_games["black_version"].isin(["15", "21"]))
+    & (all_games["white_version"] != all_games["black_version"])
+    ]
+
+    edax15_vs_edax21["edax15_won"] = (
+    ((edax15_vs_edax21["black_version"] == "15") & (edax15_vs_edax21["winner"] == "black")) |
+    ((edax15_vs_edax21["white_version"] == "15") & (edax15_vs_edax21["winner"] == "white"))).astype(int)
+
+    edax15_winrate = edax15_vs_edax21["edax15_won"].sum() / len(edax15_vs_edax21); 
+
+    # Filter for only games with no resign to make frontier average calculation fair. Resign games have less moves, so they only average frontiers over the early/mid game where other games also include the end game
+    no_resign = games[games["resign"] == False]
+    df = moves.merge(
+        no_resign[["game_id", "az_version", "az_black", "edax_version", "az_won", "draw"]],
+        on="game_id"
+    )
+
+    per_game = (
+    df.groupby(["az_version", "az_black", "edax_version", "game_id"])
+      .agg(avg_winrate=("az_won", "mean"))
+      .reset_index()
+    )
+
+    data = per_game
+
+    # Plot win rates 
+    fig, ax = plt.subplots(1, 1, figsize=(18, 10))
+
+    ax_current = ax
+    sns.lineplot(
+        data=data,
+        x="az_version",  
+        y="avg_winrate",
+        hue="edax_version",
+        ax=ax_current,
+        palette={6: 'green', 15: 'orange', 21: 'blue'}, 
+        marker="h",)
+
+    ax_current.axhline(edax15_winrate, color='firebrick', linestyle='--', label="Edax 15 winrate against Edax 21")
+
+    ax_current.set_xlabel("Training Iteration")
+    ax_current.set_ylabel("AZ Winrate")
+    ax_current.set_title("AZ winrate against Edax versions 6, 15, 21")
+    plt.legend()
+    plt.grid()
+
     fig.savefig(save_dir / save_filename, dpi=300, bbox_inches="tight")
 
 def prepare_save_dir(output_dir):
@@ -272,20 +337,31 @@ moves = pd.read_sql("SELECT * FROM moves;", engine)
 az_games = games[(games["black"] == "az") | (games["white"] == "az")]
 
 # Create edax and az version columns in games df to make further analysis easier
-az_games["az_black"] = (az_games["black"] == "az"); 
+az_games["az_black"] = np.where(az_games["black"] == "az", True, False); 
 
 az_games["az_version"] = np.where(az_games["az_black"], az_games["black_version"], az_games["white_version"]).astype(int)
 
 az_games["az_won"] = np.where(((az_games["az_black"] == True) & (az_games["winner"] == "black")) | ((az_games["az_black"] == False) & (az_games["winner"] == "white")), True, False)
 
+az_games["draw"] = np.where(az_games["winner"] == "draw", True, False); 
+
 az_games["edax_version"] = np.where(az_games["az_black"], az_games["white_version"], az_games["black_version"]).astype(int)
+
+# Create and save win rate plot
+"""
+win_rate_save_dir = Path(base_save_dir + "/win_rate")
+prepare_save_dir(win_rate_save_dir)
+
+plot_win_rate(az_games, moves, win_rate_save_dir, "win_rate.png", games)
+"""
 
 # Create and save frontier plot
 frontier_save_dir = Path(base_save_dir + "/frontier")
 prepare_save_dir(frontier_save_dir)
 
-plot_frontier_training(az_games, moves, frontier_save_dir, "frontier_difference.png")
+plot_frontier_training(az_games, moves, frontier_save_dir, "frontier_difference.png", games)
 
+"""
 # Create and save forced corner capture plots
 fcc_save_dir = Path(base_save_dir + "/forced_corner_capture")
 prepare_save_dir(fcc_save_dir)
@@ -301,4 +377,6 @@ parity_save_dir = Path(base_save_dir + "/parity")
 prepare_save_dir(parity_save_dir)
 
 plot_parity_training(az_games, moves, parity_save_dir, "parity.png")
+"""
+
 

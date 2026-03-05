@@ -3,6 +3,8 @@
 #include "othello.h"
 #include <vector>
 
+static uint8_t stableEdgeTable[256][256]; 
+
 int directions[8] = {1, 7, 8, 9, -1, -7, -8, -9};
 int lineDirections[2] = {1, -1}; 
 
@@ -115,7 +117,9 @@ uint64_t* makeMove(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) 
     return new uint64_t[]{playerBoard, opponentBoard};
 }
 
-uint8_t* makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
+std::vector<uint8_t> makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
+    std::vector<uint8_t> res;
+
     playerLine |= move; 
 
     for (int i = 0; i < 2; i++) {
@@ -130,7 +134,11 @@ uint8_t* makeLineMove(uint8_t playerLine, uint8_t opponentLine, uint8_t move) {
             opponentLine &= ~captured; 
         }
     }
-    return new uint8_t[]{playerLine, opponentLine};
+
+    res.push_back(playerLine);
+    res.push_back(opponentLine);
+
+    return res;
 }
 
 // Takes a move, e.g a1 and returns bitboard representation 00...01
@@ -162,10 +170,16 @@ std::vector<uint64_t> separateMoves(uint64_t moves) {
     return separatedMoves;
 }
 
-uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
-    return 0;
-}
+std::vector<uint8_t> separateLineMoves(uint8_t moves) {
+    std::vector<uint8_t> separatedMoves; 
 
+    while (moves) {
+        uint8_t move = moves & (~moves + 1); 
+        separatedMoves.push_back(move);
+        moves = moves ^ move; 
+    }
+    return separatedMoves;
+}
 
 // Returns true if the disc specified by move is placed in a region with an odd number of empty tiles, and false otherwise 
 bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
@@ -318,7 +332,7 @@ uint8_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
     }
 
     for (const auto move : moves) {
-        uint8_t* newEdge = makeLineMove(playerEdge, opponentEdge, move); 
+        std::vector<uint8_t> newEdge = makeLineMove(playerEdge, opponentEdge, move); 
         // Remove opponent edges that got flipped
         res &= playerEdge | newEdge[1]; 
 
@@ -332,6 +346,26 @@ uint8_t stableEdge(uint8_t playerEdge, uint8_t opponentEdge) {
         res &= stableEdge(newEdge[1], newEdge[0]);
     }
     return res; 
+}
+
+void buildStableEdgeTable() {
+    uint8_t stable; 
+    for (int b = 0; b < 256; b++) {
+        for (int w = b; w < 256; w++) {
+            // Not a valid edge as black and white discs overlap 
+            if (w & b) {
+                stableEdgeTable[b][w] = 0; 
+            }
+
+            else {
+                stable = stableEdge(b, w);
+                stableEdgeTable[b][w] = stable; 
+                stableEdgeTable[w][b] = stable;
+            }
+        }
+    }
+
+    std::cout << "Stable edge table initialised" << std::endl; 
 }
 
 uint64_t stableEdges(uint64_t playerBoard, uint64_t opponentBoard) {
@@ -352,10 +386,10 @@ uint64_t stableEdges(uint64_t playerBoard, uint64_t opponentBoard) {
     uint64_t rightPlayer = extractRightEdge(playerBoard);
     uint64_t rightOpponent = extractRightEdge(opponentBoard);
 
-    uint8_t stableTop = stableEdge(topPlayer, topOpponent);
-    uint8_t stableBottom = stableEdge(bottomPlayer, bottomOpponent); 
-    uint8_t stableLeft = stableEdge(leftPlayer, leftOpponent);
-    uint8_t stableRight = stableEdge(rightPlayer, rightOpponent); 
+    uint8_t stableTop = stableEdgeTable[topPlayer][topOpponent];
+    uint8_t stableBottom = stableEdgeTable[bottomPlayer][bottomOpponent]; 
+    uint8_t stableLeft = stableEdgeTable[leftPlayer][leftOpponent];
+    uint8_t stableRight = stableEdgeTable[rightPlayer][rightOpponent]; 
 
     stableEdges |= (uint64_t) stableTop << 56;
     stableEdges |= (uint64_t) stableBottom; 
@@ -449,8 +483,7 @@ uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     uint64_t verticalStable, horizontalStable, diagonal7Stable, diagonal9Stable; 
 
     // stableDiscs is updated in the loop. Check if any new stable discs have been discovered
-    while (stableDiscs & ~finalStableDiscs) {
-        printBoard(stableDiscs); 
+    while (stableDiscs & ~finalStableDiscs) { 
         finalStableDiscs |= stableDiscs; 
 
         verticalStable = shift(finalStableDiscs, 8) | shift(finalStableDiscs, -8) | fullV; 
@@ -467,8 +500,6 @@ uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
 
 /*
 int main() {
-    uint64_t testb = 0x9f1f131150141090; 
-    uint64_t testw = 0; 
-    printBoard(stableDiscs(testb, testw));
+    buildStableEdgeTable(); 
 }
 */

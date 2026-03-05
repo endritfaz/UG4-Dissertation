@@ -5,6 +5,7 @@
 #include "nlohmann/json.hpp"
 #include "helper.h"
 #include "analysis.h"
+#include "othello.h"
 
 using namespace pqxx;
 using json = nlohmann::json;
@@ -37,8 +38,8 @@ bool initialise_database(connection& c) {
                                     "forced_corner_capture_possible BOOLEAN NOT NULL," \
                                     "forced_corner_capture_executed BOOLEAN NOT NULL," \
                                     "parity BOOLEAN NOT NULL," \
-                                    "stable_discs_black INT," \
-                                    "stable_discs_white INT);";
+                                    "num_stable_black INT," \
+                                    "num_stable_white INT);";
                                     
     try {
         work tx(c); 
@@ -59,7 +60,7 @@ bool initialise_database(connection& c) {
 void prepare_move_insert(connection& c) {
     c.prepare(
         "move_insert", 
-        "INSERT INTO moves (game_id, ply, black_active, num_discs, num_discs_black, num_discs_white, num_moves_black, num_moves_white, num_frontier_black, num_frontier_white, forced_corner_capture_possible, forced_corner_capture_executed, parity, stable_discs_black, stable_discs_white) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15);"
+        "INSERT INTO moves (game_id, ply, black_active, num_discs, num_discs_black, num_discs_white, num_moves_black, num_moves_white, num_frontier_black, num_frontier_white, forced_corner_capture_possible, forced_corner_capture_executed, parity, num_stable_black, num_stable_white) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15);"
     );
 }
 
@@ -109,6 +110,12 @@ int main() {
         // For each game, call function that returns a list of json objects, add these moves to move table
         prepare_game_insert(c); 
         prepare_move_insert(c);
+        std::cout << "JSON file count: ";
+        std::cout << json_filepaths.size() << std::endl; 
+        
+        // Required for stable disc detection
+        buildStableEdgeTable(); 
+
         for (const auto& json_path : json_filepaths) {
             std::cout << "Current JSON file: " << json_path.string() << std::endl;
     
@@ -153,9 +160,11 @@ int main() {
                     bool forced_corner_capture_possible = move_feature["forced_corner_capture_possible"]; 
                     bool forced_corner_capture_executed = move_feature["forced_corner_capture_executed"]; 
                     bool parity = move_feature["parity"]; 
-                    
+                    int num_stable_black = move_feature["num_stable_black"];
+                    int num_stable_white = move_feature["num_stable_white"];
+
                     // Temporary invalid values for stable_discs, as stable disc detection function has not been implemented yet
-                    tx.exec(prepped{"move_insert"}, params{game_id, ply, black_active, num_discs, num_discs_black, num_discs_white, num_moves_black, num_moves_white, num_frontier_black, num_frontier_white, forced_corner_capture_possible, forced_corner_capture_executed, parity, -1, -1});
+                    tx.exec(prepped{"move_insert"}, params{game_id, ply, black_active, num_discs, num_discs_black, num_discs_white, num_moves_black, num_moves_white, num_frontier_black, num_frontier_white, forced_corner_capture_possible, forced_corner_capture_executed, parity, num_stable_black, num_stable_white});
                 }
             }
 
