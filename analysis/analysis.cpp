@@ -6,6 +6,25 @@
 
 using json = nlohmann::json;
 
+std::vector<json> extractPositionFeatures(std::vector<std::string> moves) {
+    std::vector<json> positionsFeatures{}; 
+
+    Game game{}; 
+
+    for (auto move : moves) {
+        json positionFeatures; 
+
+        positionFeatures["black"] = game.black; 
+        positionFeatures["white"] = game.white; 
+        positionFeatures["active"] = game.turn % 2 == 0 ? "black" : "white"; 
+
+        positionsFeatures.push_back(positionFeatures); 
+
+        game.makeMove(move);
+    }
+    return positionsFeatures;
+}
+
 std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
     std::vector<json> movesFeatures{}; 
     Game game{};
@@ -42,6 +61,8 @@ std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
         game.makeMove(move);
         ply += 1; 
 
+        moveFeatures["black_board"] = game.black; 
+        moveFeatures["white_board"] = game.white;
         moveFeatures["ply"] = ply;
         moveFeatures["num_discs"] = game.countWhitePieces() + game.countBlackPieces(); 
         moveFeatures["num_discs_black"] = game.countBlackPieces();

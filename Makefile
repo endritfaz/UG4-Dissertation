@@ -27,3 +27,8 @@ edaxclient: clients/EdaxClient.cpp
 db: db.cpp 
 	g++ $(CXXFLAGS) -std=c++17 db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o db
 
+probing: probing.cpp 
+	g++ $(CXXFLAGS) -std=c++17 probing.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o probing
+
+clean:
+    rm -rf build/ *.o *.out

@@ -11,3 +11,5 @@ do
             ./server $primary_bot $i $secondary_bot $j 25 0.5 true 5
         done
 done
+
+# /server edax 21 edax 21 200 0.5 true 40

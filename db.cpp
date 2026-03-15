@@ -39,7 +39,7 @@ bool initialise_database(connection& c) {
                                     "forced_corner_capture_executed BOOLEAN NOT NULL," \
                                     "parity BOOLEAN NOT NULL," \
                                     "num_stable_black INT," \
-                                    "num_stable_white INT);";
+                                    "num_stable_white INT, );";
                                     
     try {
         work tx(c); 
@@ -163,7 +163,6 @@ int main() {
                     int num_stable_black = move_feature["num_stable_black"];
                     int num_stable_white = move_feature["num_stable_white"];
 
-                    // Temporary invalid values for stable_discs, as stable disc detection function has not been implemented yet
                     tx.exec(prepped{"move_insert"}, params{game_id, ply, black_active, num_discs, num_discs_black, num_discs_white, num_moves_black, num_moves_white, num_frontier_black, num_frontier_white, forced_corner_capture_possible, forced_corner_capture_executed, parity, num_stable_black, num_stable_white});
                 }
             }
