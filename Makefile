@@ -27,8 +27,17 @@ edaxclient: clients/EdaxClient.cpp
 db: db.cpp 
 	g++ $(CXXFLAGS) -std=c++17 db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o db
 
-probing: probing.cpp 
-	g++ $(CXXFLAGS) -std=c++17 probing.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o probing
+positions: probing/init_positions.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_positions.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o positions
 
-clean:
-    rm -rf build/ *.o *.out
+activations: probing/init_activations.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_activations.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o activations
+
+results: probing/init_results.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_results.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o results
+
+label_td: probing/init_label_total_discs.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_label_total_discs.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_td
+
+label_sd: probing/init_label_stable_discs.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_label_stable_discs.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_sd

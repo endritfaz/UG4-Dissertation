@@ -17,4 +17,5 @@ uint64_t forcedCornerCaptureCorners(uint64_t playerBoard, uint64_t opponentBoard
 uint64_t forcedCornerCaptures(uint64_t playerBoard, uint64_t opponentBoard);
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard);
 void buildStableEdgeTable(); 
+int countTotalPieces(uint64_t black, uint64_t white);
 #endif

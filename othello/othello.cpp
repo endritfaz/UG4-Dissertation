@@ -498,8 +498,6 @@ uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard) {
     return finalStableDiscs;
 }
 
-/*
-int main() {
-    buildStableEdgeTable(); 
+int countTotalPieces(uint64_t black, uint64_t white) {
+    return __builtin_popcountll(white) + __builtin_popcountll(black);
 }
-*/
