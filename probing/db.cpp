@@ -17,6 +17,8 @@ bool init_positions_table(connection& c) {
                                     "id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY," \
                                     "black BYTEA NOT NULL," \
                                     "white BYTEA NOT NULL," \
+                                    "black_control BYTEA NOT NULL," \
+                                    "white_control BYTEA NOT NULL," \
                                     "turn VARCHAR(255) NOT NULL," \
                                     "UNIQUE (black, white, turn));"; 
 
@@ -37,13 +39,16 @@ bool init_positions_table(connection& c) {
 }
 
 bool init_results_table(connection& c) {
-    std::string remove_results_table_sql = "DROP TABLE IF EXISTS activations";
+    std::string remove_results_table_sql = "DROP TABLE IF EXISTS results";
 
     std::string create_results_table_sql = "CREATE TABLE results(" \
                                     "iteration VARCHAR(255) NOT NULL," \
                                     "block_1_coeff BYTEA NOT NULL," \
                                     "block_2_coeff BYTEA NOT NULL," \
                                     "block_3_coeff BYTEA NOT NULL," \
+                                    "block_1_control_coeff BYTEA NOT NULL," \
+                                    "block_2_control_coeff BYTEA NOT NULL," \
+                                    "block_3_control_coeff BYTEA NOT NULL," \
                                     "concept VARCHAR(255) NOT NULL);";
 
     try {
@@ -69,6 +74,9 @@ bool init_activations_table(connection& c) {
                                     "block_1 BYTEA NOT NULL," \
                                     "block_2 BYTEA NOT NULL," \
                                     "block_3 BYTEA NOT NULL," \
+                                    "block_1_control BYTEA NOT NULL," \
+                                    "block_2_control BYTEA NOT NULL," \
+                                    "block_3_control BYTEA NOT NULL," \
                                     "iteration VARCHAR(255) NOT NULL);";
 
     try {
@@ -136,7 +144,7 @@ bool init_label_stable_table(connection& c) {
 void prepare_position_insert(connection& c) {
     c.prepare(
         "position_insert", 
-        "INSERT INTO positions (black, white, turn) VALUES ($1, $2, $3) ON CONFLICT (black, white, turn) DO NOTHING;"
+        "INSERT INTO positions (black, white, black_control, white_control, turn) VALUES ($1, $2, $3, $4, $5) ON CONFLICT (black, white, turn) DO NOTHING RETURNING id;"
     );
 }
 

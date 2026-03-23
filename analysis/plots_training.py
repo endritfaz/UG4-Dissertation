@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import psycopg2
 import seaborn as sns
-import shutil
 from pathlib import Path
 from sqlalchemy import create_engine
 import numpy as np 

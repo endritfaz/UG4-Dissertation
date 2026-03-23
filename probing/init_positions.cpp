@@ -32,7 +32,6 @@ int main() {
             exit(-1); 
         }
 
-        // Iterate through game data, add game to game table
         std::vector<std::filesystem::path> json_filepaths;
         if (std::filesystem::exists(GAME_DIRECTORY)) {
             for (const auto& entry : std::filesystem::recursive_directory_iterator(GAME_DIRECTORY)) {
@@ -53,7 +52,7 @@ int main() {
         std::cout << "JSON file count: ";
         std::cout << json_filepaths.size() << std::endl; 
         
-
+    
         for (const auto& json_path : json_filepaths) {
             std::cout << "Current JSON file: " << json_path.string() << std::endl;
     
@@ -64,7 +63,7 @@ int main() {
             json games = j["games"];
 
             work tx(c); 
-            
+            /*
             for (const auto& game : games) {
                 std::vector<json> position_features = extractPositionFeatures(game["moves"]); 
 
@@ -73,18 +72,25 @@ int main() {
                     uint64_t white = position_feature["white"];
                     std::string turn = position_feature["active"];
 
-                    tx.exec(prepped{"position_insert"}, params{black, white, turn});
+                    // tx.exec(prepped{"position_insert"}, params{black, white, turn});
                 }
             }
-            
-            /*
+            */
+
             uint64_t black = 0x1008000000; 
             uint64_t white = 0x810000000;
-            std::string turn = "black"; 
-            tx.exec(prepped{"position_insert"}, params{black, white, turn});
-            */
-            tx.commit(); 
+            std::string turn = "black";
+
+            tx.exec(prepped{"position_insert"}, params{black, white, black, white, turn});
             
+            black = 0x81808000000; 
+            white = 0x10000000;
+            turn = "white";
+
+            tx.exec(prepped{"position_insert"}, params{black, white, black, white, turn});
+
+            tx.commit();  
+            return 0; 
         }
     }
 

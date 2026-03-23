@@ -22,6 +22,15 @@ std::vector<json> extractPositionFeatures(std::vector<std::string> moves) {
 
         game.makeMove(move);
     }
+
+    // Last board state 
+    json positionFeatures; 
+    positionFeatures["black"] = game.black; 
+    positionFeatures["white"] = game.white; 
+    positionFeatures["active"] = game.turn % 2 == 0 ? "black" : "white"; 
+
+    positionsFeatures.push_back(positionFeatures); 
+
     return positionsFeatures;
 }
 
