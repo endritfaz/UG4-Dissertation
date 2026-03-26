@@ -1,6 +1,7 @@
 #ifndef OTHELLO_H
 #define OTHELLO_H
 
+#include <vector>
 #include <cstdint>
 #include <string>
 
@@ -18,4 +19,6 @@ uint64_t forcedCornerCaptures(uint64_t playerBoard, uint64_t opponentBoard);
 uint64_t stableDiscs(uint64_t playerBoard, uint64_t opponentBoard);
 void buildStableEdgeTable(); 
 int countTotalPieces(uint64_t black, uint64_t white);
+std::vector<uint64_t> separateMoves(uint64_t moves);
+
 #endif

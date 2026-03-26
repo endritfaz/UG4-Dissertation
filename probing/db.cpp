@@ -121,8 +121,8 @@ bool init_label_stable_table(connection& c) {
 
     std::string create_stable_discs_table_sql = "CREATE TABLE label_stable_discs(" \
                                     "position_id INT PRIMARY KEY REFERENCES positions(id)," \
-                                    "black_stable INT NOT NULL," \
-                                    "white_stable INT NOT NULL," \
+                                    "active_stable INT NOT NULL," \
+                                    "inactive_stable INT NOT NULL," \
                                     "total_stable INT NOT NULL ," \
                                     "turn VARCHAR(255) NOT NULL);";
 
@@ -130,6 +130,31 @@ bool init_label_stable_table(connection& c) {
         work tx(c); 
         tx.exec(remove_stable_discs_table_sql);
         tx.exec(create_stable_discs_table_sql);
+        tx.commit(); 
+
+        return true;
+    }
+
+    catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return false; 
+    }
+}
+
+bool init_label_frontier_table(connection& c) {
+    std::string remove_frontier_discs_table_sql = "DROP TABLE IF EXISTS label_frontier_discs";
+
+    std::string create_frontier_discs_table_sql = "CREATE TABLE label_frontier_discs(" \
+                                    "position_id INT PRIMARY KEY REFERENCES positions(id)," \
+                                    "active_frontier INT NOT NULL," \
+                                    "inactive_frontier INT NOT NULL," \
+                                    "total_frontier INT NOT NULL ," \
+                                    "turn VARCHAR(255) NOT NULL);";
+
+    try {
+        work tx(c); 
+        tx.exec(remove_frontier_discs_table_sql);
+        tx.exec(create_frontier_discs_table_sql);
         tx.commit(); 
 
         return true;
@@ -158,6 +183,13 @@ void prepare_label_discs_total_insert(connection& c) {
 void prepare_stable_discs_insert(connection& c) {
     c.prepare(
         "label_sd_insert", 
-        "INSERT INTO label_stable_discs (position_id, black_stable, white_stable, total_stable, turn) VALUES ($1, $2, $3, $4, $5);"
+        "INSERT INTO label_stable_discs (position_id, active_stable, inactive_stable, total_stable, turn) VALUES ($1, $2, $3, $4, $5);"
+    );
+}
+
+void prepare_frontier_discs_insert(connection& c) {
+    c.prepare(
+        "label_fd_insert", 
+        "INSERT INTO label_frontier_discs (position_id, active_frontier, inactive_frontier, total_frontier, turn) VALUES ($1, $2, $3, $4, $5);"
     );
 }

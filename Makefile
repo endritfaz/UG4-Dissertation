@@ -1,5 +1,8 @@
 CXXFLAGS = -Iinclude -std=c++20
 
+perft: othello/perft.cpp 
+	g++ $(CXXFLAGS) -o perft othello/perft.cpp othello/othello.cpp -lfmt
+
 analysis: analysis/analysis.cpp 
 	g++ $(CXXFLAGS) -o anal analysis/analysis.cpp othello/Game.cpp othello/othello.cpp -lfmt
 
@@ -35,3 +38,6 @@ stability: probing/stability_setup.cpp
 
 label_sd: probing/init_label_stable_discs.cpp
 	g++ $(CXXFLAGS) -std=c++17 probing/init_label_stable_discs.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_sd
+
+label_fd: probing/init_label_frontier_discs.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_label_frontier_discs.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_fd

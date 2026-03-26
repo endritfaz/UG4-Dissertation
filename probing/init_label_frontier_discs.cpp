@@ -22,8 +22,8 @@ int main() {
         }
         
         // Initialise the total discs label
-        if (!init_label_stable_table(c)) {
-            std::cout << "Total discs label table initialisation failed" << std::endl; 
+        if (!init_label_frontier_table(c)) {
+            std::cout << "Frontier discs label table initialisation failed" << std::endl; 
             exit(-1); 
         }   
 
@@ -32,10 +32,7 @@ int main() {
         tx.commit();
 
         
-        prepare_stable_discs_insert(c);
-
-        // Required for stable disc detection
-        buildStableEdgeTable(); 
+        prepare_frontier_discs_insert(c);
 
         for (const auto& row : positions) {
             int id = row["id"].as<int>();
@@ -50,19 +47,20 @@ int main() {
             uint64_t black = std::stoull(std::string(reinterpret_cast<const char*>(black_bytes.data()), black_bytes.size()));
             uint64_t white = std::stoull(std::string(reinterpret_cast<const char*>(white_bytes.data()), white_bytes.size()));
             
-            int black_stable = __builtin_popcountll(stableDiscs(black, white)); 
-            int white_stable = __builtin_popcountll(stableDiscs(white, black)); 
-            int total_stable = black_stable + white_stable; 
+            int black_frontier = __builtin_popcountll(frontierDiscs(black, white)); 
+            int white_frontier = __builtin_popcountll(frontierDiscs(white, black)); 
             
-            int active_stable = black_stable; 
-            int inactive_stable = white_stable;
+            int active_frontier = black_frontier; 
+            int inactive_frontier = white_frontier;
 
             if (turn == "white") {
-                active_stable = white_stable; 
-                inactive_stable = black_stable; 
+                active_frontier = white_frontier; 
+                inactive_frontier = black_frontier; 
             }
 
-            tx.exec(prepped{"label_sd_insert"}, params{id, active_stable, inactive_stable, total_stable, turn});
+            int total_frontier = black_frontier + white_frontier; 
+
+            tx.exec(prepped{"label_fd_insert"}, params{id, active_frontier, inactive_frontier, total_frontier, turn});
         }
 
         tx.commit();
