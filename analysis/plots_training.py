@@ -460,40 +460,36 @@ def plot_win_rate(games, moves, save_dir, save_filename, all_games):
 
     edax15_winrate = edax15_vs_edax21["edax15_won"].sum() / len(edax15_vs_edax21); 
 
-    no_resign = games[games["resign"] == False]
-    df = moves.merge(
-        no_resign[["game_id", "az_version", "az_black", "edax_version", "az_won", "draw"]],
-        on="game_id"
-    )
-
-    per_game = (
-    df.groupby(["az_version", "az_black", "edax_version", "game_id"])
-      .agg(avg_winrate=("az_won", "mean"))
-      .reset_index()
-    )
-
     # Plot win rates 
-    fig, ax = plt.subplots(1, 1, figsize=(18, 10))
+    fig, ax = plt.subplots(2, 1, figsize=(12, 14))
 
-    ax_current = ax
-    sns.lineplot(
-        data=data,
-        x="az_version",  
-        y="avg_winrate",
-        hue="edax_version",
-        ax=ax_current,
-        palette={6: 'green', 15: 'orange', 21: 'blue'}, 
-        marker="h",)
+    for i, colour in enumerate(colours):
+        ax_current = ax[i]
+        az_black = (colour == "black")
+        colour_data = games[games["az_black"] == az_black]
+        sns.lineplot(
+            data=colour_data,
+            x="az_version",
+            y="az_won",
+            hue="edax_version",
+            ax=ax_current,
+            palette={6: 'green', 15: 'orange', 21: 'blue'},
+            marker="h",)
 
-    ax_current.axhline(edax15_winrate, color='firebrick', linestyle='--', label="Edax 15 winrate against Edax 21")
+        ax_current.axhline(edax15_winrate, color='firebrick', linestyle='--', label="Edax 15 winrate against Edax 21")
 
-    ax_current.set_xlabel("Training Iteration")
-    ax_current.set_ylabel("AZ Winrate")
-    ax_current.set_title("AZ winrate against Edax versions 6, 15, 21")
-    plt.legend()
-    plt.grid()
+        ax_current.set_xlabel("Training Iteration")
+        ax_current.set_ylabel("AZ Winrate")
+        ax_current.set_title(f"AZ as {colour}")
 
-    fig.savefig(save_dir / save_filename, dpi=300, bbox_inches="tight")
+        handles, labels = ax_current.get_legend_handles_labels()
+        labels = [f"AZ winrate against Edax {l}" if l.lstrip('-').isdigit() else l for l in labels]
+        ax_current.legend(handles, labels)
+        ax_current.grid()
+
+    fig.suptitle("AZ winrate against Edax versions 6, 15, 21")
+    fig.tight_layout(rect=[0, 0, 1, 0.97])
+    fig.savefig(save_dir / save_filename, dpi=300)
 
 def plot_stable(games, moves, save_dir, save_filename, all_games):
     # Calculate average game stability for edax 21 and against edax 6, 15, and 21 and plot these too
@@ -621,13 +617,14 @@ plot_stable(az_games, moves, stable_disc_save_dir, "stable.png", games)
 
 
 # Create and save win rate plot
-"""
+
 win_rate_save_dir = Path(base_save_dir + "/win_rate")
 prepare_save_dir(win_rate_save_dir)
 
 plot_win_rate(az_games, moves, win_rate_save_dir, "win_rate.png", games)
-"""
 
+
+"""
 # Create and save frontier plot
 frontier_save_dir = Path(base_save_dir + "/frontier")
 prepare_save_dir(frontier_save_dir)
@@ -652,4 +649,4 @@ parity_save_dir = Path(base_save_dir + "/parity")
 prepare_save_dir(parity_save_dir)
 
 plot_parity_training(az_games, moves, parity_save_dir, "parity.png", games)
-
+"""
