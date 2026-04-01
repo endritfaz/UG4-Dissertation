@@ -41,7 +41,9 @@ std::vector<json> extractMoveFeatures(std::vector<std::string> moves) {
 
     for (auto move : moves) {
         json moveFeatures; 
-
+        
+        moveFeatures["pass"] = move == "pass" ? true : false; 
+        
         // black_active means black played the move
         moveFeatures["black_active"] = (game.turn % 2 == 0);
         moveFeatures["parity"] = game.oddParity(move);

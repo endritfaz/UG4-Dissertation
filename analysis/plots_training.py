@@ -6,11 +6,25 @@ from pathlib import Path
 from sqlalchemy import create_engine
 import numpy as np 
 import shutil 
+import scipy.stats as stats
 
 edax_versions = [6, 15, 21]
 edax_plot_colours = ["green", "orange", "blue"]
 colours = ["black", "white"]
 
+def bootstrap_stats(data):
+    res_stats = {} 
+
+    mean = data.mean()
+    res = stats.bootstrap((data,), np.mean, confidence_level=0.95, n_resamples=5000, method='percentile')
+    lower, upper = res.confidence_interval
+
+    res_stats["mean"] = mean
+    res_stats["upper"] = upper
+    res_stats["lower"] = lower
+
+    return res_stats
+    
 def separate_edax21_games(all_games):
     edax21_black = {}; 
     edax21_white = {}; 
@@ -89,13 +103,13 @@ def plot_forced_corner_capture(games, moves, save_dir, save_filename, all_games)
             .agg(avg_white_fcc=("forced_corner_capture_executed", "mean"))
         .reset_index())
 
-        edax21_fcc_black[str(edax_version)] = per_game_black["avg_black_fcc"].mean()
+        edax21_fcc_black[str(edax_version)] = bootstrap_stats(per_game_black["avg_black_fcc"])
 
-        edax21_fcc_white[str(edax_version)] = per_game_white["avg_white_fcc"].mean()
+        edax21_fcc_white[str(edax_version)] = bootstrap_stats(per_game_white["avg_white_fcc"])
 
         if (edax_version == 15):
-            edax15_fcc["black"] = per_game_edax_version_black["avg_black_fcc"].mean()
-            edax15_fcc["white"] = per_game_edax_version_white["avg_white_fcc"].mean()
+            edax15_fcc["black"] = bootstrap_stats(per_game_edax_version_black["avg_black_fcc"])
+            edax15_fcc["white"] = bootstrap_stats(per_game_edax_version_white["avg_white_fcc"])
 
     no_resign = games[games["resign"] == False]
 
@@ -152,10 +166,14 @@ def plot_forced_corner_capture(games, moves, save_dir, save_filename, all_games)
             ax_current.set_ylabel("Average forced corner capture rate per game")
             ax_current.set_title(f"AZ ({colour.capitalize()}) vs Edax depth {edax_version} ({other_colour.capitalize()})")
 
-            ax_current.axhline(edax_data[str(edax_version)], color="blue", linestyle='--', label="Edax 21 average forced corner capture")
+            ax_current.margins(x=0)
+            xmin, xmax = ax_current.get_xlim()
+            ax_current.axhline(edax_data[str(edax_version)]["mean"], color="blue", linestyle='--', label="Edax 21 average forced corner capture")
+            ax_current.fill_between([xmin, xmax], edax_data[str(edax_version)]["upper"], edax_data[str(edax_version)]["lower"], alpha=0.2, color="blue")
 
             if (edax_version == 21):
-                ax_current.axhline(edax15_fcc[colour], color="orange", linestyle='--', label="Edax 15 average forced corner capture vs Edax 21")
+                ax_current.axhline(edax15_fcc[colour]["mean"], color="orange", linestyle='--', label="Edax 15 average forced corner capture vs Edax 21")
+                ax_current.fill_between([xmin, xmax], edax15_fcc[colour]["upper"], edax15_fcc[colour]["lower"], alpha=0.2, color="orange")
 
             ax_current.legend()
 
@@ -218,7 +236,7 @@ def plot_parity_training(games, moves, save_dir, save_filename, all_games):
     edax21_parity_white = {}
     edax15_parity = {}
     
-    moves = moves[moves["ply"] > 30]
+    moves = moves[(moves["ply"] > 48) & (moves["pass"] == False)]
 
     edax21_moves = separate_edax21_moves(all_games, moves)
 
@@ -251,13 +269,13 @@ def plot_parity_training(games, moves, save_dir, save_filename, all_games):
             .agg(avg_white_parity=("parity", "mean"))
         .reset_index())
 
-        edax21_parity_black[str(edax_version)] = per_game_black["avg_black_parity"].mean()
+        edax21_parity_black[str(edax_version)] = bootstrap_stats(per_game_black["avg_black_parity"])
 
-        edax21_parity_white[str(edax_version)] = per_game_white["avg_white_parity"].mean()
+        edax21_parity_white[str(edax_version)] = bootstrap_stats(per_game_white["avg_white_parity"])
 
         if (edax_version == 15):
-            edax15_parity["black"] = per_game_edax_version_black["avg_black_parity"].mean()
-            edax15_parity["white"] = per_game_edax_version_white["avg_white_parity"].mean()
+            edax15_parity["black"] = bootstrap_stats(per_game_edax_version_black["avg_black_parity"])
+            edax15_parity["white"] = bootstrap_stats(per_game_edax_version_white["avg_white_parity"])
 
     no_resign = games[games["resign"] == False]
 
@@ -325,10 +343,14 @@ def plot_parity_training(games, moves, save_dir, save_filename, all_games):
 
             ax_current.axhline(0.5, color='firebrick')
 
-            ax_current.axhline(edax_data[str(edax_version)], color="blue", linestyle='--', label="Edax 21 average parity")
+            ax_current.margins(x=0)
+            xmin, xmax = ax_current.get_xlim()
+            ax_current.axhline(edax_data[str(edax_version)]["mean"], color="blue", linestyle='--', label="Edax 21 average parity")
+            ax_current.fill_between([xmin, xmax], edax_data[str(edax_version)]["upper"], edax_data[str(edax_version)]["lower"], alpha=0.2, color="blue")
 
             if (edax_version == 21):
-                ax_current.axhline(edax15_parity[colour], color="orange", linestyle='--', label="Edax 15 average parity vs Edax 21")
+                ax_current.axhline(edax15_parity[colour]["mean"], color="orange", linestyle='--', label="Edax 15 average parity vs Edax 21")
+                ax_current.fill_between([xmin, xmax], edax15_parity[colour]["upper"], edax15_parity[colour]["lower"], alpha=0.2, color="orange")
 
             ax_current.set_xlabel("Training Iteration")
             ax_current.set_ylabel("Average proportion of parity successes")
@@ -374,13 +396,13 @@ def plot_frontier_training(games, moves, save_dir, save_filename, all_games):
             .agg(avg_white_frontier_diff=("white_frontier_diff", "mean"))
         .reset_index())
 
-        edax21_frontier_black[str(edax_version)] = per_game_black["avg_black_frontier_diff"].mean()
+        edax21_frontier_black[str(edax_version)] = bootstrap_stats(per_game_black["avg_black_frontier_diff"])
 
-        edax21_frontier_white[str(edax_version)] = per_game_white["avg_white_frontier_diff"].mean()
+        edax21_frontier_white[str(edax_version)] = bootstrap_stats(per_game_white["avg_white_frontier_diff"])
 
         if (edax_version == 15):
-            edax15_frontier["black"] = per_game_edax_version_black["avg_black_frontier_diff"].mean()
-            edax15_frontier["white"] = per_game_edax_version_white["avg_white_frontier_diff"].mean()
+            edax15_frontier["black"] = bootstrap_stats(per_game_edax_version_black["avg_black_frontier_diff"])
+            edax15_frontier["white"] = bootstrap_stats(per_game_edax_version_white["avg_white_frontier_diff"])
 
     df = moves.merge(all_games[["game_id", "black_version", "white_version"]],on="game_id")
     
@@ -433,10 +455,14 @@ def plot_frontier_training(games, moves, save_dir, save_filename, all_games):
             ax_current.set_ylim(-4, 8)
             ax_current.axhline(0, color='firebrick')
 
-            ax_current.axhline(edax_data[str(edax_version)], color="blue", linestyle='--', label="Edax 21 average frontier count")
+            ax_current.margins(x=0)
+            xmin, xmax = ax_current.get_xlim()
+            ax_current.axhline(edax_data[str(edax_version)]["mean"], color="blue", linestyle='--', label="Edax 21 average frontier count")
+            ax_current.fill_between([xmin, xmax], edax_data[str(edax_version)]["upper"], edax_data[str(edax_version)]["lower"], alpha=0.2, color="blue")
 
             if (edax_version == 21):
-                ax_current.axhline(edax15_frontier[colour], color="orange", linestyle='--', label="Edax 15 average frontier difference vs Edax 21")
+                ax_current.axhline(edax15_frontier[colour]["mean"], color="orange", linestyle='--', label="Edax 15 average frontier difference vs Edax 21")
+                ax_current.fill_between([xmin, xmax], edax15_frontier[colour]["upper"], edax15_frontier[colour]["lower"], alpha=0.2, color="orange")
 
             ax_current.set_xlabel("Training Iteration")
             ax_current.set_ylabel("Mean Frontier difference (per game)")
@@ -458,7 +484,11 @@ def plot_win_rate(games, moves, save_dir, save_filename, all_games):
     ((edax15_vs_edax21["black_version"] == "15") & (edax15_vs_edax21["winner"] == "black")) |
     ((edax15_vs_edax21["white_version"] == "15") & (edax15_vs_edax21["winner"] == "white"))).astype(int)
 
-    edax15_winrate = edax15_vs_edax21["edax15_won"].sum() / len(edax15_vs_edax21); 
+    # Calculate win-rate and confidence interval for edax 15 vs edax 21
+    data = edax15_vs_edax21["edax15_won"]
+    edax15_winrate = data.mean() 
+    res = stats.bootstrap((data,), np.mean, confidence_level=0.95, n_resamples=5000, method='percentile')
+    lower, upper = res.confidence_interval
 
     # Plot win rates 
     fig, ax = plt.subplots(2, 1, figsize=(12, 14))
@@ -474,9 +504,14 @@ def plot_win_rate(games, moves, save_dir, save_filename, all_games):
             hue="edax_version",
             ax=ax_current,
             palette={6: 'green', 15: 'orange', 21: 'blue'},
-            marker="h",)
+            marker="h",
+            errorbar=("ci", 95))
 
         ax_current.axhline(edax15_winrate, color='firebrick', linestyle='--', label="Edax 15 winrate against Edax 21")
+
+        ax_current.margins(x=0)
+        xmin, xmax = ax_current.get_xlim()
+        ax_current.fill_between([xmin, xmax], lower, upper, alpha=0.2, color="red")
 
         ax_current.set_xlabel("Training Iteration")
         ax_current.set_ylabel("AZ Winrate")
@@ -514,13 +549,14 @@ def plot_stable(games, moves, save_dir, save_filename, all_games):
             .agg(avg_black_stable=("num_stable_black", "mean"), avg_white_stable= ("num_stable_white", "mean"))
         .reset_index())
 
-        edax21_stability_black[str(edax_version)] = per_game_black["avg_black_stable"].mean()
+        edax21_stability_black[str(edax_version)] = bootstrap_stats(per_game_black["avg_black_stable"])
 
-        edax21_stability_white[str(edax_version)] = per_game_white["avg_white_stable"].mean()
+
+        edax21_stability_white[str(edax_version)] = bootstrap_stats(per_game_white["avg_white_stable"])
 
         if (edax_version == 15):
-            edax15_stability["black"] = per_game_white["avg_black_stable"].mean()
-            edax15_stability["white"] = per_game_black["avg_white_stable"].mean()
+            edax15_stability["black"] = bootstrap_stats(per_game_white["avg_black_stable"])
+            edax15_stability["white"] = bootstrap_stats(per_game_black["avg_white_stable"])
       
     no_resign = games[games["resign"] == False]
     df = moves.merge(
@@ -551,6 +587,7 @@ def plot_stable(games, moves, save_dir, save_filename, all_games):
             data = data[data["edax_version"] == edax_version]
 
             edax_data = edax21_stability_black if colour == "black" else edax21_stability_white; 
+            edax_data = edax_data[str(edax_version)]
 
             ax_current = ax[i][j]
             sns.lineplot(
@@ -561,7 +598,11 @@ def plot_stable(games, moves, save_dir, save_filename, all_games):
                 color=edax_plot_colours[j], 
                 marker="h",)
 
-            ax_current.axhline(edax_data[str(edax_version)], color="blue", linestyle='--', label="Edax 21 average stable disc count vs Edax 21")
+            ax_current.axhline(edax_data["mean"], color="blue", linestyle='--', label="Edax 21 average stable disc count vs Edax 21")
+
+            ax_current.margins(x=0)
+            xmin, xmax = ax_current.get_xlim()
+            ax_current.fill_between([xmin, xmax], edax_data["upper"], edax_data["lower"], alpha=0.2, color="blue")
 
             ax_current.set_xlabel("Training Iteration")
             ax_current.set_ylabel("Mean AZ stable disc (per game)")
@@ -569,7 +610,9 @@ def plot_stable(games, moves, save_dir, save_filename, all_games):
             ax_current.set_ylim(0, 8)
             
             if (edax_version == 21):
-                ax_current.axhline(edax15_stability[colour], color="orange", linestyle='--', label="Edax 15 average stable disc count vs Edax 21")
+                ax_current.axhline(edax15_stability[colour]["mean"], color="orange", linestyle='--', label="Edax 15 average stable disc count vs Edax 21")
+
+                ax_current.fill_between([xmin, xmax], edax15_stability[colour]["upper"], edax15_stability[colour]["lower"], alpha=0.2, color="orange")
 
             ax_current.legend()
             
@@ -624,7 +667,7 @@ prepare_save_dir(win_rate_save_dir)
 plot_win_rate(az_games, moves, win_rate_save_dir, "win_rate.png", games)
 
 
-"""
+
 # Create and save frontier plot
 frontier_save_dir = Path(base_save_dir + "/frontier")
 prepare_save_dir(frontier_save_dir)
@@ -639,14 +682,9 @@ prepare_save_dir(fcc_save_dir)
 plot_forced_corner_capture(az_games, moves, fcc_save_dir, "forced_corner_capture.png", games)
 
 
-fcc_cond_save_dir = Path(base_save_dir + "/forced_corner_capture")
-
-plot_forced_corner_capture_conditional(az_games, moves, fcc_cond_save_dir, "forced_corner_capture_conditional.png")
-
-
 # Create and save parity plot 
 parity_save_dir = Path(base_save_dir + "/parity")
 prepare_save_dir(parity_save_dir)
 
 plot_parity_training(az_games, moves, parity_save_dir, "parity.png", games)
-"""
+

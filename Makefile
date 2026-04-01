@@ -41,3 +41,6 @@ label_sd: probing/init_label_stable_discs.cpp
 
 label_fd: probing/init_label_frontier_discs.cpp
 	g++ $(CXXFLAGS) -std=c++17 probing/init_label_frontier_discs.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_fd
+
+label_fcc: probing/init_label_fcc.cpp
+	g++ $(CXXFLAGS) -std=c++17 probing/init_label_fcc.cpp probing/db.cpp othello/Game.cpp othello/othello.cpp analysis/analysis.cpp helper.cpp -I/usr/local/include -L/usr/local/lib -lpqxx -lpq -lfmt -o label_fcc

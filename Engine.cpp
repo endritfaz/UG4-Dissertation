@@ -3,7 +3,9 @@
 #include <string>
 #include <vector>
 #include <regex>
+#include <fcntl.h>
 #include "Engine.h"
+
 using namespace std; 
 
 Engine::Engine(char* executable):
@@ -84,10 +86,13 @@ std::string Engine::getResponse(char end) {
 }
 
 void Engine::emptyResponse() {
-    char buffer[8192]; 
-    read(pipe[0], buffer, sizeof(buffer));
-    return;
+    char buffer[8192];
+    int flags = fcntl(pipe[0], F_GETFL, 0);
+    fcntl(pipe[0], F_SETFL, flags | O_NONBLOCK);
+    while (read(pipe[0], buffer, sizeof(buffer)) > 0);
+    fcntl(pipe[0], F_SETFL, flags);
 }
+
 
 void Engine::launchEngine(const char* dir) {
 	try {
@@ -168,7 +173,6 @@ pid_t Engine::getEnginePID() {
     return enginePID; 
 }
 
-// WRITTEN BY AI 
 std::string Engine::readMove() {
     std::string buffer;
     buffer.reserve(16384);

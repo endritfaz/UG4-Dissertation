@@ -211,6 +211,8 @@ bool oddParity(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
 
 // Returns the corners that may be captured as a result of a potential forced corner capture sequence defined by playerBoard, opponentBoard, and move. Returns 0 if there are no forced corner captures. 
 uint64_t forcedCornerCaptureCorners(uint64_t playerBoard, uint64_t opponentBoard, uint64_t move) {
+    uint64_t forcedCorners = 0; 
+
     uint64_t playerMovesFirst = generateMoves(playerBoard, opponentBoard);
     uint64_t playerMovesFirstCorners = playerMovesFirst & corners; 
 
@@ -229,21 +231,33 @@ uint64_t forcedCornerCaptureCorners(uint64_t playerBoard, uint64_t opponentBoard
     uint64_t opponentMoves = generateMoves(secondOpponentBoard, secondPlayerBoard); 
     int numOpponentMoves = __builtin_popcountll(opponentMoves); 
 
-    if (numOpponentMoves > 1) {
-        return 0; 
+    std::vector<uint64_t> individualOpponentMoves = separateMoves(opponentMoves);
+
+    uint64_t* thirdBoardState;
+
+    uint64_t thirdPlayerBoard;
+    uint64_t thirdOpponentBoard;
+
+    uint64_t playerMoves;
+    uint64_t playerMovesForcedCorners; 
+
+    for (const auto opponentMove : individualOpponentMoves) {
+        thirdBoardState = makeMove(secondOpponentBoard, secondPlayerBoard, opponentMove); 
+
+        thirdPlayerBoard = thirdBoardState[1]; 
+        thirdOpponentBoard = thirdBoardState[0]; 
+
+        playerMoves = generateMoves(thirdPlayerBoard, thirdOpponentBoard); 
+
+        playerMovesForcedCorners = playerMoves & (~originalCornerCaptureMoves) & corners; 
+
+        if (playerMovesForcedCorners == 0) {
+            return 0; 
+        }
+
+        forcedCorners |= playerMovesForcedCorners; 
     }
-
-    // opponentMoves consists of either 0, or 1 move 
-    uint64_t* thirdBoardState = makeMove(secondOpponentBoard, secondPlayerBoard, opponentMoves); 
-
-    uint64_t thirdPlayerBoard = thirdBoardState[1]; 
-    uint64_t thirdOpponentBoard = thirdBoardState[0]; 
-
-    uint64_t playerMoves = generateMoves(thirdPlayerBoard, thirdOpponentBoard); 
-
-    uint64_t playerMovesForcedCorners = playerMoves & (~originalCornerCaptureMoves); 
-
-    return ((playerMovesForcedCorners & corners));
+    return forcedCorners; 
 }
 
 // Out of all possible moves the active player has, returns the ones which lead to a forced corner capture

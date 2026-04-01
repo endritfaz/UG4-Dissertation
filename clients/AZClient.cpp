@@ -65,13 +65,10 @@ class AZClient {
             engine.startEngine(path); 
         }
         
-        // TODO: Hacky, fix this 
+        // TODO: Hacky, fix this
         void ready() {
-            sleep(3);
-            // Capture intial input (to throwaway)
-            engine.emptyResponse(); 
-            std::string response = engine.getResponse('t');
-
+            sleep(5);
+            engine.emptyResponse();
             std::cout << "Ready\n";
         }
 
@@ -93,12 +90,10 @@ int main(int argc, char* argv[]) {
         "./tools/quick-run.sh",
         "console",
         "othello",
-        /*
-        "othello_8x8_az_3bx256_n200-04a589/model/weight_iter_2000.pt", 
-        "othello_8x8_az_3bx256_n200-04a589/othello_8x8_az_3bx256_n200-04a589.cfg"
-        */
         fmt::format("weights/weight_iter_{}.pt", iteration),
-        "othello_8x8_az_play.cfg"
+        "othello_8x8_az_play.cfg", 
+        "-conf_str",
+        "actor_resign_threshold=-1.0"
     };
 
     Engine engine{az_argv};

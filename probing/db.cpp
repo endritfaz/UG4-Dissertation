@@ -166,6 +166,29 @@ bool init_label_frontier_table(connection& c) {
     }
 }
 
+bool init_label_fcc_table(connection& c) {
+    std::string remove_fcc_table_sql = "DROP TABLE IF EXISTS label_fcc";
+
+    std::string create_fcc_table_sql = "CREATE TABLE label_fcc(" \
+                                    "position_id INT PRIMARY KEY REFERENCES positions(id)," \
+                                    "active_fcc_possible BOOLEAN NOT NULL," \
+                                    "num_active_fcc_possible INT NOT NULL);";
+
+    try {
+        work tx(c); 
+        tx.exec(remove_fcc_table_sql);
+        tx.exec(create_fcc_table_sql);
+        tx.commit(); 
+
+        return true;
+    }
+
+    catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return false; 
+    }
+}
+
 void prepare_position_insert(connection& c) {
     c.prepare(
         "position_insert", 
@@ -191,5 +214,12 @@ void prepare_frontier_discs_insert(connection& c) {
     c.prepare(
         "label_fd_insert", 
         "INSERT INTO label_frontier_discs (position_id, active_frontier, inactive_frontier, total_frontier, turn) VALUES ($1, $2, $3, $4, $5);"
+    );
+}
+
+void prepare_fcc_insert(connection& c) {
+    c.prepare(
+        "label_fcc_insert", 
+        "INSERT INTO label_fcc (position_id, active_fcc_possible, num_active_fcc_possible) VALUES ($1, $2, $3);"
     );
 }

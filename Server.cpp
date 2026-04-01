@@ -35,7 +35,29 @@ class Server {
             engine2.getResponse('\n');      
         }
         
-        std::string play(std::string engine1colour, std::string engine2colour, json& jgame) {
+        void force_opening(Engine active, Engine inactive, std::vector<std::string> &moves, Game &game, std::vector<std::string> opening) { 
+            std::string command; 
+            std::string response; 
+
+            for (const auto move : opening) {
+                command = fmt::format("play {} {}\n", active.getColour(), move); 
+                
+                active.sendCommand(command);
+                inactive.sendCommand(command);
+
+                response = active.getResponse('\n');
+                response = inactive.getResponse('\n');
+
+                game.makeMove(move); 
+                moves.push_back(move); 
+
+                Engine temp = active; 
+                active = inactive;
+                inactive = temp; 
+            }
+        }
+
+        std::string play(std::string engine1colour, std::string engine2colour, json& jgame, bool force_openings, std::vector<std::string> opening) {
             Game game{}; 
             std::vector<std::string> moves{};
             
@@ -66,7 +88,9 @@ class Server {
             inactive.sendCommand("init\n"); 
             response = inactive.getResponse('\n');
             
-    
+            if (force_openings)
+                force_opening(active, inactive, moves, game, opening); 
+
             while(true) {
                 // Check for a winner (no player has valid moves, board full, or resignation)
                 if (game.gameOver()) { 
@@ -127,7 +151,17 @@ class Server {
             }
         }
 
-        void playGames(int n, float black_probability, bool save=false, int checkpoint_freq=-1, std::string output_dir="") {
+        void playGames(int n, float black_probability, bool save=false, int checkpoint_freq=-1, std::string output_dir="", bool force_openings=false, std::string openings_dir="") {
+            // Load openings to force from specified directory if forcing openings
+            json openings; 
+            if (force_openings) {
+                std::ifstream i(openings_dir);
+                json j; 
+                i >> j; 
+
+                openings = j["openings"];
+            }
+
             std::vector<json> games{};  
             
             std::cout << fmt::format("Playing {} game(s)\n", n);
@@ -159,7 +193,12 @@ class Server {
                     engine2colour = "black"; 
                 }
                 
-                std::string winner = play(engine1colour, engine2colour, game); 
+                std::vector<std::string> opening; 
+                if (force_openings)
+                    opening = openings[i]["opening"];
+                    game["opening_id"] = openings[i]["id"];
+
+                std::string winner = play(engine1colour, engine2colour, game, force_openings, opening); 
                 
                 if (engine1colour == "black" && winner == "black" || engine1colour == "white" && winner == "white") {
                     engine1wins += 1; 
@@ -258,7 +297,7 @@ int main(int argc, char* argv[]) {
 
     // How often played games are persisted 
     std::stringstream convert_checkpoint_freq{ argv[8] }; 
-
+    
 	int checkpoint_freq{};
 	if (!(convert_checkpoint_freq >> checkpoint_freq)) {
 		return -1; 
@@ -269,6 +308,12 @@ int main(int argc, char* argv[]) {
         checkpoint_freq = num_games; 
     }
 
+    // Whether openings should be forced 
+    bool force_openings = std::string(argv[9]) == "true";
+
+    // Directory of openings to use if force openings is true
+    std::string openings_dir = argv[10]; 
+    
     // Start the server and bots 
     std::string primary_engine_executable = nameToExecutable(primary_engine_name); 
     std::string secondary_engine_executable = nameToExecutable(secondary_engine_name); 
@@ -281,7 +326,7 @@ int main(int argc, char* argv[]) {
     // Name of directory to which games are persisted 
     srand(time(0));
 
-    std::string save_dir = fmt::format("game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+    std::string save_dir = fmt::format("game_data_deterministic/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
 
     // Create save directories if necessary
     if (save) {
@@ -304,7 +349,7 @@ int main(int argc, char* argv[]) {
 
     serv.start();
 
-    serv.playGames(num_games, black_probability, save, checkpoint_freq, save_dir);
+    serv.playGames(num_games, black_probability, save, checkpoint_freq, save_dir, force_openings, openings_dir);
 
     // Shut down engines
     kill(serv.engine1.getEnginePID(), SIGTERM); 
