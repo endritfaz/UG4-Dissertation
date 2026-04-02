@@ -35,7 +35,7 @@ class Server {
             engine2.getResponse('\n');      
         }
         
-        void force_opening(Engine active, Engine inactive, std::vector<std::string> &moves, Game &game, std::vector<std::string> opening) { 
+        void force_opening(Engine &active, Engine &inactive, std::vector<std::string> &moves, Game &game, std::vector<std::string> opening) { 
             std::string command; 
             std::string response; 
 
@@ -121,8 +121,7 @@ class Server {
 
                 // Check if the move is actually valid and make it  
                 if (!game.validateMove(response)) {
-                    std::cout << "INVALID MOVE"; 
-                    exit(0);
+                    return "Invalid Move"; 
                 } 
 
                 game.makeMove(response); 
@@ -194,11 +193,16 @@ class Server {
                 }
                 
                 std::vector<std::string> opening; 
-                if (force_openings)
+                if (force_openings) {
                     opening = openings[i]["opening"];
                     game["opening_id"] = openings[i]["id"];
+                }
 
                 std::string winner = play(engine1colour, engine2colour, game, force_openings, opening); 
+                
+                if (winner == "Invalid move") {
+                    return; 
+                }
                 
                 if (engine1colour == "black" && winner == "black" || engine1colour == "white" && winner == "white") {
                     engine1wins += 1; 
@@ -326,7 +330,7 @@ int main(int argc, char* argv[]) {
     // Name of directory to which games are persisted 
     srand(time(0));
 
-    std::string save_dir = fmt::format("game_data_deterministic/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+    std::string save_dir = fmt::format("game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
 
     // Create save directories if necessary
     if (save) {
@@ -352,8 +356,8 @@ int main(int argc, char* argv[]) {
     serv.playGames(num_games, black_probability, save, checkpoint_freq, save_dir, force_openings, openings_dir);
 
     // Shut down engines
-    kill(serv.engine1.getEnginePID(), SIGTERM); 
-    kill(serv.engine2.getEnginePID(), SIGTERM); 
+    kill(serv.engine1.getEnginePID(), SIGKILL);
+    kill(serv.engine2.getEnginePID(), SIGKILL);
   
     return 0; 
 }

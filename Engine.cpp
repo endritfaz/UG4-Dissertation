@@ -173,6 +173,25 @@ pid_t Engine::getEnginePID() {
     return enginePID; 
 }
 
+std::string Engine::readUntilReady() {
+    std::string buffer;
+    buffer.reserve(16384);
+
+    const std::string ready_str = "Successfully started console mode";
+    char chunk[4096];
+    ssize_t n;
+
+    while ((n = read(pipe[0], chunk, sizeof(chunk))) > 0) {
+        buffer.append(chunk, static_cast<size_t>(n));
+
+        if (buffer.find(ready_str) != std::string::npos) {
+            return ready_str;
+        }
+    }
+
+    return "";
+}
+
 std::string Engine::readMove() {
     std::string buffer;
     buffer.reserve(16384);

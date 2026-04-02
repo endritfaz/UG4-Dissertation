@@ -10,7 +10,7 @@
 using namespace pqxx;
 using json = nlohmann::json;
 
-std::string GAME_DIRECTORY = "game_data_no_resign"; 
+std::string GAME_DIRECTORY = "game_data"; 
 
 bool initialise_database(connection& c) {
     std::string remove_tables_sql = "DROP TABLE IF EXISTS games, moves"; 

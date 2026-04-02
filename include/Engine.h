@@ -35,6 +35,7 @@ public:
     void startEngine(const char* dir);
     pid_t getEnginePID(void);
     std::string readMove();
+    std::string readUntilReady();
 };
 
 #endif

@@ -122,7 +122,7 @@ void Game::makeMove(std::string move) {
 }
 
 bool Game::gameOver() {
-    uint64_t full = 0xFFFFFFFF;
+    uint64_t full = 0xFFFFFFFFFFFFFFFF;
 
     if (resign) {
         return true; 
@@ -160,11 +160,15 @@ std::string Game::getWinner() {
 }
 
 bool Game::validateMove(std::string move) {
-    if (move == "resign") {
-        return true; 
+    if (move.empty()) {
+        return false;
     }
-    
-    uint64_t moveBoard = moveToBitboard(move); 
+
+    if (move == "resign") {
+        return true;
+    }
+
+    uint64_t moveBoard = moveToBitboard(move);
 
     uint64_t activePlayer; 
     uint64_t inactivePlayer; 
