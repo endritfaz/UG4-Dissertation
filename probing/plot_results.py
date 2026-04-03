@@ -28,7 +28,7 @@ for col in coeff_cols:
 subset = df[df["concept"] == concept].copy()
 subset["iteration"] = pd.to_numeric(subset["iteration"], errors="coerce")
 subset = subset.sort_values("iteration")
-subset = subset[(subset["iteration"] <= 10000) & (subset["iteration"] % 1000 == 0)]
+subset = subset[(subset["iteration"] <= 20000) & (subset["iteration"] % 1000 == 0)]
 iterations = subset["iteration"].astype(str).values
 blocks = ["1", "2", "3"]
 

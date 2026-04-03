@@ -1,14 +1,14 @@
 from sqlalchemy import create_engine, insert, Table, MetaData
 import numpy as np
 import pandas as pd 
-from sklearn.linear_model import LassoCV
+from sklearn.linear_model import LassoCV, RidgeCV
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import sys
 
 # X is an array of activations (inputs), y is an array of the concept values to predict for each activation 
 def fit_linear_model(X, y): 
-    model = LassoCV(cv=5).fit(X, y)
+    model = RidgeCV(cv=5).fit(X, y)
     return model
 
 def test_linear_model(model, X, y):
