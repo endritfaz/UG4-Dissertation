@@ -1,5 +1,8 @@
 CXXFLAGS = -Iinclude -std=c++20
 
+clean:
+	rm -f *.exe
+	
 perft: othello/perft.cpp 
 	g++ $(CXXFLAGS) -o perft othello/perft.cpp othello/othello.cpp -lfmt
 

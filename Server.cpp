@@ -330,7 +330,7 @@ int main(int argc, char* argv[]) {
     // Name of directory to which games are persisted 
     srand(time(0));
 
-    std::string save_dir = fmt::format("game_data/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
+    std::string save_dir = fmt::format("game_data2/{}v{}-{}v{}-{}", primary_engine_name, primary_engine_version, secondary_engine_name, secondary_engine_version, rand()); 
 
     // Create save directories if necessary
     if (save) {

@@ -6,6 +6,18 @@
 
 using json = nlohmann::json;
 
+bool gameFull(std::vector<std::string> moves) {
+    std::vector<json> positionsFeatures{}; 
+
+    Game game{}; 
+
+    for (auto move : moves) {
+        game.makeMove(move);
+    }
+
+    return ((game.black | game.white) == 0xFFFFFFFFFFFFFFFF);
+}
+
 std::vector<json> extractPositionFeatures(std::vector<std::string> moves) {
     std::vector<json> positionsFeatures{}; 
 

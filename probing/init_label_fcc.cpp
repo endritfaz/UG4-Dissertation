@@ -34,7 +34,14 @@ int main() {
         
         prepare_fcc_insert(c); 
 
+        int samples = 5000; 
+        int pos = 0; 
+        int neg = 0; 
+
         for (const auto& row : positions) {
+            if (neg > samples && pos > samples) 
+                break; 
+            
             int id = row["id"].as<int>();
             std::string turn = row["turn"].as<std::string>(); 
 
@@ -59,7 +66,21 @@ int main() {
             int num_active_fcc_possible = __builtin_popcountll(fcc);
             bool active_fcc_possible = num_active_fcc_possible > 0; 
             
-            tx.exec(prepped{"label_fcc_insert"}, params{id, active_fcc_possible, num_active_fcc_possible});
+            bool exec = false;
+
+            if (active_fcc_possible && pos < samples) {
+                exec = true; 
+                pos += 1;
+            }
+
+            else if (!active_fcc_possible && neg < samples) {
+                exec = true; 
+                neg += 1;
+            }
+            
+            if (exec)
+                tx.exec(prepped{"label_fcc_insert"}, params{id, active_fcc_possible, num_active_fcc_possible});
+            
         }
 
         tx.commit();

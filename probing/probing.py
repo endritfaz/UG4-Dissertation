@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, insert, Table, MetaData
 import numpy as np
 import pandas as pd 
-from sklearn.linear_model import LassoCV, RidgeCV
+from sklearn.linear_model import RidgeCV, LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import sys
@@ -11,9 +11,12 @@ def fit_linear_model(X, y):
     model = RidgeCV(cv=5).fit(X, y)
     return model
 
+def fit_logistic_regression_model(X, y):
+    model = LogisticRegression(max_iter=1000).fit(X, y)
+    return model 
+
 def test_linear_model(model, X, y):
     return model.score(X, y)
-
 
 def format_blocks(activations):
     for i in range(1, 4):
@@ -32,7 +35,7 @@ if __name__ == "__main__":
     iteration = sys.argv[1]
     table = sys.argv[2]
     concept = sys.argv[3]
-
+    binary = sys.argv[4]
     activations = pd.read_sql(f"SELECT * FROM activations WHERE iteration='{iteration}'", engine)
     label = pd.read_sql(f"SELECT * FROM {table}", engine)
 
@@ -50,7 +53,8 @@ if __name__ == "__main__":
         y = df[concept]
 
         indices = np.arange(len(X))
-        train_idx, test_idx = train_test_split(indices, random_state=104, test_size=0.25, shuffle=True)
+        stratify = y if binary == "true" else None
+        train_idx, test_idx = train_test_split(indices, random_state=104, test_size=0.25, shuffle=True, stratify=stratify)
 
         X_train, X_test = X[train_idx], X[test_idx]
         X_control_train, X_control_test = X_control[train_idx], X_control[test_idx]
@@ -62,14 +66,18 @@ if __name__ == "__main__":
         X_control_train_scaled = scaler.fit_transform(X_control_train)
         X_control_test_scaled = scaler.transform(X_control_test)
 
-        model = fit_linear_model(X_train_scaled, y_train)
-        model_control = fit_linear_model(X_control_train_scaled, y_train)
+
+        fit_model = fit_logistic_regression_model if binary == "true" else fit_linear_model
+
+        model = fit_model(X_train_scaled, y_train)
+        
+        model_control = fit_model(X_control_train_scaled, y_train)
 
         score = test_linear_model(model, X_test_scaled, y_test)
         score_control = test_linear_model(model_control, X_control_test_scaled, y_test)
 
-        res[f"block_{i}_coeff"] = score
-        res[f"block_{i}_control_coeff"] = score_control
+        res[f"block_{i}_coeff"] = np.float64(score)
+        res[f"block_{i}_control_coeff"] = np.float64(score_control)
 
     insert_stmt = insert(results_table).values(iteration=iteration, block_1_coeff=res["block_1_coeff"], block_2_coeff=res["block_2_coeff"], block_3_coeff=res["block_3_coeff"], block_1_control_coeff=res["block_1_control_coeff"], block_2_control_coeff=res["block_2_control_coeff"], block_3_control_coeff=res["block_3_control_coeff"], concept=concept)
 
